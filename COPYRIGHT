@@ -9,3 +9,7 @@ non concede a terzi diritti aggiuntivi di modifica o ridistribuzione.
 Il layout include es(basic) dalla copia di xkeyboard-config già installata
 nel sistema. Quei file non vengono copiati nei pacchetti Occidentale e
 restano soggetti alle proprie licenze e attribuzioni.
+
+Los repertorios extraídos de Unicode CLDR y sus datos derivados se distribuyen
+bajo Unicode-3.0. Su aviso se incluye en docs/UNICODE-LICENSE.txt. Esa licencia
+se aplica a dichos datos y no modifica los derechos del código original.

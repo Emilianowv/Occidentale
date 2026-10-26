@@ -64,6 +64,11 @@ class InstallerTests(unittest.TestCase):
         try:
             self.assertEqual(kb.sequence([('AD11',), ('AC02',)]), 'ß')
             self.assertEqual(kb.sequence([('AD11',), ('AB03',)]), 'ç')
+            for first, second, expected in [
+                (('AC11',),('AC02',),'ș'), (('AC11',),('AD05',True),'Ț'),
+                (('AB08',True),('AC02',),'ś'), (('AD11',),('AC03',True),'Đ'),
+                (('AD12',),('AD09',True),'Ø'), (('AD12',True),('AD07',),'ū')]:
+                self.assertEqual(kb.sequence([first,second]),expected)
         finally:
             kb.close()
         registry = subprocess.run(['xkbcli', 'list', '--skip-default-paths', '/usr/share/X11/xkb', str(self.root/'etc/xkb')],
@@ -101,6 +106,21 @@ class InstallerTests(unittest.TestCase):
         self.assertIn('custom', self.compose.read_text())
         self.assertIn('later', self.compose.read_text())
         self.assertNotIn('OCCIDENTALE', self.compose.read_text())
+
+    def test_upgrade_replaces_previous_compose_block(self):
+        original = 'include "%L"\n# BEGIN OCCIDENTALE WST\n<dead_grave> <c> : "ç" ccedilla\n# END OCCIDENTALE WST\n# personal rule below\n'
+        self.compose.write_text(original)
+        self.run_cli('user-install')
+        self.assertEqual(self.compose.read_text().count('# BEGIN OCCIDENTALE WST'),1)
+        self.assertIn('# personal rule below',self.compose.read_text())
+        kb=Keyboard(compose=self.compose.read_text())
+        try:
+            self.assertEqual(kb.sequence([('AC11',),('AC02',)]),'ș')
+            self.assertEqual(kb.sequence([('AB08',True),('AC02',)]),'ś')
+        finally:
+            kb.close()
+        self.run_cli('user-remove')
+        self.assertEqual(self.compose.read_text(),original)
 
     def test_new_files_removed_on_uninstall(self):
         self.run_cli('system-install')

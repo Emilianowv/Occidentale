@@ -18,11 +18,16 @@ La directory nativa symbols è necessaria per X11, che non usa i percorsi utente
 
 ## Accenti e Compose
 
-XKB associa un tasto a un simbolo; le sequenze di accenti morti vengono composte dalle applicazioni o dal loro sistema di input. `user-install` aggiunge quattro regole in un blocco identificabile:
+XKB associa un tasto a un simbolo; le sequenze di accenti morti vengono composte dalle applicazioni o dal loro sistema di input. `user-install` aggiunge un blocco di regole personalizzate in un blocco identificabile:
 
 ```text
 grave+c → ç    grave+C → Ç
 grave+s → ß    grave+S → ẞ
+grave+n → ñ    grave+N → Ñ
+grave+d → đ    grave+D → Đ
+agudo+s/S → ș/Ș    agudo+t/T → ț/Ț
+Shift+virgola, poi s/S → ś/Ś
+anello+o/O → ø/Ø
 ```
 
 Se il file è nuovo, include `%L` per mantenere tutte le composizioni della locale. Se esiste, il contenuto e gli include restano inalterati. Un file personalizzato che deliberatamente non include `%L` mantiene questa scelta: per usare anche le composizioni standard bisogna avere un include adeguato. Le regole locali EMI V4/V5 precedenti non vengono cancellate; il blocco Occidentale viene aggiunto dopo di esse.
@@ -77,3 +82,9 @@ Non vengono cambiati `/etc/default/keyboard`, la tastiera della console Linux, i
 - [KDE: configurazione XKB Wayland in kxkbrc](https://community.kde.org/Plasma/Wayland#Custom_keyboard_maps_(XKB)).
 - [libxkbcommon: limiti X11 e compatibilità](https://xkbcommon.github.io/libxkbcommon/doc/compatibility.html).
 - [Packaging XKB: estensioni moderne e requisiti di versione](https://xkbcommon.org/doc/current/packaging-keyboard-layouts.html).
+
+## Distinzione fra ș romena e ś polacca nella 6.1
+
+L'agudo morto mantiene `dead_acute` e le composizioni vocaliche standard; solo s/S e t/T ricevono le regole romene concordate. Shift+virgola usa internamente `dead_abovecomma` come prefisso distinto, con regole esplicite per ś/Ś e spazio → ´. Usare `dead_acute` su entrambe le posizioni renderebbe impossibile distinguere le due s. La tabella Compose personalizzata è quindi parte necessaria dell'installazione.
+
+L'ex tasto +/* ora produce `dead_abovering` e `dead_macron`: le composizioni standard å/Å, ů/Ů e vocali con macrón restano disponibili, mentre ø/Ø sono aggiunte esplicitamente al prefisso anello. Le parentesi AltGr sullo stesso tasto sono conservate; + e * rimangono sulla fila numerica.

@@ -1,16 +1,16 @@
-# Occidentale 6.0.0
+# Occidentale 6.1.0
 
-Europeo Keyboard V5 diventa **Occidentale (wst)**. La mappa resta invariata; l'installazione Linux ora usa XKB nativo e un registro aggiuntivo leggibile da KDE Plasma 6.
+Reparto de acentos acordado para facilitar la escritura de lenguas europeas con alfabeto latino:
 
-Conservati accenti, grave+c → ç, grave+s → ß, AltGr+O → œ/Œ e AltGr+A → æ/Æ. Aggiunti backup, selezione KDE da terminale, aggiornamento, ripristino e rimozione.
+- Grave+c/s/n/d → ç/ß/ñ/đ, con sus mayúsculas.
+- La antigua tecla Ñ → ;/:.
+- Shift+grave → tilde muerta; Shift+6 → circunflejo muerto.
+- Agudo+s/t → ș/ț; Shift+coma seguido de s/S → ś/Ś.
+- Antigua tecla +/* → anillo/macrón. Anillo+a/o/u → å/ø/ů; con Shift, las vocales con macrón.
+- Se conservan œ/Œ, æ/Æ, + y * de la fila numérica, corchetes y llaves AltGr. Shift+punto no cambia.
 
-Su Debian 13 installare il `.deb`, poi dal proprio utente:
+El inventario Unicode CLDR comprueba 55 de 57 repertorios principales completos; bretón y sami skolt conservan huecos documentados. No se declara cobertura total de caracteres auxiliares o aplicaciones.
 
-```bash
-occidentale user-install
-occidentale kde-select --replace emius
-```
+Para actualizar: instalar el nuevo .deb, ejecutar `occidentale user-install` desde cada usuario y salir/entrar en la sesión. Actualizar solo el archivo XKB no basta para las reglas Compose personalizadas. Backup, restore y desinstalación permanecen disponibles.
 
-Omettere `--replace emius` per una nuova installazione. Uscire e rientrare in KDE. Verificare i download con SHA256SUMS.
-
-Il rapporto in `docs/VERIFICA.md` distingue test automatici, sessione KWin isolata e limiti ancora da collaudare nelle applicazioni. La bozza Windows è inclusa come sorgente, senza installer Windows.
+La fuente Windows se actualiza y verifica estáticamente; sigue sin un instalador compilado o probado en Windows.

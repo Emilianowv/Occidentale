@@ -4,10 +4,10 @@ Ambiente reale: Debian GNU/Linux 13, Plasma/KWin 6.3.6, libxkbcommon 1.7.0, xkb-
 
 | Controllo | Esito |
 |---|---|
-| Confronto V5 originale → wst, 49 tasti × 4 stati | 196 risultati identici |
-| Test automatici di layout e gestore | 21 test superati |
+| Confronto V5 originale → wst **6.0**, 49 tasti × 4 stati | 196 risultati identici; verifica storica |
+| Test automatici di layout e gestore 6.1 | 27 test locali superati; esito remoto da verificare sul commit 6.1 |
 | Accenti gravi, acuti, circonflessi e dieresi | 40 combinazioni maiuscole/minuscole verificate tramite libxkbcommon Compose |
-| Grave+c/C e grave+s/S | ç/Ç e ß/ẞ verificati da sequenze di tasti fisici |
+| Grave+c/C, grave+s/S e grave+n/N | ç/Ç, ß/ẞ e ñ/Ñ verificati da sequenze di tasti fisici |
 | Legature, ñ, ASCII, livelli AltGr | Inclusi nei 196 controlli del manifesto |
 | Caps Lock, Control e accenti seguiti da spazio | Superati |
 | Compilazione X11 con xkbcomp | File XKM generato e riletto |
@@ -64,3 +64,11 @@ Per il collaudo finale nelle applicazioni, dopo il nuovo accesso scrivere:
 ```
 
 Controllare inoltre copia/incolla/annulla, Alt+Tab, Caps Lock, cambio tra layout alternativi e recupero della configurazione precedente.
+
+## Cambio 6.1
+
+La posizione AC10 ora produce punto e virgola e due punti senza/con Shift. I livelli AltGr conservano tilde morta e doppio acuto. Shift+virgola è il prefisso per ś/Ś; Shift+punto resta invariato. Il test dei 196 stati usa il manifesto aggiornato; non viene più dichiarata identità completa con V5. L’inventario CLDR è riproducibile con `python3 scripts/language_audit.py --write`.
+
+Shift+grave è ora tilde morta; Shift+6 è circonflesso morto. Verificate ã/õ/ñ e maiuscole, tutte le vocali con circonflesso e i simboli letterali tramite spazio. Agudo+s/t produce ș/ț, mentre Shift+virgola+s/S conserva ś/Ś; verificati entrambi i casi, đ/Đ, anello a/o/u e vocali con macrón.
+
+Il rapporto CLDR aggiornato confronta 57 repertori principali: 55 completi nelle rotte provate; restano il carattere ʼ del bretone e Ʒ/ʒ/Ǥ/ǥ/Ǯ/ǯ del sami skolt. Scots e casubio sono segnalati come non verificati, non conteggiati come coperti.

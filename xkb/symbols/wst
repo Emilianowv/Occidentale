@@ -1,5 +1,5 @@
 // Occidentale (wst), derivato da EMI / Europeo V5.
-// Mappa V5 invariata; installazione nativa e registro KDE gestiti separatamente.
+// Base V5; dalla 6.1 la posizione di Ñ diventa ;/: (ñ via grave morto+n).
 default partial alphanumeric_keys
 xkb_symbols "basic" {
     include "es(basic)"
@@ -12,7 +12,7 @@ xkb_symbols "basic" {
     key <AE03> { [ 3, numbersign, numbersign, sterling ] };
     key <AE04> { [ 4, dollar, asciitilde, dollar ] };
     key <AE05> { [ 5, percent, onehalf, threeeighths ] };
-    key <AE06> { [ 6, asciicircum, notsign, fiveeighths ] };
+    key <AE06> { [ 6, dead_circumflex, notsign, fiveeighths ] };
     key <AE07> { [ 7, ampersand, braceleft, seveneighths ] };
     key <AE08> { [ 8, asterisk, bracketleft, trademark ] };
     key <AE09> { [ 9, parenleft, bracketright, plusminus ] };
@@ -24,14 +24,18 @@ xkb_symbols "basic" {
     // Ç/ç si ottengono invece con accento grave + C/c via ~/.XCompose.
     key <BKSL> { [ backslash, bar ] }; // US: tasto che prima dava ç
     key <AB10> { [ slash, question, dead_belowdot, dead_abovedot ] };
+    // Prefisso distinto dall'agudo per conservare ś/Ś dopo Shift+virgola.
+    key <AB08> { [ comma, dead_abovecomma, U2022, multiply ] };
 
     // Legature: A aveva già ae/AE in es(basic), ora dichiarate esplicitamente.
     // O: sostituisce oslash/Oslash di es(basic) con oe/OE.
     key <AC01> { [ a, A, ae, AE ] };
     key <AD09> { [ o, O, oe, OE ] };
+    // Punteggiatura sulla fila centrale; conservare tilde e doppio acuto morti.
+    key <AC10> { [ semicolon, colon, dead_tilde, dead_doubleacute ] };
 
     // AltGr (Alt destro) + Shift: parentesi graffe sui tasti ` e +.
-    // Conservare dead_grave, dead_circumflex e i livelli AltGr senza Shift.
-    key <AD11> { [ dead_grave, dead_circumflex, bracketleft, braceleft ] };
-    key <AD12> { [ plus, asterisk, bracketright, braceright ] };
+    // Grave e tilde morti; il circonflesso morto è ora su Shift+6.
+    key <AD11> { [ dead_grave, dead_tilde, bracketleft, braceleft ] };
+    key <AD12> { [ dead_abovering, dead_macron, bracketright, braceright ] };
 };

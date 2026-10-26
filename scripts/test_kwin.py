@@ -29,6 +29,14 @@ def verify_states(keymap, compose):
                 assert kb.symbol(item['xkb_key'], bool(i&1), bool(i&2)) == sym_from_name(level['xkb_keysym'].encode(), 0), (item['xkb_key'], i)
         assert kb.sequence([('AD11',), ('AB03',)]) == 'ç'
         assert kb.sequence([('AD11',), ('AC02',)]) == 'ß'
+        assert kb.sequence([('AD11',), ('AB06',)]) == 'ñ'
+        assert kb.sequence([('AD11',), ('AB06', True)]) == 'Ñ'
+        for first, second, expected in [
+            (('AC11',),('AC02',),'ș'), (('AC11',),('AD05',True),'Ț'),
+            (('AB08',True),('AC02',True),'Ś'), (('AD11',),('AC03',True),'Đ'),
+            (('AD12',),('AC01',),'å'), (('AD12',),('AD09',True),'Ø'),
+            (('AD12',),('AD07',),'ů'), (('AD12',True),('AD07',True),'Ū')]:
+            assert kb.sequence([first,second]) == expected, expected
     finally:
         kb.close()
 

@@ -1,7 +1,7 @@
 {
   "project": "Occidentale",
   "based_on": "EMI V5",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "os_support": {
     "linux": "XKB e Compose: vedere VERIFICA.md per i test eseguiti",
     "windows": "Sorgente MSKLC; compilazione e test Windows non eseguiti"
@@ -188,8 +188,8 @@
         },
         {
           "character": "^",
-          "dead": false,
-          "xkb_keysym": "asciicircum"
+          "dead": true,
+          "xkb_keysym": "dead_circumflex"
         },
         {
           "character": "¬",
@@ -663,9 +663,9 @@
           "xkb_keysym": "dead_grave"
         },
         {
-          "character": "^",
+          "character": "~",
           "dead": true,
-          "xkb_keysym": "dead_circumflex"
+          "xkb_keysym": "dead_tilde"
         },
         {
           "character": "[",
@@ -686,14 +686,14 @@
       "caps_sensitive": false,
       "levels": [
         {
-          "character": "+",
-          "dead": false,
-          "xkb_keysym": "plus"
+          "character": "˚",
+          "dead": true,
+          "xkb_keysym": "dead_abovering"
         },
         {
-          "character": "*",
-          "dead": false,
-          "xkb_keysym": "asterisk"
+          "character": "¯",
+          "dead": true,
+          "xkb_keysym": "dead_macron"
         },
         {
           "character": "]",
@@ -963,17 +963,17 @@
       "xkb_key": "AC10",
       "scan_code": "27",
       "virtual_key": "OEM_1",
-      "caps_sensitive": true,
+      "caps_sensitive": false,
       "levels": [
         {
-          "character": "ñ",
+          "character": ";",
           "dead": false,
-          "xkb_keysym": "ntilde"
+          "xkb_keysym": "semicolon"
         },
         {
-          "character": "Ñ",
+          "character": ":",
           "dead": false,
-          "xkb_keysym": "Ntilde"
+          "xkb_keysym": "colon"
         },
         {
           "character": "~",
@@ -1251,9 +1251,9 @@
           "xkb_keysym": "comma"
         },
         {
-          "character": ";",
-          "dead": false,
-          "xkb_keysym": "semicolon"
+          "character": "´",
+          "dead": true,
+          "xkb_keysym": "dead_abovecomma"
         },
         {
           "character": "•",
@@ -1390,5 +1390,5 @@
     "Avoid overwriting Linux Compose customization."
   ],
   "xkb_layout": "wst",
-  "manifest_note": "Verificato contro XKB compilato V5; corretti quattro livelli ereditati omessi dal manifest originario."
+  "manifest_note": "6.1: ;/: en AC10; ñ/đ por grave; tilde en Shift+grave; circunflejo en Shift+6; anillo/macrón en AD12; ș/ț por agudo y ś/Ś por Shift+coma."
 }

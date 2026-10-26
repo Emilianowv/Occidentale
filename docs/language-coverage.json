@@ -1,0 +1,6045 @@
+{
+  "layout_version": "6.1.0",
+  "source": "release-49",
+  "model": "direct or one dead key + printable key; concatenation for multi-character exemplars",
+  "compose_locale": "en_US.UTF-8",
+  "dead_keys": [
+    "dead_abovecomma",
+    "dead_abovedot",
+    "dead_abovering",
+    "dead_acute",
+    "dead_belowdot",
+    "dead_breve",
+    "dead_caron",
+    "dead_cedilla",
+    "dead_circumflex",
+    "dead_diaeresis",
+    "dead_doubleacute",
+    "dead_grave",
+    "dead_hook",
+    "dead_horn",
+    "dead_macron",
+    "dead_ogonek",
+    "dead_tilde"
+  ],
+  "recipes": {
+    "`": {
+      "steps": [
+        "`"
+      ],
+      "modifiers": 0
+    },
+    "~": {
+      "steps": [
+        "Shift+`"
+      ],
+      "modifiers": 1
+    },
+    "\\": {
+      "steps": [
+        "\\"
+      ],
+      "modifiers": 0
+    },
+    "1": {
+      "steps": [
+        "1"
+      ],
+      "modifiers": 0
+    },
+    "!": {
+      "steps": [
+        "Shift+1"
+      ],
+      "modifiers": 1
+    },
+    "|": {
+      "steps": [
+        "AltGr+1"
+      ],
+      "modifiers": 1
+    },
+    "¡": {
+      "steps": [
+        "Shift+AltGr+1"
+      ],
+      "modifiers": 2
+    },
+    "2": {
+      "steps": [
+        "2"
+      ],
+      "modifiers": 0
+    },
+    "@": {
+      "steps": [
+        "Shift+2"
+      ],
+      "modifiers": 1
+    },
+    "⅛": {
+      "steps": [
+        "Shift+AltGr+2"
+      ],
+      "modifiers": 2
+    },
+    "3": {
+      "steps": [
+        "3"
+      ],
+      "modifiers": 0
+    },
+    "#": {
+      "steps": [
+        "Shift+3"
+      ],
+      "modifiers": 1
+    },
+    "£": {
+      "steps": [
+        "Shift+AltGr+3"
+      ],
+      "modifiers": 2
+    },
+    "4": {
+      "steps": [
+        "4"
+      ],
+      "modifiers": 0
+    },
+    "$": {
+      "steps": [
+        "Shift+4"
+      ],
+      "modifiers": 1
+    },
+    "5": {
+      "steps": [
+        "5"
+      ],
+      "modifiers": 0
+    },
+    "%": {
+      "steps": [
+        "Shift+5"
+      ],
+      "modifiers": 1
+    },
+    "½": {
+      "steps": [
+        "AltGr+5"
+      ],
+      "modifiers": 1
+    },
+    "⅜": {
+      "steps": [
+        "Shift+AltGr+5"
+      ],
+      "modifiers": 2
+    },
+    "6": {
+      "steps": [
+        "6"
+      ],
+      "modifiers": 0
+    },
+    "¬": {
+      "steps": [
+        "AltGr+6"
+      ],
+      "modifiers": 1
+    },
+    "⅝": {
+      "steps": [
+        "Shift+AltGr+6"
+      ],
+      "modifiers": 2
+    },
+    "7": {
+      "steps": [
+        "7"
+      ],
+      "modifiers": 0
+    },
+    "&": {
+      "steps": [
+        "Shift+7"
+      ],
+      "modifiers": 1
+    },
+    "{": {
+      "steps": [
+        "AltGr+7"
+      ],
+      "modifiers": 1
+    },
+    "⅞": {
+      "steps": [
+        "Shift+AltGr+7"
+      ],
+      "modifiers": 2
+    },
+    "8": {
+      "steps": [
+        "8"
+      ],
+      "modifiers": 0
+    },
+    "*": {
+      "steps": [
+        "Shift+8"
+      ],
+      "modifiers": 1
+    },
+    "[": {
+      "steps": [
+        "AltGr+8"
+      ],
+      "modifiers": 1
+    },
+    "™": {
+      "steps": [
+        "Shift+AltGr+8"
+      ],
+      "modifiers": 2
+    },
+    "9": {
+      "steps": [
+        "9"
+      ],
+      "modifiers": 0
+    },
+    "(": {
+      "steps": [
+        "Shift+9"
+      ],
+      "modifiers": 1
+    },
+    "]": {
+      "steps": [
+        "AltGr+9"
+      ],
+      "modifiers": 1
+    },
+    "±": {
+      "steps": [
+        "Shift+AltGr+9"
+      ],
+      "modifiers": 2
+    },
+    "0": {
+      "steps": [
+        "0"
+      ],
+      "modifiers": 0
+    },
+    ")": {
+      "steps": [
+        "Shift+0"
+      ],
+      "modifiers": 1
+    },
+    "}": {
+      "steps": [
+        "AltGr+0"
+      ],
+      "modifiers": 1
+    },
+    "°": {
+      "steps": [
+        "Shift+AltGr+0"
+      ],
+      "modifiers": 2
+    },
+    "-": {
+      "steps": [
+        "-"
+      ],
+      "modifiers": 0
+    },
+    "_": {
+      "steps": [
+        "Shift+-"
+      ],
+      "modifiers": 1
+    },
+    "¿": {
+      "steps": [
+        "Shift+AltGr+-"
+      ],
+      "modifiers": 2
+    },
+    "=": {
+      "steps": [
+        "="
+      ],
+      "modifiers": 0
+    },
+    "+": {
+      "steps": [
+        "Shift+="
+      ],
+      "modifiers": 1
+    },
+    "q": {
+      "steps": [
+        "Q"
+      ],
+      "modifiers": 0
+    },
+    "Q": {
+      "steps": [
+        "Shift+Q"
+      ],
+      "modifiers": 1
+    },
+    "Ω": {
+      "steps": [
+        "Shift+AltGr+Q"
+      ],
+      "modifiers": 2
+    },
+    "w": {
+      "steps": [
+        "W"
+      ],
+      "modifiers": 0
+    },
+    "W": {
+      "steps": [
+        "Shift+W"
+      ],
+      "modifiers": 1
+    },
+    "ſ": {
+      "steps": [
+        "AltGr+W"
+      ],
+      "modifiers": 1
+    },
+    "§": {
+      "steps": [
+        "Shift+AltGr+W"
+      ],
+      "modifiers": 2
+    },
+    "e": {
+      "steps": [
+        "E"
+      ],
+      "modifiers": 0
+    },
+    "E": {
+      "steps": [
+        "Shift+E"
+      ],
+      "modifiers": 1
+    },
+    "€": {
+      "steps": [
+        "AltGr+E"
+      ],
+      "modifiers": 1
+    },
+    "¢": {
+      "steps": [
+        "AltGr+C"
+      ],
+      "modifiers": 1
+    },
+    "r": {
+      "steps": [
+        "R"
+      ],
+      "modifiers": 0
+    },
+    "R": {
+      "steps": [
+        "Shift+R"
+      ],
+      "modifiers": 1
+    },
+    "¶": {
+      "steps": [
+        "AltGr+R"
+      ],
+      "modifiers": 1
+    },
+    "®": {
+      "steps": [
+        "Shift+AltGr+R"
+      ],
+      "modifiers": 2
+    },
+    "t": {
+      "steps": [
+        "T"
+      ],
+      "modifiers": 0
+    },
+    "T": {
+      "steps": [
+        "Shift+T"
+      ],
+      "modifiers": 1
+    },
+    "ŧ": {
+      "steps": [
+        "AltGr+T"
+      ],
+      "modifiers": 1
+    },
+    "Ŧ": {
+      "steps": [
+        "Shift+AltGr+T"
+      ],
+      "modifiers": 2
+    },
+    "y": {
+      "steps": [
+        "Y"
+      ],
+      "modifiers": 0
+    },
+    "Y": {
+      "steps": [
+        "Shift+Y"
+      ],
+      "modifiers": 1
+    },
+    "←": {
+      "steps": [
+        "AltGr+Y"
+      ],
+      "modifiers": 1
+    },
+    "¥": {
+      "steps": [
+        "Shift+AltGr+Y"
+      ],
+      "modifiers": 2
+    },
+    "u": {
+      "steps": [
+        "U"
+      ],
+      "modifiers": 0
+    },
+    "U": {
+      "steps": [
+        "Shift+U"
+      ],
+      "modifiers": 1
+    },
+    "↓": {
+      "steps": [
+        "AltGr+U"
+      ],
+      "modifiers": 1
+    },
+    "↑": {
+      "steps": [
+        "Shift+AltGr+U"
+      ],
+      "modifiers": 2
+    },
+    "i": {
+      "steps": [
+        "I"
+      ],
+      "modifiers": 0
+    },
+    "I": {
+      "steps": [
+        "Shift+I"
+      ],
+      "modifiers": 1
+    },
+    "→": {
+      "steps": [
+        "AltGr+I"
+      ],
+      "modifiers": 1
+    },
+    "ı": {
+      "steps": [
+        "Shift+AltGr+I"
+      ],
+      "modifiers": 2
+    },
+    "o": {
+      "steps": [
+        "O"
+      ],
+      "modifiers": 0
+    },
+    "O": {
+      "steps": [
+        "Shift+O"
+      ],
+      "modifiers": 1
+    },
+    "œ": {
+      "steps": [
+        "AltGr+O"
+      ],
+      "modifiers": 1
+    },
+    "Œ": {
+      "steps": [
+        "Shift+AltGr+O"
+      ],
+      "modifiers": 2
+    },
+    "p": {
+      "steps": [
+        "P"
+      ],
+      "modifiers": 0
+    },
+    "P": {
+      "steps": [
+        "Shift+P"
+      ],
+      "modifiers": 1
+    },
+    "þ": {
+      "steps": [
+        "AltGr+P"
+      ],
+      "modifiers": 1
+    },
+    "Þ": {
+      "steps": [
+        "Shift+AltGr+P"
+      ],
+      "modifiers": 2
+    },
+    "a": {
+      "steps": [
+        "A"
+      ],
+      "modifiers": 0
+    },
+    "A": {
+      "steps": [
+        "Shift+A"
+      ],
+      "modifiers": 1
+    },
+    "æ": {
+      "steps": [
+        "AltGr+A"
+      ],
+      "modifiers": 1
+    },
+    "Æ": {
+      "steps": [
+        "Shift+AltGr+A"
+      ],
+      "modifiers": 2
+    },
+    "s": {
+      "steps": [
+        "S"
+      ],
+      "modifiers": 0
+    },
+    "S": {
+      "steps": [
+        "Shift+S"
+      ],
+      "modifiers": 1
+    },
+    "ß": {
+      "steps": [
+        "AltGr+S"
+      ],
+      "modifiers": 1
+    },
+    "ẞ": {
+      "steps": [
+        "Shift+AltGr+S"
+      ],
+      "modifiers": 2
+    },
+    "d": {
+      "steps": [
+        "D"
+      ],
+      "modifiers": 0
+    },
+    "D": {
+      "steps": [
+        "Shift+D"
+      ],
+      "modifiers": 1
+    },
+    "ð": {
+      "steps": [
+        "AltGr+D"
+      ],
+      "modifiers": 1
+    },
+    "Ð": {
+      "steps": [
+        "Shift+AltGr+D"
+      ],
+      "modifiers": 2
+    },
+    "f": {
+      "steps": [
+        "F"
+      ],
+      "modifiers": 0
+    },
+    "F": {
+      "steps": [
+        "Shift+F"
+      ],
+      "modifiers": 1
+    },
+    "đ": {
+      "steps": [
+        "AltGr+F"
+      ],
+      "modifiers": 1
+    },
+    "ª": {
+      "steps": [
+        "Shift+AltGr+F"
+      ],
+      "modifiers": 2
+    },
+    "g": {
+      "steps": [
+        "G"
+      ],
+      "modifiers": 0
+    },
+    "G": {
+      "steps": [
+        "Shift+G"
+      ],
+      "modifiers": 1
+    },
+    "ŋ": {
+      "steps": [
+        "AltGr+G"
+      ],
+      "modifiers": 1
+    },
+    "Ŋ": {
+      "steps": [
+        "Shift+AltGr+G"
+      ],
+      "modifiers": 2
+    },
+    "h": {
+      "steps": [
+        "H"
+      ],
+      "modifiers": 0
+    },
+    "H": {
+      "steps": [
+        "Shift+H"
+      ],
+      "modifiers": 1
+    },
+    "ħ": {
+      "steps": [
+        "AltGr+H"
+      ],
+      "modifiers": 1
+    },
+    "Ħ": {
+      "steps": [
+        "Shift+AltGr+H"
+      ],
+      "modifiers": 2
+    },
+    "j": {
+      "steps": [
+        "J"
+      ],
+      "modifiers": 0
+    },
+    "J": {
+      "steps": [
+        "Shift+J"
+      ],
+      "modifiers": 1
+    },
+    "k": {
+      "steps": [
+        "K"
+      ],
+      "modifiers": 0
+    },
+    "K": {
+      "steps": [
+        "Shift+K"
+      ],
+      "modifiers": 1
+    },
+    "ĸ": {
+      "steps": [
+        "AltGr+K"
+      ],
+      "modifiers": 1
+    },
+    "l": {
+      "steps": [
+        "L"
+      ],
+      "modifiers": 0
+    },
+    "L": {
+      "steps": [
+        "Shift+L"
+      ],
+      "modifiers": 1
+    },
+    "ł": {
+      "steps": [
+        "AltGr+L"
+      ],
+      "modifiers": 1
+    },
+    "Ł": {
+      "steps": [
+        "Shift+AltGr+L"
+      ],
+      "modifiers": 2
+    },
+    ";": {
+      "steps": [
+        ";"
+      ],
+      "modifiers": 0
+    },
+    ":": {
+      "steps": [
+        "Shift+;"
+      ],
+      "modifiers": 1
+    },
+    "z": {
+      "steps": [
+        "Z"
+      ],
+      "modifiers": 0
+    },
+    "Z": {
+      "steps": [
+        "Shift+Z"
+      ],
+      "modifiers": 1
+    },
+    "«": {
+      "steps": [
+        "AltGr+Z"
+      ],
+      "modifiers": 1
+    },
+    "<": {
+      "steps": [
+        "tecla ISO <"
+      ],
+      "modifiers": 0
+    },
+    "x": {
+      "steps": [
+        "X"
+      ],
+      "modifiers": 0
+    },
+    "X": {
+      "steps": [
+        "Shift+X"
+      ],
+      "modifiers": 1
+    },
+    "»": {
+      "steps": [
+        "AltGr+X"
+      ],
+      "modifiers": 1
+    },
+    ">": {
+      "steps": [
+        "Shift+tecla ISO <"
+      ],
+      "modifiers": 1
+    },
+    "c": {
+      "steps": [
+        "C"
+      ],
+      "modifiers": 0
+    },
+    "C": {
+      "steps": [
+        "Shift+C"
+      ],
+      "modifiers": 1
+    },
+    "©": {
+      "steps": [
+        "Shift+AltGr+C"
+      ],
+      "modifiers": 2
+    },
+    "v": {
+      "steps": [
+        "V"
+      ],
+      "modifiers": 0
+    },
+    "V": {
+      "steps": [
+        "Shift+V"
+      ],
+      "modifiers": 1
+    },
+    "„": {
+      "steps": [
+        "AltGr+V"
+      ],
+      "modifiers": 1
+    },
+    "‚": {
+      "steps": [
+        "Shift+AltGr+V"
+      ],
+      "modifiers": 2
+    },
+    "b": {
+      "steps": [
+        "B"
+      ],
+      "modifiers": 0
+    },
+    "B": {
+      "steps": [
+        "Shift+B"
+      ],
+      "modifiers": 1
+    },
+    "“": {
+      "steps": [
+        "AltGr+B"
+      ],
+      "modifiers": 1
+    },
+    "‘": {
+      "steps": [
+        "Shift+AltGr+B"
+      ],
+      "modifiers": 2
+    },
+    "n": {
+      "steps": [
+        "N"
+      ],
+      "modifiers": 0
+    },
+    "N": {
+      "steps": [
+        "Shift+N"
+      ],
+      "modifiers": 1
+    },
+    "”": {
+      "steps": [
+        "AltGr+N"
+      ],
+      "modifiers": 1
+    },
+    "’": {
+      "steps": [
+        "Shift+AltGr+N"
+      ],
+      "modifiers": 2
+    },
+    "m": {
+      "steps": [
+        "M"
+      ],
+      "modifiers": 0
+    },
+    "M": {
+      "steps": [
+        "Shift+M"
+      ],
+      "modifiers": 1
+    },
+    "µ": {
+      "steps": [
+        "AltGr+M"
+      ],
+      "modifiers": 1
+    },
+    "º": {
+      "steps": [
+        "Shift+AltGr+M"
+      ],
+      "modifiers": 2
+    },
+    ",": {
+      "steps": [
+        ","
+      ],
+      "modifiers": 0
+    },
+    "•": {
+      "steps": [
+        "AltGr+,"
+      ],
+      "modifiers": 1
+    },
+    "×": {
+      "steps": [
+        "Shift+AltGr+,"
+      ],
+      "modifiers": 2
+    },
+    ".": {
+      "steps": [
+        "."
+      ],
+      "modifiers": 0
+    },
+    "·": {
+      "steps": [
+        "AltGr+."
+      ],
+      "modifiers": 1
+    },
+    "÷": {
+      "steps": [
+        "Shift+AltGr+."
+      ],
+      "modifiers": 2
+    },
+    "/": {
+      "steps": [
+        "/"
+      ],
+      "modifiers": 0
+    },
+    "?": {
+      "steps": [
+        "Shift+/"
+      ],
+      "modifiers": 1
+    },
+    "¦": {
+      "steps": [
+        "Shift+AltGr+tecla ISO <"
+      ],
+      "modifiers": 2
+    },
+    " ": {
+      "steps": [
+        "Espacio"
+      ],
+      "modifiers": 0
+    },
+    "¹": {
+      "steps": [
+        "Shift+6",
+        "1"
+      ],
+      "modifiers": 1
+    },
+    "²": {
+      "steps": [
+        "Shift+6",
+        "2"
+      ],
+      "modifiers": 1
+    },
+    "³": {
+      "steps": [
+        "Shift+6",
+        "3"
+      ],
+      "modifiers": 1
+    },
+    "⁴": {
+      "steps": [
+        "Shift+6",
+        "4"
+      ],
+      "modifiers": 1
+    },
+    "⁵": {
+      "steps": [
+        "Shift+6",
+        "5"
+      ],
+      "modifiers": 1
+    },
+    "⁶": {
+      "steps": [
+        "Shift+6",
+        "6"
+      ],
+      "modifiers": 1
+    },
+    "⁷": {
+      "steps": [
+        "Shift+6",
+        "7"
+      ],
+      "modifiers": 1
+    },
+    "⁸": {
+      "steps": [
+        "Shift+6",
+        "8"
+      ],
+      "modifiers": 1
+    },
+    "⁹": {
+      "steps": [
+        "Shift+6",
+        "9"
+      ],
+      "modifiers": 1
+    },
+    "⁽": {
+      "steps": [
+        "Shift+6",
+        "Shift+9"
+      ],
+      "modifiers": 2
+    },
+    "⁰": {
+      "steps": [
+        "Shift+6",
+        "0"
+      ],
+      "modifiers": 1
+    },
+    "⁾": {
+      "steps": [
+        "Shift+6",
+        "Shift+0"
+      ],
+      "modifiers": 2
+    },
+    "⁻": {
+      "steps": [
+        "Shift+6",
+        "-"
+      ],
+      "modifiers": 1
+    },
+    "⁼": {
+      "steps": [
+        "Shift+6",
+        "="
+      ],
+      "modifiers": 1
+    },
+    "⁺": {
+      "steps": [
+        "Shift+6",
+        "Shift+="
+      ],
+      "modifiers": 2
+    },
+    "ŵ": {
+      "steps": [
+        "Shift+6",
+        "W"
+      ],
+      "modifiers": 1
+    },
+    "Ŵ": {
+      "steps": [
+        "Shift+6",
+        "Shift+W"
+      ],
+      "modifiers": 2
+    },
+    "ê": {
+      "steps": [
+        "Shift+6",
+        "E"
+      ],
+      "modifiers": 1
+    },
+    "Ê": {
+      "steps": [
+        "Shift+6",
+        "Shift+E"
+      ],
+      "modifiers": 2
+    },
+    "ŷ": {
+      "steps": [
+        "Shift+6",
+        "Y"
+      ],
+      "modifiers": 1
+    },
+    "Ŷ": {
+      "steps": [
+        "Shift+6",
+        "Shift+Y"
+      ],
+      "modifiers": 2
+    },
+    "û": {
+      "steps": [
+        "Shift+6",
+        "U"
+      ],
+      "modifiers": 1
+    },
+    "Û": {
+      "steps": [
+        "Shift+6",
+        "Shift+U"
+      ],
+      "modifiers": 2
+    },
+    "î": {
+      "steps": [
+        "Shift+6",
+        "I"
+      ],
+      "modifiers": 1
+    },
+    "Î": {
+      "steps": [
+        "Shift+6",
+        "Shift+I"
+      ],
+      "modifiers": 2
+    },
+    "ô": {
+      "steps": [
+        "Shift+6",
+        "O"
+      ],
+      "modifiers": 1
+    },
+    "Ô": {
+      "steps": [
+        "Shift+6",
+        "Shift+O"
+      ],
+      "modifiers": 2
+    },
+    "â": {
+      "steps": [
+        "Shift+6",
+        "A"
+      ],
+      "modifiers": 1
+    },
+    "Â": {
+      "steps": [
+        "Shift+6",
+        "Shift+A"
+      ],
+      "modifiers": 2
+    },
+    "ŝ": {
+      "steps": [
+        "Shift+6",
+        "S"
+      ],
+      "modifiers": 1
+    },
+    "Ŝ": {
+      "steps": [
+        "Shift+6",
+        "Shift+S"
+      ],
+      "modifiers": 2
+    },
+    "ĝ": {
+      "steps": [
+        "Shift+6",
+        "G"
+      ],
+      "modifiers": 1
+    },
+    "Ĝ": {
+      "steps": [
+        "Shift+6",
+        "Shift+G"
+      ],
+      "modifiers": 2
+    },
+    "ĥ": {
+      "steps": [
+        "Shift+6",
+        "H"
+      ],
+      "modifiers": 1
+    },
+    "Ĥ": {
+      "steps": [
+        "Shift+6",
+        "Shift+H"
+      ],
+      "modifiers": 2
+    },
+    "ĵ": {
+      "steps": [
+        "Shift+6",
+        "J"
+      ],
+      "modifiers": 1
+    },
+    "Ĵ": {
+      "steps": [
+        "Shift+6",
+        "Shift+J"
+      ],
+      "modifiers": 2
+    },
+    "ẑ": {
+      "steps": [
+        "Shift+6",
+        "Z"
+      ],
+      "modifiers": 1
+    },
+    "Ẑ": {
+      "steps": [
+        "Shift+6",
+        "Shift+Z"
+      ],
+      "modifiers": 2
+    },
+    "ĉ": {
+      "steps": [
+        "Shift+6",
+        "C"
+      ],
+      "modifiers": 1
+    },
+    "Ĉ": {
+      "steps": [
+        "Shift+6",
+        "Shift+C"
+      ],
+      "modifiers": 2
+    },
+    "^": {
+      "steps": [
+        "Shift+6",
+        "Espacio"
+      ],
+      "modifiers": 1
+    },
+    "ȩ": {
+      "steps": [
+        "AltGr+=",
+        "E"
+      ],
+      "modifiers": 1
+    },
+    "Ȩ": {
+      "steps": [
+        "AltGr+=",
+        "Shift+E"
+      ],
+      "modifiers": 2
+    },
+    "ŗ": {
+      "steps": [
+        "AltGr+=",
+        "R"
+      ],
+      "modifiers": 1
+    },
+    "Ŗ": {
+      "steps": [
+        "AltGr+=",
+        "Shift+R"
+      ],
+      "modifiers": 2
+    },
+    "ţ": {
+      "steps": [
+        "AltGr+=",
+        "T"
+      ],
+      "modifiers": 1
+    },
+    "Ţ": {
+      "steps": [
+        "AltGr+=",
+        "Shift+T"
+      ],
+      "modifiers": 2
+    },
+    "ş": {
+      "steps": [
+        "AltGr+=",
+        "S"
+      ],
+      "modifiers": 1
+    },
+    "Ş": {
+      "steps": [
+        "AltGr+=",
+        "Shift+S"
+      ],
+      "modifiers": 2
+    },
+    "ḑ": {
+      "steps": [
+        "AltGr+=",
+        "D"
+      ],
+      "modifiers": 1
+    },
+    "Ḑ": {
+      "steps": [
+        "AltGr+=",
+        "Shift+D"
+      ],
+      "modifiers": 2
+    },
+    "ģ": {
+      "steps": [
+        "AltGr+=",
+        "G"
+      ],
+      "modifiers": 1
+    },
+    "Ģ": {
+      "steps": [
+        "AltGr+=",
+        "Shift+G"
+      ],
+      "modifiers": 2
+    },
+    "ḩ": {
+      "steps": [
+        "AltGr+=",
+        "H"
+      ],
+      "modifiers": 1
+    },
+    "Ḩ": {
+      "steps": [
+        "AltGr+=",
+        "Shift+H"
+      ],
+      "modifiers": 2
+    },
+    "ķ": {
+      "steps": [
+        "AltGr+=",
+        "K"
+      ],
+      "modifiers": 1
+    },
+    "Ķ": {
+      "steps": [
+        "AltGr+=",
+        "Shift+K"
+      ],
+      "modifiers": 2
+    },
+    "ļ": {
+      "steps": [
+        "AltGr+=",
+        "L"
+      ],
+      "modifiers": 1
+    },
+    "Ļ": {
+      "steps": [
+        "AltGr+=",
+        "Shift+L"
+      ],
+      "modifiers": 2
+    },
+    "ç": {
+      "steps": [
+        "tecla de grave",
+        "C"
+      ],
+      "modifiers": 0
+    },
+    "Ç": {
+      "steps": [
+        "tecla de grave",
+        "Shift+C"
+      ],
+      "modifiers": 1
+    },
+    "ņ": {
+      "steps": [
+        "AltGr+=",
+        "N"
+      ],
+      "modifiers": 1
+    },
+    "Ņ": {
+      "steps": [
+        "AltGr+=",
+        "Shift+N"
+      ],
+      "modifiers": 2
+    },
+    "¸": {
+      "steps": [
+        "AltGr+=",
+        "Espacio"
+      ],
+      "modifiers": 1
+    },
+    "ę": {
+      "steps": [
+        "Shift+AltGr+=",
+        "E"
+      ],
+      "modifiers": 2
+    },
+    "Ę": {
+      "steps": [
+        "Shift+AltGr+=",
+        "Shift+E"
+      ],
+      "modifiers": 3
+    },
+    "ų": {
+      "steps": [
+        "Shift+AltGr+=",
+        "U"
+      ],
+      "modifiers": 2
+    },
+    "Ų": {
+      "steps": [
+        "Shift+AltGr+=",
+        "Shift+U"
+      ],
+      "modifiers": 3
+    },
+    "į": {
+      "steps": [
+        "Shift+AltGr+=",
+        "I"
+      ],
+      "modifiers": 2
+    },
+    "Į": {
+      "steps": [
+        "Shift+AltGr+=",
+        "Shift+I"
+      ],
+      "modifiers": 3
+    },
+    "ǫ": {
+      "steps": [
+        "Shift+AltGr+=",
+        "O"
+      ],
+      "modifiers": 2
+    },
+    "Ǫ": {
+      "steps": [
+        "Shift+AltGr+=",
+        "Shift+O"
+      ],
+      "modifiers": 3
+    },
+    "ą": {
+      "steps": [
+        "Shift+AltGr+=",
+        "A"
+      ],
+      "modifiers": 2
+    },
+    "Ą": {
+      "steps": [
+        "Shift+AltGr+=",
+        "Shift+A"
+      ],
+      "modifiers": 3
+    },
+    "˛": {
+      "steps": [
+        "Shift+AltGr+=",
+        "Espacio"
+      ],
+      "modifiers": 2
+    },
+    "Ὼ": {
+      "steps": [
+        "tecla de grave",
+        "Shift+AltGr+Q"
+      ],
+      "modifiers": 2
+    },
+    "ẁ": {
+      "steps": [
+        "tecla de grave",
+        "W"
+      ],
+      "modifiers": 0
+    },
+    "Ẁ": {
+      "steps": [
+        "tecla de grave",
+        "Shift+W"
+      ],
+      "modifiers": 1
+    },
+    "è": {
+      "steps": [
+        "tecla de grave",
+        "E"
+      ],
+      "modifiers": 0
+    },
+    "È": {
+      "steps": [
+        "tecla de grave",
+        "Shift+E"
+      ],
+      "modifiers": 1
+    },
+    "ỳ": {
+      "steps": [
+        "tecla de grave",
+        "Y"
+      ],
+      "modifiers": 0
+    },
+    "Ỳ": {
+      "steps": [
+        "tecla de grave",
+        "Shift+Y"
+      ],
+      "modifiers": 1
+    },
+    "ù": {
+      "steps": [
+        "tecla de grave",
+        "U"
+      ],
+      "modifiers": 0
+    },
+    "Ù": {
+      "steps": [
+        "tecla de grave",
+        "Shift+U"
+      ],
+      "modifiers": 1
+    },
+    "ì": {
+      "steps": [
+        "tecla de grave",
+        "I"
+      ],
+      "modifiers": 0
+    },
+    "Ì": {
+      "steps": [
+        "tecla de grave",
+        "Shift+I"
+      ],
+      "modifiers": 1
+    },
+    "ò": {
+      "steps": [
+        "tecla de grave",
+        "O"
+      ],
+      "modifiers": 0
+    },
+    "Ò": {
+      "steps": [
+        "tecla de grave",
+        "Shift+O"
+      ],
+      "modifiers": 1
+    },
+    "à": {
+      "steps": [
+        "tecla de grave",
+        "A"
+      ],
+      "modifiers": 0
+    },
+    "À": {
+      "steps": [
+        "tecla de grave",
+        "Shift+A"
+      ],
+      "modifiers": 1
+    },
+    "Đ": {
+      "steps": [
+        "tecla de grave",
+        "Shift+D"
+      ],
+      "modifiers": 1
+    },
+    "ŋ̀": {
+      "steps": [
+        "tecla de grave",
+        "AltGr+G"
+      ],
+      "modifiers": 1
+    },
+    "Ŋ̀": {
+      "steps": [
+        "tecla de grave",
+        "Shift+AltGr+G"
+      ],
+      "modifiers": 2
+    },
+    "ǜ": {
+      "steps": [
+        "tecla de grave",
+        "V"
+      ],
+      "modifiers": 0
+    },
+    "Ǜ": {
+      "steps": [
+        "tecla de grave",
+        "Shift+V"
+      ],
+      "modifiers": 1
+    },
+    "ñ": {
+      "steps": [
+        "tecla de grave",
+        "N"
+      ],
+      "modifiers": 0
+    },
+    "Ñ": {
+      "steps": [
+        "tecla de grave",
+        "Shift+N"
+      ],
+      "modifiers": 1
+    },
+    "m̀": {
+      "steps": [
+        "tecla de grave",
+        "M"
+      ],
+      "modifiers": 0
+    },
+    "M̀": {
+      "steps": [
+        "tecla de grave",
+        "Shift+M"
+      ],
+      "modifiers": 1
+    },
+    "≃": {
+      "steps": [
+        "Shift+tecla de grave",
+        "="
+      ],
+      "modifiers": 1
+    },
+    "ẽ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "E"
+      ],
+      "modifiers": 1
+    },
+    "Ẽ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "Shift+E"
+      ],
+      "modifiers": 2
+    },
+    "ỹ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "Y"
+      ],
+      "modifiers": 1
+    },
+    "Ỹ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "Shift+Y"
+      ],
+      "modifiers": 2
+    },
+    "ũ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "U"
+      ],
+      "modifiers": 1
+    },
+    "Ũ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "Shift+U"
+      ],
+      "modifiers": 2
+    },
+    "ĩ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "I"
+      ],
+      "modifiers": 1
+    },
+    "Ĩ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "Shift+I"
+      ],
+      "modifiers": 2
+    },
+    "õ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "O"
+      ],
+      "modifiers": 1
+    },
+    "Õ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "Shift+O"
+      ],
+      "modifiers": 2
+    },
+    "ã": {
+      "steps": [
+        "Shift+tecla de grave",
+        "A"
+      ],
+      "modifiers": 1
+    },
+    "Ã": {
+      "steps": [
+        "Shift+tecla de grave",
+        "Shift+A"
+      ],
+      "modifiers": 2
+    },
+    "≲": {
+      "steps": [
+        "Shift+tecla de grave",
+        "tecla ISO <"
+      ],
+      "modifiers": 1
+    },
+    "≳": {
+      "steps": [
+        "Shift+tecla de grave",
+        "Shift+tecla ISO <"
+      ],
+      "modifiers": 2
+    },
+    "ṽ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "V"
+      ],
+      "modifiers": 1
+    },
+    "Ṽ": {
+      "steps": [
+        "Shift+tecla de grave",
+        "Shift+V"
+      ],
+      "modifiers": 2
+    },
+    "ẘ": {
+      "steps": [
+        "˚",
+        "W"
+      ],
+      "modifiers": 0
+    },
+    "ẙ": {
+      "steps": [
+        "˚",
+        "Y"
+      ],
+      "modifiers": 0
+    },
+    "ů": {
+      "steps": [
+        "˚",
+        "U"
+      ],
+      "modifiers": 0
+    },
+    "Ů": {
+      "steps": [
+        "˚",
+        "Shift+U"
+      ],
+      "modifiers": 1
+    },
+    "ø": {
+      "steps": [
+        "˚",
+        "O"
+      ],
+      "modifiers": 0
+    },
+    "Ø": {
+      "steps": [
+        "˚",
+        "Shift+O"
+      ],
+      "modifiers": 1
+    },
+    "å": {
+      "steps": [
+        "˚",
+        "A"
+      ],
+      "modifiers": 0
+    },
+    "Å": {
+      "steps": [
+        "˚",
+        "Shift+A"
+      ],
+      "modifiers": 1
+    },
+    "ē": {
+      "steps": [
+        "Shift+˚",
+        "E"
+      ],
+      "modifiers": 1
+    },
+    "Ē": {
+      "steps": [
+        "Shift+˚",
+        "Shift+E"
+      ],
+      "modifiers": 2
+    },
+    "ȳ": {
+      "steps": [
+        "Shift+˚",
+        "Y"
+      ],
+      "modifiers": 1
+    },
+    "Ȳ": {
+      "steps": [
+        "Shift+˚",
+        "Shift+Y"
+      ],
+      "modifiers": 2
+    },
+    "ū": {
+      "steps": [
+        "Shift+˚",
+        "U"
+      ],
+      "modifiers": 1
+    },
+    "Ū": {
+      "steps": [
+        "Shift+˚",
+        "Shift+U"
+      ],
+      "modifiers": 2
+    },
+    "ī": {
+      "steps": [
+        "Shift+˚",
+        "I"
+      ],
+      "modifiers": 1
+    },
+    "Ī": {
+      "steps": [
+        "Shift+˚",
+        "Shift+I"
+      ],
+      "modifiers": 2
+    },
+    "ō": {
+      "steps": [
+        "Shift+˚",
+        "O"
+      ],
+      "modifiers": 1
+    },
+    "Ō": {
+      "steps": [
+        "Shift+˚",
+        "Shift+O"
+      ],
+      "modifiers": 2
+    },
+    "ā": {
+      "steps": [
+        "Shift+˚",
+        "A"
+      ],
+      "modifiers": 1
+    },
+    "Ā": {
+      "steps": [
+        "Shift+˚",
+        "Shift+A"
+      ],
+      "modifiers": 2
+    },
+    "ǣ": {
+      "steps": [
+        "Shift+˚",
+        "AltGr+A"
+      ],
+      "modifiers": 2
+    },
+    "Ǣ": {
+      "steps": [
+        "Shift+˚",
+        "Shift+AltGr+A"
+      ],
+      "modifiers": 3
+    },
+    "ḡ": {
+      "steps": [
+        "Shift+˚",
+        "G"
+      ],
+      "modifiers": 1
+    },
+    "Ḡ": {
+      "steps": [
+        "Shift+˚",
+        "Shift+G"
+      ],
+      "modifiers": 2
+    },
+    "ǖ": {
+      "steps": [
+        "Shift+˚",
+        "V"
+      ],
+      "modifiers": 1
+    },
+    "Ǖ": {
+      "steps": [
+        "Shift+˚",
+        "Shift+V"
+      ],
+      "modifiers": 2
+    },
+    "¯": {
+      "steps": [
+        "Shift+˚",
+        "Espacio"
+      ],
+      "modifiers": 1
+    },
+    "ʠ": {
+      "steps": [
+        "AltGr+J",
+        "Q"
+      ],
+      "modifiers": 1
+    },
+    "ⱳ": {
+      "steps": [
+        "AltGr+J",
+        "W"
+      ],
+      "modifiers": 1
+    },
+    "Ⱳ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+W"
+      ],
+      "modifiers": 2
+    },
+    "ẻ": {
+      "steps": [
+        "AltGr+J",
+        "E"
+      ],
+      "modifiers": 1
+    },
+    "Ẻ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+E"
+      ],
+      "modifiers": 2
+    },
+    "ɼ": {
+      "steps": [
+        "AltGr+J",
+        "R"
+      ],
+      "modifiers": 1
+    },
+    "ƭ": {
+      "steps": [
+        "AltGr+J",
+        "T"
+      ],
+      "modifiers": 1
+    },
+    "Ƭ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+T"
+      ],
+      "modifiers": 2
+    },
+    "ỷ": {
+      "steps": [
+        "AltGr+J",
+        "Y"
+      ],
+      "modifiers": 1
+    },
+    "Ỷ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+Y"
+      ],
+      "modifiers": 2
+    },
+    "ủ": {
+      "steps": [
+        "AltGr+J",
+        "U"
+      ],
+      "modifiers": 1
+    },
+    "Ủ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+U"
+      ],
+      "modifiers": 2
+    },
+    "ỉ": {
+      "steps": [
+        "AltGr+J",
+        "I"
+      ],
+      "modifiers": 1
+    },
+    "Ỉ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+I"
+      ],
+      "modifiers": 2
+    },
+    "ỏ": {
+      "steps": [
+        "AltGr+J",
+        "O"
+      ],
+      "modifiers": 1
+    },
+    "Ỏ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+O"
+      ],
+      "modifiers": 2
+    },
+    "ƥ": {
+      "steps": [
+        "AltGr+J",
+        "P"
+      ],
+      "modifiers": 1
+    },
+    "Ƥ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+P"
+      ],
+      "modifiers": 2
+    },
+    "ả": {
+      "steps": [
+        "AltGr+J",
+        "A"
+      ],
+      "modifiers": 1
+    },
+    "Ả": {
+      "steps": [
+        "AltGr+J",
+        "Shift+A"
+      ],
+      "modifiers": 2
+    },
+    "ʂ": {
+      "steps": [
+        "AltGr+J",
+        "S"
+      ],
+      "modifiers": 1
+    },
+    "ɗ": {
+      "steps": [
+        "AltGr+J",
+        "D"
+      ],
+      "modifiers": 1
+    },
+    "Ɗ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+D"
+      ],
+      "modifiers": 2
+    },
+    "ƒ": {
+      "steps": [
+        "AltGr+J",
+        "F"
+      ],
+      "modifiers": 1
+    },
+    "Ƒ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+F"
+      ],
+      "modifiers": 2
+    },
+    "ɠ": {
+      "steps": [
+        "AltGr+J",
+        "G"
+      ],
+      "modifiers": 1
+    },
+    "Ɠ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+G"
+      ],
+      "modifiers": 2
+    },
+    "ɦ": {
+      "steps": [
+        "AltGr+J",
+        "H"
+      ],
+      "modifiers": 1
+    },
+    "ƙ": {
+      "steps": [
+        "AltGr+J",
+        "K"
+      ],
+      "modifiers": 1
+    },
+    "Ƙ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+K"
+      ],
+      "modifiers": 2
+    },
+    "ȥ": {
+      "steps": [
+        "AltGr+J",
+        "Z"
+      ],
+      "modifiers": 1
+    },
+    "Ȥ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+Z"
+      ],
+      "modifiers": 2
+    },
+    "ƈ": {
+      "steps": [
+        "AltGr+J",
+        "C"
+      ],
+      "modifiers": 1
+    },
+    "Ƈ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+C"
+      ],
+      "modifiers": 2
+    },
+    "ʋ": {
+      "steps": [
+        "AltGr+J",
+        "V"
+      ],
+      "modifiers": 1
+    },
+    "Ʋ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+V"
+      ],
+      "modifiers": 2
+    },
+    "ɓ": {
+      "steps": [
+        "AltGr+J",
+        "B"
+      ],
+      "modifiers": 1
+    },
+    "Ɓ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+B"
+      ],
+      "modifiers": 2
+    },
+    "ɲ": {
+      "steps": [
+        "AltGr+J",
+        "N"
+      ],
+      "modifiers": 1
+    },
+    "Ɲ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+N"
+      ],
+      "modifiers": 2
+    },
+    "ɱ": {
+      "steps": [
+        "AltGr+J",
+        "M"
+      ],
+      "modifiers": 1
+    },
+    "Ɱ": {
+      "steps": [
+        "AltGr+J",
+        "Shift+M"
+      ],
+      "modifiers": 2
+    },
+    "̉": {
+      "steps": [
+        "AltGr+J",
+        "Espacio"
+      ],
+      "modifiers": 1
+    },
+    "ư": {
+      "steps": [
+        "Shift+AltGr+J",
+        "U"
+      ],
+      "modifiers": 2
+    },
+    "Ư": {
+      "steps": [
+        "Shift+AltGr+J",
+        "Shift+U"
+      ],
+      "modifiers": 3
+    },
+    "ơ": {
+      "steps": [
+        "Shift+AltGr+J",
+        "O"
+      ],
+      "modifiers": 2
+    },
+    "Ơ": {
+      "steps": [
+        "Shift+AltGr+J",
+        "Shift+O"
+      ],
+      "modifiers": 3
+    },
+    "̛": {
+      "steps": [
+        "Shift+AltGr+J",
+        "Espacio"
+      ],
+      "modifiers": 2
+    },
+    "ű": {
+      "steps": [
+        "Shift+AltGr+;",
+        "U"
+      ],
+      "modifiers": 2
+    },
+    "Ű": {
+      "steps": [
+        "Shift+AltGr+;",
+        "Shift+U"
+      ],
+      "modifiers": 3
+    },
+    "ő": {
+      "steps": [
+        "Shift+AltGr+;",
+        "O"
+      ],
+      "modifiers": 2
+    },
+    "Ő": {
+      "steps": [
+        "Shift+AltGr+;",
+        "Shift+O"
+      ],
+      "modifiers": 3
+    },
+    "˝": {
+      "steps": [
+        "Shift+AltGr+;",
+        "Espacio"
+      ],
+      "modifiers": 2
+    },
+    "Ώ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+AltGr+Q"
+      ],
+      "modifiers": 2
+    },
+    "ẃ": {
+      "steps": [
+        "tecla de agudo",
+        "W"
+      ],
+      "modifiers": 0
+    },
+    "Ẃ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+W"
+      ],
+      "modifiers": 1
+    },
+    "é": {
+      "steps": [
+        "tecla de agudo",
+        "E"
+      ],
+      "modifiers": 0
+    },
+    "É": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+E"
+      ],
+      "modifiers": 1
+    },
+    "ŕ": {
+      "steps": [
+        "tecla de agudo",
+        "R"
+      ],
+      "modifiers": 0
+    },
+    "Ŕ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+R"
+      ],
+      "modifiers": 1
+    },
+    "ț": {
+      "steps": [
+        "tecla de agudo",
+        "T"
+      ],
+      "modifiers": 0
+    },
+    "Ț": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+T"
+      ],
+      "modifiers": 1
+    },
+    "ý": {
+      "steps": [
+        "tecla de agudo",
+        "Y"
+      ],
+      "modifiers": 0
+    },
+    "Ý": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+Y"
+      ],
+      "modifiers": 1
+    },
+    "ú": {
+      "steps": [
+        "tecla de agudo",
+        "U"
+      ],
+      "modifiers": 0
+    },
+    "Ú": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+U"
+      ],
+      "modifiers": 1
+    },
+    "í": {
+      "steps": [
+        "tecla de agudo",
+        "I"
+      ],
+      "modifiers": 0
+    },
+    "Í": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+I"
+      ],
+      "modifiers": 1
+    },
+    "ó": {
+      "steps": [
+        "tecla de agudo",
+        "O"
+      ],
+      "modifiers": 0
+    },
+    "Ó": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+O"
+      ],
+      "modifiers": 1
+    },
+    "ṕ": {
+      "steps": [
+        "tecla de agudo",
+        "P"
+      ],
+      "modifiers": 0
+    },
+    "Ṕ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+P"
+      ],
+      "modifiers": 1
+    },
+    "á": {
+      "steps": [
+        "tecla de agudo",
+        "A"
+      ],
+      "modifiers": 0
+    },
+    "Á": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+A"
+      ],
+      "modifiers": 1
+    },
+    "ǽ": {
+      "steps": [
+        "tecla de agudo",
+        "AltGr+A"
+      ],
+      "modifiers": 1
+    },
+    "Ǽ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+AltGr+A"
+      ],
+      "modifiers": 2
+    },
+    "ș": {
+      "steps": [
+        "tecla de agudo",
+        "S"
+      ],
+      "modifiers": 0
+    },
+    "Ș": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+S"
+      ],
+      "modifiers": 1
+    },
+    "ǵ": {
+      "steps": [
+        "tecla de agudo",
+        "G"
+      ],
+      "modifiers": 0
+    },
+    "Ǵ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+G"
+      ],
+      "modifiers": 1
+    },
+    "ŋ́": {
+      "steps": [
+        "tecla de agudo",
+        "AltGr+G"
+      ],
+      "modifiers": 1
+    },
+    "Ŋ́": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+AltGr+G"
+      ],
+      "modifiers": 2
+    },
+    "j́": {
+      "steps": [
+        "tecla de agudo",
+        "J"
+      ],
+      "modifiers": 0
+    },
+    "J́": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+J"
+      ],
+      "modifiers": 1
+    },
+    "ḱ": {
+      "steps": [
+        "tecla de agudo",
+        "K"
+      ],
+      "modifiers": 0
+    },
+    "Ḱ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+K"
+      ],
+      "modifiers": 1
+    },
+    "ĺ": {
+      "steps": [
+        "tecla de agudo",
+        "L"
+      ],
+      "modifiers": 0
+    },
+    "Ĺ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+L"
+      ],
+      "modifiers": 1
+    },
+    "ź": {
+      "steps": [
+        "tecla de agudo",
+        "Z"
+      ],
+      "modifiers": 0
+    },
+    "Ź": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+Z"
+      ],
+      "modifiers": 1
+    },
+    "ć": {
+      "steps": [
+        "tecla de agudo",
+        "C"
+      ],
+      "modifiers": 0
+    },
+    "Ć": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+C"
+      ],
+      "modifiers": 1
+    },
+    "ǘ": {
+      "steps": [
+        "tecla de agudo",
+        "V"
+      ],
+      "modifiers": 0
+    },
+    "Ǘ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+V"
+      ],
+      "modifiers": 1
+    },
+    "ń": {
+      "steps": [
+        "tecla de agudo",
+        "N"
+      ],
+      "modifiers": 0
+    },
+    "Ń": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+N"
+      ],
+      "modifiers": 1
+    },
+    "ḿ": {
+      "steps": [
+        "tecla de agudo",
+        "M"
+      ],
+      "modifiers": 0
+    },
+    "Ḿ": {
+      "steps": [
+        "tecla de agudo",
+        "Shift+M"
+      ],
+      "modifiers": 1
+    },
+    "'": {
+      "steps": [
+        "tecla de agudo",
+        "Espacio"
+      ],
+      "modifiers": 0
+    },
+    "ẅ": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "W"
+      ],
+      "modifiers": 1
+    },
+    "Ẅ": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Shift+W"
+      ],
+      "modifiers": 2
+    },
+    "ë": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "E"
+      ],
+      "modifiers": 1
+    },
+    "Ë": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Shift+E"
+      ],
+      "modifiers": 2
+    },
+    "ẗ": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "T"
+      ],
+      "modifiers": 1
+    },
+    "ÿ": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Y"
+      ],
+      "modifiers": 1
+    },
+    "Ÿ": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Shift+Y"
+      ],
+      "modifiers": 2
+    },
+    "ü": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "U"
+      ],
+      "modifiers": 1
+    },
+    "Ü": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Shift+U"
+      ],
+      "modifiers": 2
+    },
+    "ï": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "I"
+      ],
+      "modifiers": 1
+    },
+    "Ï": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Shift+I"
+      ],
+      "modifiers": 2
+    },
+    "ö": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "O"
+      ],
+      "modifiers": 1
+    },
+    "Ö": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Shift+O"
+      ],
+      "modifiers": 2
+    },
+    "ä": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "A"
+      ],
+      "modifiers": 1
+    },
+    "Ä": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Shift+A"
+      ],
+      "modifiers": 2
+    },
+    "ḧ": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "H"
+      ],
+      "modifiers": 1
+    },
+    "Ḧ": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Shift+H"
+      ],
+      "modifiers": 2
+    },
+    "ẍ": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "X"
+      ],
+      "modifiers": 1
+    },
+    "Ẍ": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Shift+X"
+      ],
+      "modifiers": 2
+    },
+    "\"": {
+      "steps": [
+        "Shift+tecla de agudo",
+        "Espacio"
+      ],
+      "modifiers": 1
+    },
+    "₁": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "1"
+      ],
+      "modifiers": 2
+    },
+    "₂": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "2"
+      ],
+      "modifiers": 2
+    },
+    "₃": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "3"
+      ],
+      "modifiers": 2
+    },
+    "₄": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "4"
+      ],
+      "modifiers": 2
+    },
+    "₅": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "5"
+      ],
+      "modifiers": 2
+    },
+    "₆": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "6"
+      ],
+      "modifiers": 2
+    },
+    "₇": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "7"
+      ],
+      "modifiers": 2
+    },
+    "₈": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "8"
+      ],
+      "modifiers": 2
+    },
+    "₉": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "9"
+      ],
+      "modifiers": 2
+    },
+    "₍": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+9"
+      ],
+      "modifiers": 3
+    },
+    "₀": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "0"
+      ],
+      "modifiers": 2
+    },
+    "₎": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+0"
+      ],
+      "modifiers": 3
+    },
+    "₋": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "-"
+      ],
+      "modifiers": 2
+    },
+    "₌": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "="
+      ],
+      "modifiers": 2
+    },
+    "₊": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+="
+      ],
+      "modifiers": 3
+    },
+    "ě": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "E"
+      ],
+      "modifiers": 2
+    },
+    "Ě": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+E"
+      ],
+      "modifiers": 3
+    },
+    "ř": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "R"
+      ],
+      "modifiers": 2
+    },
+    "Ř": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+R"
+      ],
+      "modifiers": 3
+    },
+    "ť": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "T"
+      ],
+      "modifiers": 2
+    },
+    "Ť": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+T"
+      ],
+      "modifiers": 3
+    },
+    "ǔ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "U"
+      ],
+      "modifiers": 2
+    },
+    "Ǔ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+U"
+      ],
+      "modifiers": 3
+    },
+    "ǐ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "I"
+      ],
+      "modifiers": 2
+    },
+    "Ǐ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+I"
+      ],
+      "modifiers": 3
+    },
+    "ǒ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "O"
+      ],
+      "modifiers": 2
+    },
+    "Ǒ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+O"
+      ],
+      "modifiers": 3
+    },
+    "ǎ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "A"
+      ],
+      "modifiers": 2
+    },
+    "Ǎ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+A"
+      ],
+      "modifiers": 3
+    },
+    "š": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "S"
+      ],
+      "modifiers": 2
+    },
+    "Š": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+S"
+      ],
+      "modifiers": 3
+    },
+    "ď": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "D"
+      ],
+      "modifiers": 2
+    },
+    "Ď": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+D"
+      ],
+      "modifiers": 3
+    },
+    "ǧ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "G"
+      ],
+      "modifiers": 2
+    },
+    "Ǧ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+G"
+      ],
+      "modifiers": 3
+    },
+    "ȟ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "H"
+      ],
+      "modifiers": 2
+    },
+    "Ȟ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+H"
+      ],
+      "modifiers": 3
+    },
+    "ǰ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "J"
+      ],
+      "modifiers": 2
+    },
+    "ǩ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "K"
+      ],
+      "modifiers": 2
+    },
+    "Ǩ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+K"
+      ],
+      "modifiers": 3
+    },
+    "ľ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "L"
+      ],
+      "modifiers": 2
+    },
+    "Ľ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+L"
+      ],
+      "modifiers": 3
+    },
+    "ž": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Z"
+      ],
+      "modifiers": 2
+    },
+    "Ž": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+Z"
+      ],
+      "modifiers": 3
+    },
+    "č": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "C"
+      ],
+      "modifiers": 2
+    },
+    "Č": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+C"
+      ],
+      "modifiers": 3
+    },
+    "ǚ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "V"
+      ],
+      "modifiers": 2
+    },
+    "Ǚ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+V"
+      ],
+      "modifiers": 3
+    },
+    "ň": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "N"
+      ],
+      "modifiers": 2
+    },
+    "Ň": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Shift+N"
+      ],
+      "modifiers": 3
+    },
+    "ˇ": {
+      "steps": [
+        "Shift+AltGr+tecla de agudo",
+        "Espacio"
+      ],
+      "modifiers": 2
+    },
+    "ĕ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "E"
+      ],
+      "modifiers": 2
+    },
+    "Ĕ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "Shift+E"
+      ],
+      "modifiers": 3
+    },
+    "ŭ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "U"
+      ],
+      "modifiers": 2
+    },
+    "Ŭ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "Shift+U"
+      ],
+      "modifiers": 3
+    },
+    "ĭ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "I"
+      ],
+      "modifiers": 2
+    },
+    "Ĭ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "Shift+I"
+      ],
+      "modifiers": 3
+    },
+    "ŏ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "O"
+      ],
+      "modifiers": 2
+    },
+    "Ŏ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "Shift+O"
+      ],
+      "modifiers": 3
+    },
+    "ă": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "A"
+      ],
+      "modifiers": 2
+    },
+    "Ă": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "Shift+A"
+      ],
+      "modifiers": 3
+    },
+    "ğ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "G"
+      ],
+      "modifiers": 2
+    },
+    "Ğ": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "Shift+G"
+      ],
+      "modifiers": 3
+    },
+    "˘": {
+      "steps": [
+        "Shift+AltGr+\\",
+        "Espacio"
+      ],
+      "modifiers": 2
+    },
+    "Ὠ": {
+      "steps": [
+        "Shift+,",
+        "Shift+AltGr+Q"
+      ],
+      "modifiers": 3
+    },
+    "ś": {
+      "steps": [
+        "Shift+,",
+        "S"
+      ],
+      "modifiers": 1
+    },
+    "Ś": {
+      "steps": [
+        "Shift+,",
+        "Shift+S"
+      ],
+      "modifiers": 2
+    },
+    "´": {
+      "steps": [
+        "Shift+,",
+        "Espacio"
+      ],
+      "modifiers": 1
+    },
+    "⨪": {
+      "steps": [
+        "AltGr+/",
+        "-"
+      ],
+      "modifiers": 1
+    },
+    "⩦": {
+      "steps": [
+        "AltGr+/",
+        "="
+      ],
+      "modifiers": 1
+    },
+    "⨥": {
+      "steps": [
+        "AltGr+/",
+        "Shift+="
+      ],
+      "modifiers": 2
+    },
+    "ẉ": {
+      "steps": [
+        "AltGr+/",
+        "W"
+      ],
+      "modifiers": 1
+    },
+    "Ẉ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+W"
+      ],
+      "modifiers": 2
+    },
+    "ẹ": {
+      "steps": [
+        "AltGr+/",
+        "E"
+      ],
+      "modifiers": 1
+    },
+    "Ẹ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+E"
+      ],
+      "modifiers": 2
+    },
+    "ṛ": {
+      "steps": [
+        "AltGr+/",
+        "R"
+      ],
+      "modifiers": 1
+    },
+    "Ṛ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+R"
+      ],
+      "modifiers": 2
+    },
+    "ṭ": {
+      "steps": [
+        "AltGr+/",
+        "T"
+      ],
+      "modifiers": 1
+    },
+    "Ṭ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+T"
+      ],
+      "modifiers": 2
+    },
+    "ỵ": {
+      "steps": [
+        "AltGr+/",
+        "Y"
+      ],
+      "modifiers": 1
+    },
+    "Ỵ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+Y"
+      ],
+      "modifiers": 2
+    },
+    "ụ": {
+      "steps": [
+        "AltGr+/",
+        "U"
+      ],
+      "modifiers": 1
+    },
+    "Ụ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+U"
+      ],
+      "modifiers": 2
+    },
+    "ị": {
+      "steps": [
+        "AltGr+/",
+        "I"
+      ],
+      "modifiers": 1
+    },
+    "Ị": {
+      "steps": [
+        "AltGr+/",
+        "Shift+I"
+      ],
+      "modifiers": 2
+    },
+    "ọ": {
+      "steps": [
+        "AltGr+/",
+        "O"
+      ],
+      "modifiers": 1
+    },
+    "Ọ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+O"
+      ],
+      "modifiers": 2
+    },
+    "ạ": {
+      "steps": [
+        "AltGr+/",
+        "A"
+      ],
+      "modifiers": 1
+    },
+    "Ạ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+A"
+      ],
+      "modifiers": 2
+    },
+    "ṣ": {
+      "steps": [
+        "AltGr+/",
+        "S"
+      ],
+      "modifiers": 1
+    },
+    "Ṣ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+S"
+      ],
+      "modifiers": 2
+    },
+    "ḍ": {
+      "steps": [
+        "AltGr+/",
+        "D"
+      ],
+      "modifiers": 1
+    },
+    "Ḍ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+D"
+      ],
+      "modifiers": 2
+    },
+    "ḥ": {
+      "steps": [
+        "AltGr+/",
+        "H"
+      ],
+      "modifiers": 1
+    },
+    "Ḥ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+H"
+      ],
+      "modifiers": 2
+    },
+    "ḳ": {
+      "steps": [
+        "AltGr+/",
+        "K"
+      ],
+      "modifiers": 1
+    },
+    "Ḳ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+K"
+      ],
+      "modifiers": 2
+    },
+    "ḷ": {
+      "steps": [
+        "AltGr+/",
+        "L"
+      ],
+      "modifiers": 1
+    },
+    "Ḷ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+L"
+      ],
+      "modifiers": 2
+    },
+    "ẓ": {
+      "steps": [
+        "AltGr+/",
+        "Z"
+      ],
+      "modifiers": 1
+    },
+    "Ẓ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+Z"
+      ],
+      "modifiers": 2
+    },
+    "ṿ": {
+      "steps": [
+        "AltGr+/",
+        "V"
+      ],
+      "modifiers": 1
+    },
+    "Ṿ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+V"
+      ],
+      "modifiers": 2
+    },
+    "ḅ": {
+      "steps": [
+        "AltGr+/",
+        "B"
+      ],
+      "modifiers": 1
+    },
+    "Ḅ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+B"
+      ],
+      "modifiers": 2
+    },
+    "ṇ": {
+      "steps": [
+        "AltGr+/",
+        "N"
+      ],
+      "modifiers": 1
+    },
+    "Ṇ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+N"
+      ],
+      "modifiers": 2
+    },
+    "ṃ": {
+      "steps": [
+        "AltGr+/",
+        "M"
+      ],
+      "modifiers": 1
+    },
+    "Ṃ": {
+      "steps": [
+        "AltGr+/",
+        "Shift+M"
+      ],
+      "modifiers": 2
+    },
+    "̣": {
+      "steps": [
+        "AltGr+/",
+        "Espacio"
+      ],
+      "modifiers": 1
+    },
+    "ẇ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "W"
+      ],
+      "modifiers": 2
+    },
+    "Ẇ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+W"
+      ],
+      "modifiers": 3
+    },
+    "ẛ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "AltGr+W"
+      ],
+      "modifiers": 3
+    },
+    "ė": {
+      "steps": [
+        "Shift+AltGr+/",
+        "E"
+      ],
+      "modifiers": 2
+    },
+    "Ė": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+E"
+      ],
+      "modifiers": 3
+    },
+    "ṙ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "R"
+      ],
+      "modifiers": 2
+    },
+    "Ṙ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+R"
+      ],
+      "modifiers": 3
+    },
+    "ṫ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "T"
+      ],
+      "modifiers": 2
+    },
+    "Ṫ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+T"
+      ],
+      "modifiers": 3
+    },
+    "ẏ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Y"
+      ],
+      "modifiers": 2
+    },
+    "Ẏ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+Y"
+      ],
+      "modifiers": 3
+    },
+    "İ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+I"
+      ],
+      "modifiers": 3
+    },
+    "ȯ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "O"
+      ],
+      "modifiers": 2
+    },
+    "Ȯ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+O"
+      ],
+      "modifiers": 3
+    },
+    "ṗ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "P"
+      ],
+      "modifiers": 2
+    },
+    "Ṗ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+P"
+      ],
+      "modifiers": 3
+    },
+    "ȧ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "A"
+      ],
+      "modifiers": 2
+    },
+    "Ȧ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+A"
+      ],
+      "modifiers": 3
+    },
+    "ṡ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "S"
+      ],
+      "modifiers": 2
+    },
+    "Ṡ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+S"
+      ],
+      "modifiers": 3
+    },
+    "ḋ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "D"
+      ],
+      "modifiers": 2
+    },
+    "Ḋ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+D"
+      ],
+      "modifiers": 3
+    },
+    "ḟ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "F"
+      ],
+      "modifiers": 2
+    },
+    "Ḟ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+F"
+      ],
+      "modifiers": 3
+    },
+    "ġ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "G"
+      ],
+      "modifiers": 2
+    },
+    "Ġ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+G"
+      ],
+      "modifiers": 3
+    },
+    "ḣ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "H"
+      ],
+      "modifiers": 2
+    },
+    "Ḣ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+H"
+      ],
+      "modifiers": 3
+    },
+    "ȷ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "J"
+      ],
+      "modifiers": 2
+    },
+    "ŀ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "L"
+      ],
+      "modifiers": 2
+    },
+    "Ŀ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+L"
+      ],
+      "modifiers": 3
+    },
+    "ż": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Z"
+      ],
+      "modifiers": 2
+    },
+    "Ż": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+Z"
+      ],
+      "modifiers": 3
+    },
+    "ẋ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "X"
+      ],
+      "modifiers": 2
+    },
+    "Ẋ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+X"
+      ],
+      "modifiers": 3
+    },
+    "ċ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "C"
+      ],
+      "modifiers": 2
+    },
+    "Ċ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+C"
+      ],
+      "modifiers": 3
+    },
+    "ḃ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "B"
+      ],
+      "modifiers": 2
+    },
+    "Ḃ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+B"
+      ],
+      "modifiers": 3
+    },
+    "ṅ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "N"
+      ],
+      "modifiers": 2
+    },
+    "Ṅ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+N"
+      ],
+      "modifiers": 3
+    },
+    "ṁ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "M"
+      ],
+      "modifiers": 2
+    },
+    "Ṁ": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Shift+M"
+      ],
+      "modifiers": 3
+    },
+    "˙": {
+      "steps": [
+        "Shift+AltGr+/",
+        "Espacio"
+      ],
+      "modifiers": 2
+    }
+  },
+  "languages": [
+    {
+      "locale": "es",
+      "name": "Español",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/es.xml",
+      "special": [
+        "Á",
+        "É",
+        "Í",
+        "Ñ",
+        "Ó",
+        "Ú",
+        "Ü",
+        "á",
+        "é",
+        "í",
+        "ñ",
+        "ó",
+        "ú",
+        "ü"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 66,
+      "covered_count": 66
+    },
+    {
+      "locale": "fr",
+      "name": "Francés",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/fr.xml",
+      "special": [
+        "À",
+        "Â",
+        "Æ",
+        "Ç",
+        "È",
+        "É",
+        "Ê",
+        "Ë",
+        "Î",
+        "Ï",
+        "Ô",
+        "Ù",
+        "Û",
+        "Ü",
+        "à",
+        "â",
+        "æ",
+        "ç",
+        "è",
+        "é",
+        "ê",
+        "ë",
+        "î",
+        "ï",
+        "ô",
+        "ù",
+        "û",
+        "ü",
+        "ÿ",
+        "Œ",
+        "œ",
+        "Ÿ"
+      ],
+      "missing": [],
+      "auxiliary_missing": [
+        "Ĳ",
+        "ĳ"
+      ],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…"
+      ],
+      "required_count": 84,
+      "covered_count": 84
+    },
+    {
+      "locale": "it",
+      "name": "Italiano",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/it.xml",
+      "special": [
+        "À",
+        "È",
+        "É",
+        "Ì",
+        "Ò",
+        "Ù",
+        "à",
+        "è",
+        "é",
+        "ì",
+        "ò",
+        "ù"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‑",
+        "—",
+        "…"
+      ],
+      "required_count": 64,
+      "covered_count": 64
+    },
+    {
+      "locale": "pt",
+      "name": "Portugués",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/pt.xml",
+      "special": [
+        "À",
+        "Á",
+        "Â",
+        "Ã",
+        "Ç",
+        "É",
+        "Ê",
+        "Í",
+        "Ó",
+        "Ô",
+        "Õ",
+        "Ú",
+        "à",
+        "á",
+        "â",
+        "ã",
+        "ç",
+        "é",
+        "ê",
+        "í",
+        "ó",
+        "ô",
+        "õ",
+        "ú"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 76,
+      "covered_count": 76
+    },
+    {
+      "locale": "ca",
+      "name": "Catalán",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/ca.xml",
+      "special": [
+        "·",
+        "À",
+        "Ç",
+        "È",
+        "É",
+        "Í",
+        "Ï",
+        "Ò",
+        "Ó",
+        "Ú",
+        "Ü",
+        "à",
+        "ç",
+        "è",
+        "é",
+        "í",
+        "ï",
+        "ò",
+        "ó",
+        "ú",
+        "ü"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 73,
+      "covered_count": 73
+    },
+    {
+      "locale": "gl",
+      "name": "Gallego",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/gl.xml",
+      "special": [
+        "Á",
+        "É",
+        "Í",
+        "Ï",
+        "Ñ",
+        "Ó",
+        "Ú",
+        "Ü",
+        "á",
+        "é",
+        "í",
+        "ï",
+        "ñ",
+        "ó",
+        "ú",
+        "ü"
+      ],
+      "missing": [],
+      "auxiliary_missing": [
+        "ɑ",
+        "Ɑ"
+      ],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 68,
+      "covered_count": 68
+    },
+    {
+      "locale": "oc",
+      "name": "Occitano",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/oc.xml",
+      "special": [
+        "À",
+        "Á",
+        "Ç",
+        "È",
+        "É",
+        "Í",
+        "Ï",
+        "Ò",
+        "Ó",
+        "Ú",
+        "Ü",
+        "à",
+        "á",
+        "ç",
+        "è",
+        "é",
+        "í",
+        "ï",
+        "ò",
+        "ó",
+        "ú",
+        "ü"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "⋅"
+      ],
+      "required_count": 74,
+      "covered_count": 74
+    },
+    {
+      "locale": "ast",
+      "name": "Asturiano",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/ast.xml",
+      "special": [
+        "Á",
+        "É",
+        "Í",
+        "Ñ",
+        "Ó",
+        "Ú",
+        "Ü",
+        "á",
+        "é",
+        "í",
+        "ñ",
+        "ó",
+        "ú",
+        "ü",
+        "Ḥ",
+        "ḥ",
+        "Ḷ",
+        "ḷ"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 64,
+      "covered_count": 64
+    },
+    {
+      "locale": "an",
+      "name": "Aragonés",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/an.xml",
+      "special": [
+        "Á",
+        "É",
+        "Í",
+        "Ó",
+        "Ú",
+        "Ü",
+        "á",
+        "é",
+        "í",
+        "ó",
+        "ú",
+        "ü"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 64,
+      "covered_count": 64
+    },
+    {
+      "locale": "co",
+      "name": "Corso",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/co.xml",
+      "special": [
+        "À",
+        "È",
+        "Ì",
+        "Ï",
+        "Ò",
+        "Ù",
+        "Ü",
+        "à",
+        "è",
+        "ì",
+        "ï",
+        "ò",
+        "ù",
+        "ü"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 66,
+      "covered_count": 66
+    },
+    {
+      "locale": "sc",
+      "name": "Sardo",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/sc.xml",
+      "special": [
+        "À",
+        "È",
+        "Ì",
+        "Ò",
+        "Ù",
+        "à",
+        "è",
+        "ì",
+        "ò",
+        "ù"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "–",
+        "—",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 52,
+      "covered_count": 52
+    },
+    {
+      "locale": "fur",
+      "name": "Friulano",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/fur.xml",
+      "special": [
+        "À",
+        "Â",
+        "Ç",
+        "È",
+        "Ê",
+        "Ì",
+        "Î",
+        "Ò",
+        "Ô",
+        "Ù",
+        "Û",
+        "à",
+        "â",
+        "ç",
+        "è",
+        "ê",
+        "ì",
+        "î",
+        "ò",
+        "ô",
+        "ù",
+        "û"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑"
+      ],
+      "required_count": 74,
+      "covered_count": 74
+    },
+    {
+      "locale": "rm",
+      "name": "Romanche",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/rm.xml",
+      "special": [
+        "À",
+        "È",
+        "É",
+        "Ì",
+        "Ò",
+        "Ù",
+        "à",
+        "è",
+        "é",
+        "ì",
+        "ò",
+        "ù"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑"
+      ],
+      "required_count": 64,
+      "covered_count": 64
+    },
+    {
+      "locale": "wa",
+      "name": "Valón",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/wa.xml",
+      "special": [
+        "À",
+        "Â",
+        "Å",
+        "Æ",
+        "Ç",
+        "È",
+        "É",
+        "Ê",
+        "Ë",
+        "Î",
+        "Ï",
+        "Ô",
+        "Ù",
+        "Û",
+        "Ü",
+        "à",
+        "â",
+        "å",
+        "æ",
+        "ç",
+        "è",
+        "é",
+        "ê",
+        "ë",
+        "î",
+        "ï",
+        "ô",
+        "ù",
+        "û",
+        "ü",
+        "ÿ",
+        "Œ",
+        "œ",
+        "Ÿ"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…"
+      ],
+      "required_count": 86,
+      "covered_count": 86
+    },
+    {
+      "locale": "vec",
+      "name": "Véneto",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/vec.xml",
+      "special": [
+        "À",
+        "È",
+        "É",
+        "Ì",
+        "Ò",
+        "Ó",
+        "Ù",
+        "à",
+        "è",
+        "é",
+        "ì",
+        "ò",
+        "ó",
+        "ù"
+      ],
+      "missing": [],
+      "auxiliary_missing": [
+        "Z̧",
+        "z̧",
+        "ʣ",
+        "ʦ"
+      ],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "‒",
+        "–",
+        "—",
+        "―",
+        "…",
+        "⁄",
+        "⁓",
+        "〈",
+        "〉"
+      ],
+      "required_count": 58,
+      "covered_count": 58
+    },
+    {
+      "locale": "lij",
+      "name": "Ligur",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/lij.xml",
+      "special": [
+        "À",
+        "Â",
+        "Ä",
+        "Æ",
+        "Ç",
+        "È",
+        "É",
+        "Ê",
+        "Ë",
+        "Ì",
+        "Î",
+        "Ï",
+        "Ñ",
+        "Ò",
+        "Ó",
+        "Ô",
+        "Ö",
+        "Ù",
+        "Û",
+        "Ü",
+        "à",
+        "â",
+        "ä",
+        "æ",
+        "ç",
+        "è",
+        "é",
+        "ê",
+        "ë",
+        "ì",
+        "î",
+        "ï",
+        "ñ",
+        "ò",
+        "ó",
+        "ô",
+        "ö",
+        "ù",
+        "û",
+        "ü"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…"
+      ],
+      "required_count": 92,
+      "covered_count": 92
+    },
+    {
+      "locale": "ro",
+      "name": "Rumano",
+      "group": "Romances",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/ro.xml",
+      "special": [
+        "Â",
+        "Î",
+        "â",
+        "î",
+        "Ă",
+        "ă",
+        "Ș",
+        "ș",
+        "Ț",
+        "ț"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "…"
+      ],
+      "required_count": 62,
+      "covered_count": 62
+    },
+    {
+      "locale": "en",
+      "name": "Inglés",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/en.xml",
+      "special": [],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 52,
+      "covered_count": 52
+    },
+    {
+      "locale": "de",
+      "name": "Alemán",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/de.xml",
+      "special": [
+        "Ä",
+        "Ö",
+        "Ü",
+        "ß",
+        "ä",
+        "ö",
+        "ü"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "…"
+      ],
+      "required_count": 60,
+      "covered_count": 60
+    },
+    {
+      "locale": "nl",
+      "name": "Neerlandés",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/nl.xml",
+      "special": [
+        "Á",
+        "Ä",
+        "É",
+        "Ë",
+        "Í",
+        "ÍJ́",
+        "Ï",
+        "Ó",
+        "Ö",
+        "Ú",
+        "Ü",
+        "á",
+        "ä",
+        "é",
+        "ë",
+        "í",
+        "íj́",
+        "ï",
+        "ó",
+        "ö",
+        "ú",
+        "ü"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 76,
+      "covered_count": 76
+    },
+    {
+      "locale": "fy",
+      "name": "Frisón occidental",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/fy.xml",
+      "special": [
+        "À",
+        "Á",
+        "Â",
+        "Ä",
+        "È",
+        "É",
+        "Ê",
+        "Ë",
+        "Í",
+        "ÍJ́",
+        "Ï",
+        "Ó",
+        "Ô",
+        "Ö",
+        "Ú",
+        "Û",
+        "Ü",
+        "Ý",
+        "à",
+        "á",
+        "â",
+        "ä",
+        "è",
+        "é",
+        "ê",
+        "ë",
+        "í",
+        "íj́",
+        "ï",
+        "ó",
+        "ô",
+        "ö",
+        "ú",
+        "û",
+        "ü",
+        "ý"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 86,
+      "covered_count": 86
+    },
+    {
+      "locale": "lb",
+      "name": "Luxemburgués",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/lb.xml",
+      "special": [
+        "Ä",
+        "É",
+        "Ë",
+        "ä",
+        "é",
+        "ë"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "…"
+      ],
+      "required_count": 58,
+      "covered_count": 58
+    },
+    {
+      "locale": "da",
+      "name": "Danés",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/da.xml",
+      "special": [
+        "Å",
+        "Æ",
+        "Ø",
+        "å",
+        "æ",
+        "ø"
+      ],
+      "missing": [],
+      "auxiliary_missing": [
+        "Ǿ",
+        "ǿ"
+      ],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "†",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 58,
+      "covered_count": 58
+    },
+    {
+      "locale": "nb",
+      "name": "Noruego bokmål",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/nb.xml",
+      "special": [
+        "À",
+        "Å",
+        "Æ",
+        "É",
+        "Ò",
+        "Ó",
+        "Ô",
+        "Ø",
+        "à",
+        "å",
+        "æ",
+        "é",
+        "ò",
+        "ó",
+        "ô",
+        "ø"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‑",
+        "–",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 68,
+      "covered_count": 68
+    },
+    {
+      "locale": "nn",
+      "name": "Noruego nynorsk",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/nn.xml",
+      "special": [
+        "À",
+        "Å",
+        "Æ",
+        "È",
+        "É",
+        "Ê",
+        "Ò",
+        "Ó",
+        "Ô",
+        "Ø",
+        "à",
+        "å",
+        "æ",
+        "è",
+        "é",
+        "ê",
+        "ò",
+        "ó",
+        "ô",
+        "ø"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‑",
+        "–",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 72,
+      "covered_count": 72
+    },
+    {
+      "locale": "sv",
+      "name": "Sueco",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/sv.xml",
+      "special": [
+        "À",
+        "Ä",
+        "Å",
+        "É",
+        "Ö",
+        "à",
+        "ä",
+        "å",
+        "é",
+        "ö"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 62,
+      "covered_count": 62
+    },
+    {
+      "locale": "is",
+      "name": "Islandés",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/is.xml",
+      "special": [
+        "Á",
+        "Æ",
+        "É",
+        "Í",
+        "Ð",
+        "Ó",
+        "Ö",
+        "Ú",
+        "Ý",
+        "Þ",
+        "á",
+        "æ",
+        "é",
+        "í",
+        "ð",
+        "ó",
+        "ö",
+        "ú",
+        "ý",
+        "þ"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 64,
+      "covered_count": 64
+    },
+    {
+      "locale": "fo",
+      "name": "Feroés",
+      "group": "Germánicas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/fo.xml",
+      "special": [
+        "Á",
+        "Æ",
+        "Í",
+        "Ð",
+        "Ó",
+        "Ø",
+        "Ú",
+        "Ý",
+        "á",
+        "æ",
+        "í",
+        "ð",
+        "ó",
+        "ø",
+        "ú",
+        "ý"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "†",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 58,
+      "covered_count": 58
+    },
+    {
+      "locale": "ga",
+      "name": "Irlandés",
+      "group": "Célticas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/ga.xml",
+      "special": [
+        "Á",
+        "É",
+        "Í",
+        "Ó",
+        "Ú",
+        "á",
+        "é",
+        "í",
+        "ó",
+        "ú"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 46,
+      "covered_count": 46
+    },
+    {
+      "locale": "gd",
+      "name": "Gaélico escocés",
+      "group": "Célticas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/gd.xml",
+      "special": [
+        "À",
+        "È",
+        "Ì",
+        "Ò",
+        "Ù",
+        "à",
+        "è",
+        "ì",
+        "ò",
+        "ù"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "‧",
+        "⁊"
+      ],
+      "required_count": 46,
+      "covered_count": 46
+    },
+    {
+      "locale": "cy",
+      "name": "Galés",
+      "group": "Célticas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/cy.xml",
+      "special": [
+        "À",
+        "Á",
+        "Â",
+        "Ä",
+        "È",
+        "É",
+        "Ê",
+        "Ë",
+        "Ì",
+        "Í",
+        "Î",
+        "Ï",
+        "Ò",
+        "Ó",
+        "Ô",
+        "Ö",
+        "Ù",
+        "Ú",
+        "Û",
+        "Ü",
+        "Ý",
+        "à",
+        "á",
+        "â",
+        "ä",
+        "è",
+        "é",
+        "ê",
+        "ë",
+        "ì",
+        "í",
+        "î",
+        "ï",
+        "ò",
+        "ó",
+        "ô",
+        "ö",
+        "ù",
+        "ú",
+        "û",
+        "ü",
+        "ý",
+        "ÿ",
+        "Ŵ",
+        "ŵ",
+        "Ŷ",
+        "ŷ",
+        "Ÿ",
+        "Ẁ",
+        "ẁ",
+        "Ẃ",
+        "ẃ",
+        "Ẅ",
+        "ẅ",
+        "Ỳ",
+        "ỳ"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 114,
+      "covered_count": 114
+    },
+    {
+      "locale": "br",
+      "name": "Bretón",
+      "group": "Célticas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/br.xml",
+      "special": [
+        "CʼH",
+        "cʼh",
+        "Ê",
+        "Ñ",
+        "Ù",
+        "ê",
+        "ñ",
+        "ù"
+      ],
+      "missing": [
+        "CʼH",
+        "cʼh"
+      ],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑"
+      ],
+      "required_count": 58,
+      "covered_count": 56
+    },
+    {
+      "locale": "kw",
+      "name": "Córnico",
+      "group": "Célticas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/kw.xml",
+      "special": [],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑"
+      ],
+      "required_count": 52,
+      "covered_count": 52
+    },
+    {
+      "locale": "gv",
+      "name": "Manés",
+      "group": "Célticas",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/gv.xml",
+      "special": [
+        "Ç",
+        "ç"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 54,
+      "covered_count": 54
+    },
+    {
+      "locale": "pl",
+      "name": "Polaco",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/pl.xml",
+      "special": [
+        "Ó",
+        "ó",
+        "Ą",
+        "ą",
+        "Ć",
+        "ć",
+        "Ę",
+        "ę",
+        "Ł",
+        "ł",
+        "Ń",
+        "ń",
+        "Ś",
+        "ś",
+        "Ź",
+        "ź",
+        "Ż",
+        "ż"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 64,
+      "covered_count": 64
+    },
+    {
+      "locale": "cs",
+      "name": "Checo",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/cs.xml",
+      "special": [
+        "Á",
+        "É",
+        "Í",
+        "Ó",
+        "Ú",
+        "Ý",
+        "á",
+        "é",
+        "í",
+        "ó",
+        "ú",
+        "ý",
+        "Č",
+        "č",
+        "Ď",
+        "ď",
+        "Ě",
+        "ě",
+        "Ň",
+        "ň",
+        "Ř",
+        "ř",
+        "Š",
+        "š",
+        "Ť",
+        "ť",
+        "Ů",
+        "ů",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "…"
+      ],
+      "required_count": 84,
+      "covered_count": 84
+    },
+    {
+      "locale": "sk",
+      "name": "Eslovaco",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/sk.xml",
+      "special": [
+        "DŽ",
+        "dž",
+        "Á",
+        "Ä",
+        "É",
+        "Í",
+        "Ó",
+        "Ô",
+        "Ú",
+        "Ý",
+        "á",
+        "ä",
+        "é",
+        "í",
+        "ó",
+        "ô",
+        "ú",
+        "ý",
+        "Č",
+        "č",
+        "Ď",
+        "ď",
+        "Ĺ",
+        "ĺ",
+        "Ľ",
+        "ľ",
+        "Ň",
+        "ň",
+        "Ŕ",
+        "ŕ",
+        "Š",
+        "š",
+        "Ť",
+        "ť",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "…"
+      ],
+      "required_count": 92,
+      "covered_count": 92
+    },
+    {
+      "locale": "sl",
+      "name": "Esloveno",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/sl.xml",
+      "special": [
+        "Č",
+        "č",
+        "Š",
+        "š",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‑",
+        "–",
+        "‟",
+        "…"
+      ],
+      "required_count": 50,
+      "covered_count": 50
+    },
+    {
+      "locale": "hr",
+      "name": "Croata",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/hr.xml",
+      "special": [
+        "DŽ",
+        "dž",
+        "Ć",
+        "ć",
+        "Č",
+        "č",
+        "Đ",
+        "đ",
+        "Š",
+        "š",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "–",
+        "—",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 60,
+      "covered_count": 60
+    },
+    {
+      "locale": "bs",
+      "name": "Bosnio",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/bs.xml",
+      "special": [
+        "DŽ",
+        "dž",
+        "Ć",
+        "ć",
+        "Č",
+        "č",
+        "Đ",
+        "đ",
+        "Š",
+        "š",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "–",
+        "—",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 60,
+      "covered_count": 60
+    },
+    {
+      "locale": "sr_Latn",
+      "name": "Serbio latino",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/sr_Latn.xml",
+      "special": [
+        "DŽ",
+        "dž",
+        "Ć",
+        "ć",
+        "Č",
+        "č",
+        "Đ",
+        "đ",
+        "Š",
+        "š",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "…"
+      ],
+      "required_count": 60,
+      "covered_count": 60
+    },
+    {
+      "locale": "eu",
+      "name": "Euskera",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/eu.xml",
+      "special": [
+        "Ç",
+        "Ñ",
+        "ç",
+        "ñ"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 56,
+      "covered_count": 56
+    },
+    {
+      "locale": "hu",
+      "name": "Húngaro",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/hu.xml",
+      "special": [
+        "Á",
+        "É",
+        "Í",
+        "Ó",
+        "Ö",
+        "Ú",
+        "Ü",
+        "á",
+        "é",
+        "í",
+        "ó",
+        "ö",
+        "ú",
+        "ü",
+        "Ő",
+        "ő",
+        "Ű",
+        "ű"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‑",
+        "–",
+        "…",
+        "⁒",
+        "⟨",
+        "⟩"
+      ],
+      "required_count": 98,
+      "covered_count": 98
+    },
+    {
+      "locale": "sq",
+      "name": "Albanés",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/sq.xml",
+      "special": [
+        "Ç",
+        "Ë",
+        "ç",
+        "ë"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 72,
+      "covered_count": 72
+    },
+    {
+      "locale": "tr",
+      "name": "Turco",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/tr.xml",
+      "special": [
+        "Ç",
+        "Ö",
+        "Ü",
+        "ç",
+        "ö",
+        "ü",
+        "Ğ",
+        "ğ",
+        "İ",
+        "ı",
+        "Ş",
+        "ş"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 58,
+      "covered_count": 58
+    },
+    {
+      "locale": "mt",
+      "name": "Maltés",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/mt.xml",
+      "special": [
+        "GĦ",
+        "għ",
+        "À",
+        "È",
+        "Ì",
+        "Ò",
+        "Ù",
+        "à",
+        "è",
+        "ì",
+        "ò",
+        "ù",
+        "Ċ",
+        "ċ",
+        "Ġ",
+        "ġ",
+        "Ħ",
+        "ħ",
+        "Ż",
+        "ż"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‑"
+      ],
+      "required_count": 68,
+      "covered_count": 68
+    },
+    {
+      "locale": "fi",
+      "name": "Finés",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/fi.xml",
+      "special": [
+        "Ä",
+        "Å",
+        "Ö",
+        "ä",
+        "å",
+        "ö",
+        "Š",
+        "š",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [
+        "Ʒ",
+        "Ǥ",
+        "ǥ",
+        "Ǯ",
+        "ǯ",
+        "ʒ"
+      ],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "…"
+      ],
+      "required_count": 62,
+      "covered_count": 62
+    },
+    {
+      "locale": "et",
+      "name": "Estonio",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/et.xml",
+      "special": [
+        "Ä",
+        "Õ",
+        "Ö",
+        "Ü",
+        "ä",
+        "õ",
+        "ö",
+        "ü",
+        "Š",
+        "š",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‑",
+        "–"
+      ],
+      "required_count": 64,
+      "covered_count": 64
+    },
+    {
+      "locale": "lv",
+      "name": "Letón",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/lv.xml",
+      "special": [
+        "Ā",
+        "ā",
+        "Č",
+        "č",
+        "Ē",
+        "ē",
+        "Ģ",
+        "ģ",
+        "Ī",
+        "ī",
+        "Ķ",
+        "ķ",
+        "Ļ",
+        "ļ",
+        "Ņ",
+        "ņ",
+        "Š",
+        "š",
+        "Ū",
+        "ū",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "†",
+        "‡",
+        "…",
+        "′",
+        "″"
+      ],
+      "required_count": 66,
+      "covered_count": 66
+    },
+    {
+      "locale": "lt",
+      "name": "Lituano",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/lt.xml",
+      "special": [
+        "Ą",
+        "ą",
+        "Č",
+        "č",
+        "Ė",
+        "ė",
+        "Ę",
+        "ę",
+        "Į",
+        "į",
+        "Š",
+        "š",
+        "Ū",
+        "ū",
+        "Ų",
+        "ų",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [
+        "J̃",
+        "J̇̃",
+        "L̃",
+        "M̃",
+        "R̃",
+        "i̇̀",
+        "i̇́",
+        "i̇̃",
+        "j̃",
+        "j̇̃",
+        "l̃",
+        "m̃",
+        "r̃",
+        "Ą́",
+        "Ą̃",
+        "ą́",
+        "ą̃",
+        "Ė́",
+        "Ė̃",
+        "ė́",
+        "ė̃",
+        "Ę́",
+        "Ę̃",
+        "ę́",
+        "ę̃",
+        "Į́",
+        "Į̃",
+        "Į̇́",
+        "Į̇̃",
+        "į́",
+        "į̃",
+        "į̇́",
+        "į̇̃",
+        "İ̀",
+        "İ́",
+        "İ̃",
+        "Ū́",
+        "Ū̃",
+        "ū́",
+        "ū̃",
+        "Ų́",
+        "Ų̃",
+        "ų́",
+        "ų̃"
+      ],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "…"
+      ],
+      "required_count": 64,
+      "covered_count": 64
+    },
+    {
+      "locale": "se",
+      "name": "Sami septentrional",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/se.xml",
+      "special": [
+        "Á",
+        "á",
+        "Č",
+        "č",
+        "Đ",
+        "đ",
+        "Ŋ",
+        "ŋ",
+        "Š",
+        "š",
+        "Ŧ",
+        "ŧ",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑"
+      ],
+      "required_count": 58,
+      "covered_count": 58
+    },
+    {
+      "locale": "sma",
+      "name": "Sami meridional",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/sma.xml",
+      "special": [
+        "Ä",
+        "Å",
+        "Ö",
+        "ä",
+        "å",
+        "ö"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑"
+      ],
+      "required_count": 48,
+      "covered_count": 48
+    },
+    {
+      "locale": "smj",
+      "name": "Sami de Lule",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/smj.xml",
+      "special": [
+        "Á",
+        "Ä",
+        "Å",
+        "á",
+        "ä",
+        "å",
+        "Ń",
+        "ń"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑"
+      ],
+      "required_count": 48,
+      "covered_count": 48
+    },
+    {
+      "locale": "smn",
+      "name": "Sami de Inari",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/smn.xml",
+      "special": [
+        "Á",
+        "Â",
+        "Ä",
+        "á",
+        "â",
+        "ä",
+        "Č",
+        "č",
+        "Đ",
+        "đ",
+        "Ŋ",
+        "ŋ",
+        "Š",
+        "š",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑"
+      ],
+      "required_count": 62,
+      "covered_count": 62
+    },
+    {
+      "locale": "sms",
+      "name": "Sami skolt",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/sms.xml",
+      "special": [
+        "Â",
+        "Ä",
+        "Å",
+        "Õ",
+        "â",
+        "ä",
+        "å",
+        "õ",
+        "Č",
+        "č",
+        "Đ",
+        "đ",
+        "Ŋ",
+        "ŋ",
+        "Š",
+        "š",
+        "Ž",
+        "ž",
+        "Ʒ",
+        "Ǥ",
+        "ǥ",
+        "Ǧ",
+        "ǧ",
+        "Ǩ",
+        "ǩ",
+        "Ǯ",
+        "ǯ",
+        "ʒ"
+      ],
+      "missing": [
+        "Ʒ",
+        "Ǥ",
+        "ǥ",
+        "Ǯ",
+        "ǯ",
+        "ʒ"
+      ],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "…"
+      ],
+      "required_count": 72,
+      "covered_count": 66
+    },
+    {
+      "locale": "hsb",
+      "name": "Alto sorabo",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/hsb.xml",
+      "special": [
+        "DŹ",
+        "dź",
+        "Ó",
+        "ó",
+        "Ć",
+        "ć",
+        "Č",
+        "č",
+        "Ě",
+        "ě",
+        "Ł",
+        "ł",
+        "Ń",
+        "ń",
+        "Ř",
+        "ř",
+        "Š",
+        "š",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "…"
+      ],
+      "required_count": 74,
+      "covered_count": 74
+    },
+    {
+      "locale": "dsb",
+      "name": "Bajo sorabo",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "source": "https://raw.githubusercontent.com/unicode-org/cldr/release-49/common/main/dsb.xml",
+      "special": [
+        "Ó",
+        "ó",
+        "Ć",
+        "ć",
+        "Č",
+        "č",
+        "Ě",
+        "ě",
+        "Ł",
+        "ł",
+        "Ń",
+        "ń",
+        "Ŕ",
+        "ŕ",
+        "Ś",
+        "ś",
+        "Š",
+        "š",
+        "Ź",
+        "ź",
+        "Ž",
+        "ž"
+      ],
+      "missing": [],
+      "auxiliary_missing": [],
+      "punctuation_missing": [
+        "‐",
+        "‑",
+        "–",
+        "—",
+        "…"
+      ],
+      "required_count": 76,
+      "covered_count": 76
+    }
+  ],
+  "unavailable_languages": [
+    {
+      "locale": "sco",
+      "name": "Escocés (scots)",
+      "group": "Germánicas",
+      "unavailable": "No se encontró un repertorio CLDR en los tres directorios para sco."
+    },
+    {
+      "locale": "csb",
+      "name": "Casubio",
+      "group": "Otras lenguas europeas de alfabeto latino",
+      "unavailable": "No se encontró un repertorio CLDR en los tres directorios para csb."
+    }
+  ]
+}
