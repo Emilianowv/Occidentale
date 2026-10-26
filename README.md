@@ -1,90 +1,70 @@
-# Occidentale · wst
+# Occidentale
 
-Tastiera latina multilingue, derivata da **EMI / Europeo Keyboard V5**. Il nome visibile è **Occidentale**, l'identificatore XKB e l'abbreviazione sono **wst**. La versione 6.0 ha introdotto un'installazione Linux nativa, selezionabile anche in KDE Plasma 6. La 6.1 introduce il nuovo reparto di accenti concordato: ñ/đ via grave, ș/ț via agudo, ś via Shift+virgola e anello/macrón sulla vecchia posizione +/*.
+![Occidentale: un teclado, muchas lenguas. Windows y Linux.](docs/images/occidentale-banner.svg)
 
-| Combinazione | Risultato |
+**Escribe en varias lenguas sin cambiar de teclado.** Acentos, eñes, cedillas y letras como **å, ø, œ, æ, ș y ß**, con combinaciones fáciles de recordar.
+
+**[📥 Descargar el proyecto](https://github.com/Emilianowv/Occidentale/archive/refs/heads/main.zip)** · **[🪟 Windows](windows/README.md)** · **[🐧 Linux](docs/INSTALACION.md)** · **[⌨️ Guía de teclas](docs/TECLAS.md)**
+
+## Un teclado para tus idiomas
+
+Escribe **español, português, français, italiano, Deutsch, svenska, norsk, română** y muchas otras lenguas europeas con alfabeto latino. Occidentale conserva las letras QWERTY y reúne los caracteres especiales en un mismo lugar.
+
+| Para escribir… | Tienes a mano… |
 |---|---|
-| Grave morto + n / N | ñ / Ñ |
-| Ex tasto Ñ, con/senza Shift | ; / : |
-| Acuto morto + vocale | á é í ó ú, anche maiuscole |
-| Grave morto + vocale | à è ì ò ù, anche maiuscole |
-| Grave morto + c / C | ç / Ç |
-| Grave morto + s / S | ß / ẞ |
-| Grave morto + d / D | đ / Đ |
-| Agudo morto + s/S, t/T | ș/Ș, ț/Ț |
-| Shift + virgola, poi s/S | ś/Ś |
-| Ex tasto +, poi a/A, o/O, u/U | å/Å, ø/Ø, ů/Ů |
-| Shift + ex tasto +, poi vocale | ā ē ī ō ū / Ā Ē Ī Ō Ū |
-| AltGr + O, con Shift | œ / Œ |
-| AltGr + A, con Shift | æ / Æ |
-| Shift + acuto, poi vocale | dieresi |
-| Shift + grave, poi vocale | tilde: ã õ (anche ñ) |
-| Shift + 6, poi vocale | circonflesso: â ê î ô û |
-| AltGr + E | € |
+| Español y portugués | ñ Ñ · á é í ó ú · ã õ · ç Ç |
+| Francés e italiano | à è ì ò ù · â ê î ô û · œ Œ · æ Æ |
+| Alemán | ä ö ü · ß ẞ |
+| Sueco, noruego y danés | å Å · ø Ø · æ Æ · ä ö |
+| Rumano | ă â î · ș Ș · ț Ț |
+| Y más lenguas europeas | ś Ś · đ Đ · ů Ů · ā ē ī ō ū |
 
-Il **grave morto** è il tasto subito a destra della P, ereditato dalla base spagnola; il tasto US in alto a sinistra produce invece un grave letterale. La tastiera mantiene numeri e molti simboli nelle posizioni US, con ñ tramite Compose e tasti morti spagnoli. La mappa completa verificata è in [docs/layout-manifest.json](docs/layout-manifest.json).
+La [cobertura detallada](docs/LENGUAS.md) comprueba **55 de 57 repertorios principales** con el motor de teclado de Linux. Puedes consultar los caracteres que aún faltan y cómo se han comprobado; el resultado no equivale a una prueba en todas las aplicaciones ni en Windows.
 
-## Debian 13 e KDE Plasma 6: installazione consigliata
+## Elige tu sistema
 
-Scarica e verifica il pacchetto `.deb` con il file `SHA256SUMS` della stessa release, quindi dalla cartella del download:
+| 🪟 Windows | 🐧 Linux |
+|---|---|
+| Archivo de teclado **Occidentale.klc**, preparado para trabajar con Microsoft Keyboard Layout Creator. | Se instala como un teclado del sistema, con acentos personalizados y copias de seguridad. |
+| **En preparación:** el archivo está revisado automáticamente; faltan compilar y probar el instalador en Windows. | **Verificado en Debian 13 y KDE Plasma 6**, con pruebas de Wayland y del protocolo X11. |
+| [Ver la versión para Windows →](windows/README.md) | [Instalar en Linux →](docs/INSTALACION.md) |
 
-```bash
-sha256sum -c SHA256SUMS
-sudo apt install ./occidentale_6.1.0_all.deb
-occidentale user-install
-occidentale kde-select
-occidentale doctor
-```
+El ZIP incluye los archivos de ambos sistemas. **Actualmente no hay un instalador Windows listo para descargar.** En Linux puedes instalar desde ese ZIP; la guía también explica cómo usar el paquete `.deb` cuando esté disponible en una versión publicada.
 
-Esegui i comandi `user-*` e `kde-select` **dal tuo utente**, senza sudo. Per sostituire il precedente identificatore EMI nella lista KDE, usa `occidentale kde-select --replace emius` al posto di `kde-select`. Gli altri layout e le relative varianti rimangono come alternative. Non viene superato il limite di quattro layout di X11.
+## Aprende lo esencial en un minuto
 
-**Esci dalla sessione KDE e accedi nuovamente**, anche su X11: ciò ricarica la configurazione del compositore/desktop e le tabelle Compose nelle applicazioni. Il programma prepara la configurazione persistente; non dichiara di avere attivato istantaneamente il layout nella sessione aperta.
+Primero pulsa la tecla del acento, suéltala y después pulsa la letra. Para obtener la mayúscula, usa Mayús con la letra.
 
-In alternativa alla selezione da terminale, riapri le Impostazioni di sistema di KDE, cerca **Tastiera → Disposizioni**, abilita la gestione delle disposizioni e aggiungi **Occidentale**. Se è impostato un filtro di lingua, scegli tutte le lingue o una delle lingue occidentali registrate. `user-install` è necessario per le sequenze personalizzate, incluse ș/ț, ś/Ś e anello+o → ø.
+| Pulsa… | Después… | Escribes… |
+|---|---|---|
+| Acento grave **&#96;** | n / N | **ñ / Ñ** |
+| Acento grave **&#96;** | c / C | **ç / Ç** |
+| Acento grave **&#96;** | s / S | **ß / ẞ** |
+| Acento agudo **´** | una vocal | **á é í ó ú** |
+| Acento agudo **´** | s / t | **ș / ț** |
+| Anillo **˚** | a / o / u | **å / ø / ů** |
+| **AltGr + O** | — | **œ**; con Mayús, **Œ** |
+| **AltGr + A** | — | **æ**; con Mayús, **Æ** |
 
-## Installazione dal sorgente o archivio ZIP/TAR
+**¿Dónde están esas teclas?** El acento grave está justo a la derecha de **P**; el anillo, en la tecla siguiente. El agudo está a la derecha de la antigua posición de **Ñ**, que ahora escribe **;** y **:**. Las letras impresas en tu teclado físico pueden ser distintas: consulta la [guía de posiciones y combinaciones](docs/TECLAS.md).
 
-```bash
-sudo apt install python3 xkb-data libxkbcommon0 libxkbcommon-tools x11-xkb-utils
-./occidentale test
-sudo ./occidentale system-install
-./occidentale user-install
-./occidentale kde-select --replace emius
-./occidentale doctor
-```
+## ¿Qué pasa con mi teclado actual?
 
-Ometti `--replace emius` se non hai quel vecchio layout. L'installazione dal sorgente richiede di conservare la cartella per usare successivamente gli stessi comandi. Il pacchetto Debian installa invece il comando `occidentale` nel sistema.
+En KDE puedes conservarlo como alternativa. El instalador Linux guarda copias antes de modificar la configuración y permite volver atrás o desinstalar Occidentale. La [guía de instalación](docs/INSTALACION.md) reúne esos pasos, la actualización y la ayuda si algo no funciona.
 
-## Aggiornamenti, backup e ripristino
+## Ayuda y novedades
 
-Per aggiornare, installa il nuovo `.deb` e ripeti `occidentale user-install`. Dal sorgente, usa `system-install` della nuova versione e poi `user-install`. Operazioni ripetute non duplicano le voci. Sono conservati snapshot prima delle modifiche effettive, con contenuto precedente, permessi e assenza originaria dei file.
+- [Instalación y recuperación en Linux](docs/INSTALACION.md)
+- [Windows: archivo disponible y próximos pasos](windows/README.md)
+- [Todas las combinaciones de uso diario](docs/TECLAS.md)
+- [Idiomas y caracteres pendientes](docs/LENGUAS.md)
+- [Novedades de la versión 6.1](docs/RELEASE.md)
+- [Comunicar un problema o proponer una mejora](https://github.com/Emilianowv/Occidentale/issues)
 
-```bash
-occidentale backups
-occidentale restore
-sudo occidentale backups --scope system
-sudo occidentale restore --scope system
-```
+<details>
+<summary><strong>Información técnica y desarrollo</strong></summary>
 
-`restore` annulla **l'ultima transazione** del relativo ambito; `--backup ID` sceglie uno snapshot preciso. Per esempio, dopo `user-install` e `kde-select`, il primo restore annulla la selezione KDE e il secondo le aggiunte Compose. Un ripristino che sovrascriverebbe modifiche successive viene annullato con una spiegazione. Dettagli in [docs/LINUX.md](docs/LINUX.md).
-
-## Disinstallazione
-
-Prima, ogni utente interessato esegue:
-
-```bash
-occidentale user-remove
-```
-
-Esci e rientra con un layout alternativo, poi:
-
-```bash
-sudo apt remove occidentale
-```
-
-Per l'installazione dal sorgente, usa `sudo ./occidentale system-remove`. Le configurazioni precedenti vengono recuperate se sono ancora inalterate. Se hai aggiunto altre regole Compose o modificato KDE nel frattempo, vengono rimosse soltanto le parti gestite da Occidentale. I backup restano disponibili anche dopo `apt purge`.
-
-## Verifiche e distribuzione
+El nombre del teclado es **Occidentale** y su identificador Linux es **wst**.
 
 ```bash
 make check
@@ -92,12 +72,8 @@ make build
 python3 scripts/test_deb.py
 ```
 
-Il build genera ZIP, TAR.GZ, pacchetto Debian `all` e checksum in `dist/`. Il test Debian usa **dpkg reale in una radice temporanea**, compresi gli script di installazione/rimozione. Per verificare KWin e il protocollo X11 in una sessione isolata: `python3 scripts/test_kwin.py` (dipendenze in [docs/VERIFICA.md](docs/VERIFICA.md)). Nessuno di questi test seleziona la tastiera nel desktop dell'utente.
+El build genera ZIP, TAR.GZ, paquete Debian y sumas de comprobación. Para las pruebas aisladas de KWin y X11, consulta las dependencias en [Verificaciones](docs/VERIFICA.md) y ejecuta `python3 scripts/test_kwin.py`.
 
-Risultati e limiti dei test sono in [docs/VERIFICA.md](docs/VERIFICA.md). Il sorgente Windows rinominato [Occidentale.klc](windows/Occidentale.klc) resta una bozza MSKLC: non viene distribuito un installer Windows non collaudato.
+[Integración Linux](docs/LINUX.md) · [Diseño 6.1](docs/DISENO-6.1.md) · [Mapa completo](docs/layout-manifest.json) · [Verificaciones y límites](docs/VERIFICA.md) · [Publicación](docs/PUBBLICAZIONE.md) · [Procedencia](docs/PROVENIENZA.md) · [Derechos y atribuciones](COPYRIGHT)
 
-Destinazione GitHub: **Emilianowv/Occidentale**. [Guida alla pubblicazione](docs/PUBBLICAZIONE.md). I pacchetti escludono configurazioni personali, backup locali e cronologia Git; un audit impedisce email personali. Per attribuzioni e condizioni di distribuzione, leggi [COPYRIGHT](COPYRIGHT).
-
-## Diseño y cobertura lingüística
-
-[Inventario de lenguas y caracteres faltantes](docs/LENGUAS.md), calculado con Unicode CLDR y las tablas XKB/Compose reales. El reparto aprobado se describe en [docs/DISENO-6.1.md](docs/DISENO-6.1.md). Shift+punto conserva los dos puntos como posición reservada. El inventario comprueba 55 de 57 repertorios principales completos, sin prometer cobertura tipográfica o de aplicaciones total.
+</details>

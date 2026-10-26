@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
+  <title id="title">Occidentale — Un teclado. Muchas lenguas.</title>
+  <desc id="desc">Teclado multilingüe para Windows y Linux, con teclas ilustradas de ñ, å, œ, ç, ø, æ, ș, ō y ß.</desc>
+  <defs>
+    <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#f7f5ee"/><stop offset="1" stop-color="#e9f1ee"/></linearGradient>
+    <linearGradient id="blue" x2="0" y2="1"><stop stop-color="#3269e8"/><stop offset="1" stop-color="#2351c3"/></linearGradient>
+  </defs>
+  <rect width="1280" height="440" rx="28" fill="url(#paper)"/>
+  <circle cx="1215" cy="10" r="214" fill="#dfe8e3"/>
+  <circle cx="783" cy="455" r="175" fill="#e2eae3"/>
+  <g font-family="DejaVu Sans, sans-serif">
+    <rect x="58" y="47" width="31" height="24" rx="6" fill="#275acf"/>
+    <path d="M65 55h17M65 61h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="103" y="65" fill="#42544b" font-size="15" letter-spacing="2">TECLADO MULTILINGÜE</text>
+    <text x="56" y="153" fill="#182b25" font-size="76" font-weight="700" letter-spacing="-3">Occidentale</text>
+    <text x="60" y="218" fill="#243b31" font-size="37">Un teclado. Muchas lenguas.</text>
+    <text x="62" y="264" fill="#53655c" font-size="22">Tus palabras, con todos sus acentos.</text>
+    <rect x="60" y="316" width="158" height="49" rx="24.5" fill="#244fbc"/>
+    <path d="M80 332h10v10H80zM92 332h10v10H92zM80 344h10v10H80zM92 344h10v10H92z" fill="#fff"/>
+    <text x="113" y="347" fill="#fff" font-size="18">Windows</text>
+    <rect x="231" y="316" width="123" height="49" rx="24.5" fill="#dce7df"/>
+    <text x="257" y="347" fill="#244c37" font-size="18">Linux</text>
+    <text x="63" y="406" fill="#637569" font-size="14">QWERTY · Acentos · Letras especiales</text>
+    <g text-anchor="middle" font-size="49">
+      <g fill="#cbd6cf">
+        <rect x="827" y="75" width="108" height="96" rx="18"/>
+        <rect x="949" y="75" width="108" height="96" rx="18"/>
+        <rect x="1071" y="75" width="108" height="96" rx="18"/>
+        <rect x="827" y="185" width="108" height="96" rx="18"/>
+        <rect x="949" y="185" width="108" height="96" rx="18"/>
+        <rect x="1071" y="185" width="108" height="96" rx="18"/>
+        <rect x="827" y="295" width="108" height="96" rx="18"/>
+        <rect x="949" y="295" width="108" height="96" rx="18"/>
+        <rect x="1071" y="295" width="108" height="96" rx="18"/>
+      </g>
+      <g fill="#fffefa">
+        <rect x="827" y="69" width="108" height="96" rx="18"/>
+        <rect x="949" y="69" width="108" height="96" rx="18"/>
+        <rect x="1071" y="69" width="108" height="96" rx="18"/>
+        <rect x="827" y="179" width="108" height="96" rx="18"/>
+        <rect x="1071" y="179" width="108" height="96" rx="18"/>
+        <rect x="827" y="289" width="108" height="96" rx="18"/>
+        <rect x="949" y="289" width="108" height="96" rx="18"/>
+        <rect x="1071" y="289" width="108" height="96" rx="18"/>
+      </g>
+      <rect x="949" y="179" width="108" height="96" rx="18" fill="url(#blue)"/>
+      <g fill="#253e32">
+        <text x="881" y="135">ñ</text><text x="1003" y="135">å</text><text x="1125" y="135">œ</text>
+        <text x="881" y="245">ç</text><text x="1125" y="245">æ</text>
+        <text x="881" y="355">ș</text><text x="1003" y="355">ō</text><text x="1125" y="355">ß</text>
+      </g>
+      <text x="1003" y="245" fill="#fff">ø</text>
+    </g>
+  </g>
+</svg>
