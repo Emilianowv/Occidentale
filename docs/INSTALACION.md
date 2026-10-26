@@ -65,11 +65,11 @@ Antes de probar, anota el identificador de tu distribución habitual para poder 
 
 ## Si tienes un paquete Debian `.deb`
 
-Cuando una [versión publicada](https://github.com/Emilianowv/Occidentale/releases) incluya `occidentale_6.1.0_all.deb`, descarga también su `SHA256SUMS`. Desde la carpeta de descarga, verifica el archivo antes de instalar:
+Cuando una [versión publicada](https://github.com/Emilianowv/Occidentale/releases) incluya `occidentale_6.2.0_all.deb`, descarga también su `SHA256SUMS`. Desde la carpeta de descarga, verifica el archivo antes de instalar:
 
 ```bash
-grep '  occidentale_6.1.0_all.deb$' SHA256SUMS | sha256sum -c -
-sudo apt install ./occidentale_6.1.0_all.deb
+grep '  occidentale_6.2.0_all.deb$' SHA256SUMS | sha256sum -c -
+sudo apt install ./occidentale_6.2.0_all.deb
 occidentale user-install
 occidentale kde-select
 occidentale doctor

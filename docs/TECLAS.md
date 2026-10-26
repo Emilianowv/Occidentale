@@ -12,14 +12,16 @@ Las posiciones se refieren a la distribución Occidentale; las etiquetas impresa
 
 | Posición física | Sin Mayús | Con Mayús |
 |---|---|---|
+| Debajo de **Escape**, esquina superior izquierda | **¿** | **¡** |
 | Justo a la derecha de **P** | Acento grave **&#96;** | Tilde **~** |
 | La tecla siguiente, antigua **+ / \*** | Anillo **˚** | Macrón **¯** |
 | Antigua posición de **Ñ**, a la derecha de **L** | **;** | **:** |
 | Siguiente tecla a la derecha de esa posición | Acento agudo **´** | Diéresis **¨** |
 | Tecla **6** de la fila numérica | **6** | Circunflejo **^** |
 | Tecla de la coma **,** | **,** | Prefijo para **ś / Ś** |
+| Tecla del punto **.** | **.** | Carón **ˇ** |
 
-El grave que forma letras está **a la derecha de P**. El grave de la esquina superior izquierda es un símbolo literal y no inicia esas combinaciones.
+El grave que forma letras está **a la derecha de P**. La tecla de la esquina superior izquierda ahora escribe **¿ / ¡**. Para escribir el grave literal, pulsa grave y después Espacio; para la tilde literal, pulsa Mayús+grave y después Espacio.
 
 ## Acentos cotidianos
 
@@ -31,6 +33,8 @@ El grave que forma letras está **a la derecha de P**. El grave de la esquina su
 | Mayús + **6**: **^** | â ê î ô û | Â Ê Î Ô Û |
 | Mayús + grave: **~** | ã õ; también ñ | Ã Õ; también Ñ |
 | Mayús + anillo: **¯** | ā ē ī ō ū | Ā Ē Ī Ō Ū |
+
+**Para las lenguas eslavas:** pulsa **Mayús+punto**, suelta ambas teclas y pulsa **c, s, z, e, d, t, n, r o l**. Obtienes **č š ž ě ď ť ň ř ľ**; con Mayús en la letra, **Č Š Ž Ě Ď Ť Ň Ř Ľ**. El acceso anterior mediante Mayús+AltGr+agudo sigue disponible.
 
 Para escribir el acento por sí solo, pulsa su tecla y después **Espacio**. Por ejemplo, Mayús+6 y Espacio escribe **^**.
 
@@ -61,11 +65,14 @@ Para los siguientes caracteres, mantén **AltGr** (Alt derecho) mientras pulsas 
 
 | Símbolo | Combinación |
 |---|---|
+| ¿ / ¡ | Tecla debajo de Escape, sin/con Mayús |
 | ; / : | Antigua tecla Ñ, sin/con Mayús |
 | + | Mayús + **=** de la fila numérica |
 | * | Mayús + **8** |
 | [ / { | AltGr / AltGr+Mayús + tecla del grave a la derecha de P |
 | ] / } | AltGr / AltGr+Mayús + tecla del anillo |
-| ~ literal | Mayús + tecla de la esquina superior izquierda |
+| &#96; literal | Grave a la derecha de P, después Espacio |
+| ~ literal | Mayús + grave a la derecha de P, después Espacio |
+| ˇ literal | Mayús + punto, después Espacio |
 
-Mayús+punto conserva **:**. Para los demás niveles y caracteres, consulta el [mapa completo](layout-manifest.json) y el [inventario de idiomas](LENGUAS.md).
+Los **:** siguen en Mayús+antigua tecla Ñ. Los niveles AltGr del punto conservan **·** y **÷**. Para los demás niveles y caracteres, consulta el [mapa completo](layout-manifest.json) y el [inventario de idiomas](LENGUAS.md).

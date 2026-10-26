@@ -1,7 +1,7 @@
 {
   "project": "Occidentale",
   "based_on": "EMI V5",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "os_support": {
     "linux": "XKB e Compose: vedere VERIFICA.md per i test eseguiti",
     "windows": "Sorgente MSKLC; compilazione e test Windows non eseguiti"
@@ -14,14 +14,14 @@
       "caps_sensitive": false,
       "levels": [
         {
-          "character": "`",
+          "character": "¿",
           "dead": false,
-          "xkb_keysym": "grave"
+          "xkb_keysym": "questiondown"
         },
         {
-          "character": "~",
+          "character": "¡",
           "dead": false,
-          "xkb_keysym": "asciitilde"
+          "xkb_keysym": "exclamdown"
         },
         {
           "character": "\\",
@@ -1279,9 +1279,9 @@
           "xkb_keysym": "period"
         },
         {
-          "character": ":",
-          "dead": false,
-          "xkb_keysym": "colon"
+          "character": "ˇ",
+          "dead": true,
+          "xkb_keysym": "dead_caron"
         },
         {
           "character": "·",

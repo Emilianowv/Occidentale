@@ -6,7 +6,8 @@ xkb_symbols "basic" {
     name[Group1] = "Occidentale";
 
     // Nivel 1: pulsación normal, Nivel 2: Mayús. Niveles 3/4: AltGr español.
-    key <TLDE> { [ grave, asciitilde, backslash, backslash ] };
+    // Signos de apertura accesibles debajo de Escape.
+    key <TLDE> { [ questiondown, exclamdown, backslash, backslash ] };
     key <AE01> { [ 1, exclam, bar, exclamdown ] };
     key <AE02> { [ 2, at, at, oneeighth ] };
     key <AE03> { [ 3, numbersign, numbersign, sterling ] };
@@ -26,6 +27,8 @@ xkb_symbols "basic" {
     key <AB10> { [ slash, question, dead_belowdot, dead_abovedot ] };
     // Prefisso distinto dall'agudo per conservare ś/Ś dopo Shift+virgola.
     key <AB08> { [ comma, dead_abovecomma, U2022, multiply ] };
+    // Carón con Mayús+punto; los dos puntos siguen en Mayús+AC10.
+    key <AB09> { [ period, dead_caron, periodcentered, division ] };
 
     // Legature: A aveva già ae/AE in es(basic), ora dichiarate esplicitamente.
     // O: sostituisce oslash/Oslash di es(basic) con oe/OE.

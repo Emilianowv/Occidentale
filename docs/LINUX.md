@@ -1,5 +1,7 @@
 # Integrazione Linux
 
+La [guida delle combinazioni 6.2](TECLAS.md) documenta anche ¿/¡ sotto Escape e il carón morto su Shift+punto. Per i simboli letterali grave e tilde, usare il tasto morto a destra di P, senza/con Shift, seguito da Spazio.
+
 ## Architettura
 
 `system-install` compila il sorgente prima di modificare file, poi installa:

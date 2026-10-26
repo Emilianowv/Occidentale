@@ -19,4 +19,6 @@ Il nuovo manifesto rappresenta i risultati reali. Le tabelle di tastiera non son
 
 L'installer precedente riusava lo stato EMI V4 e configurava soltanto la cediglia. Il nuovo gestore usa un ambito `occidentale` separato e definisce esplicitamente anche ß/ẞ. I backup e i file di tastiera delle versioni precedenti non vengono cancellati.
 
-Il sorgente MSKLC è stato rinominato in `windows/Occidentale.klc`, con nome interno `WST` e versione 6.1. La sua validazione rimane statica; non è un port Windows collaudato e mantiene i limiti della trasposizione preliminare originale.
+La 6.2 modifica soltanto altri tre livelli: TLDE normale/Shift (¿/¡) e AB09 Shift (carón morto). Il [reparto 6.2](DISENO-6.2.md) documenta i simboli conservati e le loro nuove posizioni.
+
+Il sorgente MSKLC è stato rinominato in `windows/Occidentale.klc`, con nome interno `WST` e versione attuale 6.2. La sua validazione rimane statica; non è un port Windows collaudato e mantiene i limiti della trasposizione preliminare originale.

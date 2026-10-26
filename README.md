@@ -37,6 +37,8 @@ Primero pulsa la tecla del acento, suéltala y después pulsa la letra. Para obt
 
 | Pulsa… | Después… | Escribes… |
 |---|---|---|
+| Tecla debajo de Escape | — | **¿**; con Mayús, **¡** |
+| Mayús + punto | c / s / z / e / d / t / n / r / l | **č š ž ě ď ť ň ř ľ** |
 | Acento grave **&#96;** | n / N | **ñ / Ñ** |
 | Acento grave **&#96;** | c / C | **ç / Ç** |
 | Acento grave **&#96;** | s / S | **ß / ẞ** |
@@ -58,7 +60,7 @@ En KDE puedes conservarlo como alternativa. El instalador Linux guarda copias an
 - [Windows: archivo disponible y próximos pasos](windows/README.md)
 - [Todas las combinaciones de uso diario](docs/TECLAS.md)
 - [Idiomas y caracteres pendientes](docs/LENGUAS.md)
-- [Novedades de la versión 6.1](docs/RELEASE.md)
+- [Novedades de la versión 6.2](docs/RELEASE.md)
 - [Comunicar un problema o proponer una mejora](https://github.com/Emilianowv/Occidentale/issues)
 
 <details>
@@ -74,6 +76,6 @@ python3 scripts/test_deb.py
 
 El build genera ZIP, TAR.GZ, paquete Debian y sumas de comprobación. Para las pruebas aisladas de KWin y X11, consulta las dependencias en [Verificaciones](docs/VERIFICA.md) y ejecuta `python3 scripts/test_kwin.py`.
 
-[Integración Linux](docs/LINUX.md) · [Diseño 6.1](docs/DISENO-6.1.md) · [Mapa completo](docs/layout-manifest.json) · [Verificaciones y límites](docs/VERIFICA.md) · [Publicación](docs/PUBBLICAZIONE.md) · [Procedencia](docs/PROVENIENZA.md) · [Derechos y atribuciones](COPYRIGHT)
+[Integración Linux](docs/LINUX.md) · [Diseño 6.2](docs/DISENO-6.2.md) · [Mapa completo](docs/layout-manifest.json) · [Verificaciones y límites](docs/VERIFICA.md) · [Publicación](docs/PUBBLICAZIONE.md) · [Procedencia](docs/PROVENIENZA.md) · [Derechos y atribuciones](COPYRIGHT)
 
 </details>

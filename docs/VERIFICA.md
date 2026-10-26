@@ -5,7 +5,7 @@ Ambiente reale: Debian GNU/Linux 13, Plasma/KWin 6.3.6, libxkbcommon 1.7.0, xkb-
 | Controllo | Esito |
 |---|---|
 | Confronto V5 originale → wst **6.0**, 49 tasti × 4 stati | 196 risultati identici; verifica storica |
-| Test automatici di layout e gestore 6.1 | 27 test locali superati; esito remoto da verificare sul commit 6.1 |
+| Test automatici di layout e gestore 6.2 | 29 test locali superati; workflow remoto consultabile nelle Actions del repository |
 | Accenti gravi, acuti, circonflessi e dieresi | 40 combinazioni maiuscole/minuscole verificate tramite libxkbcommon Compose |
 | Grave+c/C, grave+s/S e grave+n/N | ç/Ç, ß/ẞ e ñ/Ñ verificati da sequenze di tasti fisici |
 | Legature, ñ, ASCII, livelli AltGr | Inclusi nei 196 controlli del manifesto |
@@ -21,6 +21,9 @@ Ambiente reale: Debian GNU/Linux 13, Plasma/KWin 6.3.6, libxkbcommon 1.7.0, xkb-
 | Pacchetto Debian con dpkg reale e fakeroot | Installazione, reinstallazione, rimozione, purge e compilazione del payload installato superati in radice temporanea |
 | Archivi ZIP/TAR e pacchetto .deb | Build deterministico e checksum verificati |
 | Sorgente Windows | 49 posizioni e combinazioni essenziali controllate staticamente |
+| Shift+punto, carón 6.2 | č š ž ě ď ť ň ř ľ e maiuscole verificati; anche sul keymap esportato da KWin e riletto da X11 |
+| Sotto Escape 6.2 | ¿/¡ senza/con Shift; livelli AltGr invariati |
+| Confronto 6.1 → 6.2 | Cambiano solo TLDE livelli 1/2 e AB09 livello 2; tutti i 571 risultati accessibili precedenti restano disponibili |
 
 La sessione KWin dei test usa home, configurazione, runtime e bus D-Bus temporanei; non è stata modificata la disposizione del desktop aperto. Il test Wayland verifica il caricamento di `kxkbrc` nel compositore e il contenuto esportato al client. Compose viene poi verificato con la tabella dell'utente di prova; non è una simulazione di digitazione in ogni applicazione grafica.
 
@@ -60,6 +63,7 @@ Per il collaudo finale nelle applicazioni, dopo il nuovo accesso scrivere:
 ä ë ï ö ü Ä Ë Ï Ö Ü
 â ê î ô û Â Ê Î Ô Û
 ç Ç ß ẞ œ Œ æ Æ ñ Ñ
+¿ ¡ č š ž ě ď ť ň ř ľ Č Š Ž Ě Ď Ť Ň Ř Ľ
 [] {} / ? \ | @ # €
 ```
 
@@ -72,3 +76,9 @@ La posizione AC10 ora produce punto e virgola e due punti senza/con Shift. I liv
 Shift+grave è ora tilde morta; Shift+6 è circonflesso morto. Verificate ã/õ/ñ e maiuscole, tutte le vocali con circonflesso e i simboli letterali tramite spazio. Agudo+s/t produce ș/ț, mentre Shift+virgola+s/S conserva ś/Ś; verificati entrambi i casi, đ/Đ, anello a/o/u e vocali con macrón.
 
 Il rapporto CLDR aggiornato confronta 57 repertori principali: 55 completi nelle rotte provate; restano il carattere ʼ del bretone e Ʒ/ʒ/Ǥ/ǥ/Ǯ/ǯ del sami skolt. Scots e casubio sono segnalati come non verificati, non conteggiati come coperti.
+
+## Cambio 6.2
+
+Il tasto sotto Escape ora produce ¿/¡; Shift+punto è carón morto. I due punti restano su Shift+AC10. I simboli letterali grave e tilde sono verificati tramite i tasti morti a destra di P seguiti da Spazio. La copertura delle lingue non diminuisce e tutte le rotte di caratteri precedentemente accessibili hanno ancora un risultato raggiungibile.
+
+Rieseguiti localmente i 29 test, il controllo statico Windows, il test con KWin Wayland isolato e Xwayland indipendente e il ciclo reale dpkg in una radice temporanea. Non è stata cambiata la disposizione del desktop dell'utente.

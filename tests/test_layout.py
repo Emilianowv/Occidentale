@@ -42,7 +42,32 @@ class LayoutTests(unittest.TestCase):
         self.assertEqual(self.kb.sequence([('AC10', False, True), ('AC01',)]), 'ã')
         self.assertEqual(self.kb.sequence([('AC10', True, True), ('AD09',)]), 'ő')
         self.assertEqual(self.kb.name('AB08', shift=True), 'dead_abovecomma')
-        self.assertEqual(self.kb.name('AB09', shift=True), 'colon')
+
+    def test_opening_punctuation_below_escape(self):
+        self.assertEqual(self.kb.name('TLDE'), 'questiondown')
+        self.assertEqual(self.kb.name('TLDE', shift=True), 'exclamdown')
+        self.assertEqual(self.kb.name('TLDE', altgr=True), 'backslash')
+        self.assertEqual(self.kb.name('TLDE', shift=True, altgr=True), 'backslash')
+        # Existing alternative routes and closing punctuation are retained.
+        self.assertEqual(self.kb.name('AE01', shift=True), 'exclam')
+        self.assertEqual(self.kb.name('AB10', shift=True), 'question')
+        self.assertEqual(self.kb.name('AE01', shift=True, altgr=True), 'exclamdown')
+        self.assertEqual(self.kb.name('AE11', shift=True, altgr=True), 'questiondown')
+
+    def test_caron_on_shift_period_both_cases(self):
+        self.assertEqual(self.kb.name('AB09'), 'period')
+        self.assertEqual(self.kb.name('AB09', shift=True), 'dead_caron')
+        self.assertEqual(self.kb.name('AB09', altgr=True), 'periodcentered')
+        self.assertEqual(self.kb.name('AB09', shift=True, altgr=True), 'division')
+        self.assertEqual(self.kb.name('AC11', shift=True, altgr=True), 'dead_caron')
+        for key, lower, upper in [('AB03','č','Č'),('AC02','š','Š'),('AB01','ž','Ž'),
+                                  ('AD03','ě','Ě'),('AC03','ď','Ď'),('AD05','ť','Ť'),
+                                  ('AB06','ň','Ň'),('AD04','ř','Ř'),('AC09','ľ','Ľ')]:
+            for shift, expected in [(False,lower),(True,upper)]:
+                with self.subTest(expected=expected):
+                    self.assertEqual(self.kb.sequence([('AB09',True),(key,shift)]),expected)
+                    self.assertEqual(self.kb.sequence([('AC11',True,True),(key,shift)]),expected)
+        self.assertEqual(self.kb.sequence([('AB09',True),('SPCE',)]),'ˇ')
 
     def test_romanian_and_polish_have_distinct_prefixes(self):
         for key, lower, upper in [('AC02','ș','Ș'),('AD05','ț','Ț')]:
@@ -80,7 +105,7 @@ class LayoutTests(unittest.TestCase):
 
     def test_dead_keys_then_space(self):
         for key, shift, expected in [('AD11', False, '`'), ('AD11', True, '~'), ('AE06', True, '^'),
-                                     ('AC11', False, "'"), ('AC11', True, '"')]:
+                                     ('AC11', False, "'"), ('AC11', True, '"'), ('AB09', True, 'ˇ')]:
             with self.subTest(key=key, shift=shift):
                 self.assertEqual(self.kb.sequence([(key, shift), ('SPCE',)]), expected)
 
@@ -91,7 +116,6 @@ class LayoutTests(unittest.TestCase):
             for shift, expected in [(False,lower),(True,upper)]:
                 with self.subTest(expected=expected):
                     self.assertEqual(self.kb.sequence([('AD11',True),(key,shift)]),expected)
-        self.assertEqual(self.kb.name('TLDE', shift=True), 'asciitilde')
 
     def test_caps_lock_and_shortcut_modifiers(self):
         update(self.kb.state, self.kb.code('CAPS'), 1)
@@ -102,6 +126,9 @@ class LayoutTests(unittest.TestCase):
             self.assertEqual(self.kb.name('AC10'), 'semicolon')
             self.assertEqual(self.kb.name('AC10', shift=True), 'colon')
             self.assertEqual(self.kb.sequence([('AD11',), ('AB06',)]), 'Ñ')
+            self.assertEqual(self.kb.name('TLDE'), 'questiondown')
+            self.assertEqual(self.kb.name('TLDE', shift=True), 'exclamdown')
+            self.assertEqual(self.kb.sequence([('AB09',True), ('AB03',)]), 'Č')
         finally:
             update(self.kb.state, self.kb.code('CAPS'), 1)
             update(self.kb.state, self.kb.code('CAPS'), 0)

@@ -1,6 +1,6 @@
 # Cobertura de lenguas europeas con alfabeto latino
 
-Occidentale 6.1.0 · datos Unicode CLDR release-49 · Compose en_US.UTF-8.
+Occidentale 6.2.0 · datos Unicode CLDR release-49 · Compose en_US.UTF-8.
 
 Es una selección de lenguas modernas y regionales, no un inventario exhaustivo. Las categorías organizan el trabajo; no establecen límites políticos o geográficos.
 
@@ -128,9 +128,9 @@ Los repertorios principales, auxiliares y de puntuación se mantienen separados.
 | ä | Shift+tecla de agudo → A |
 | ö | Shift+tecla de agudo → O |
 | ü | Shift+tecla de agudo → U |
-| č | Shift+AltGr+tecla de agudo → C |
-| š | Shift+AltGr+tecla de agudo → S |
-| ž | Shift+AltGr+tecla de agudo → Z |
+| č | Shift+. → C |
+| š | Shift+. → S |
+| ž | Shift+. → Z |
 | ą | Shift+AltGr+= → A |
 | ę | Shift+AltGr+= → E |
 | ł | AltGr+L |

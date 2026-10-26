@@ -1,5 +1,5 @@
 {
-  "layout_version": "6.1.0",
+  "layout_version": "6.2.0",
   "source": "release-49",
   "model": "direct or one dead key + printable key; concatenation for multi-character exemplars",
   "compose_locale": "en_US.UTF-8",
@@ -23,15 +23,15 @@
     "dead_tilde"
   ],
   "recipes": {
-    "`": {
+    "¿": {
       "steps": [
-        "`"
+        "¿"
       ],
       "modifiers": 0
     },
-    "~": {
+    "¡": {
       "steps": [
-        "Shift+`"
+        "Shift+¿"
       ],
       "modifiers": 1
     },
@@ -58,12 +58,6 @@
         "AltGr+1"
       ],
       "modifiers": 1
-    },
-    "¡": {
-      "steps": [
-        "Shift+AltGr+1"
-      ],
-      "modifiers": 2
     },
     "2": {
       "steps": [
@@ -110,6 +104,12 @@
     "$": {
       "steps": [
         "Shift+4"
+      ],
+      "modifiers": 1
+    },
+    "~": {
+      "steps": [
+        "AltGr+4"
       ],
       "modifiers": 1
     },
@@ -262,12 +262,6 @@
         "Shift+-"
       ],
       "modifiers": 1
-    },
-    "¿": {
-      "steps": [
-        "Shift+AltGr+-"
-      ],
-      "modifiers": 2
     },
     "=": {
       "steps": [
@@ -1647,6 +1641,13 @@
       ],
       "modifiers": 1
     },
+    "`": {
+      "steps": [
+        "tecla de grave",
+        "Espacio"
+      ],
+      "modifiers": 0
+    },
     "≃": {
       "steps": [
         "Shift+tecla de grave",
@@ -2790,360 +2791,360 @@
     },
     "₁": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "1"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₂": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "2"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₃": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "3"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₄": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "4"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₅": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "5"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₆": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "6"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₇": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "7"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₈": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "8"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₉": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "9"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₍": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+9"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "₀": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "0"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₎": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+0"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "₋": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "-"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₌": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "="
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "₊": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+="
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ě": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "E"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ě": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+E"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ř": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "R"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ř": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+R"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ť": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "T"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ť": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+T"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ǔ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "U"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ǔ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+U"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ǐ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "I"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ǐ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+I"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ǒ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "O"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ǒ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+O"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ǎ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "A"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ǎ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+A"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "š": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "S"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Š": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+S"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ď": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "D"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ď": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+D"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ǧ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "G"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ǧ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+G"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ȟ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "H"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ȟ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+H"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ǰ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "J"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "ǩ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "K"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ǩ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+K"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ľ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "L"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ľ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+L"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ž": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Z"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ž": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+Z"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "č": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "C"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Č": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+C"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ǚ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "V"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ǚ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+V"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ň": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "N"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "Ň": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Shift+N"
       ],
-      "modifiers": 3
+      "modifiers": 2
     },
     "ˇ": {
       "steps": [
-        "Shift+AltGr+tecla de agudo",
+        "Shift+.",
         "Espacio"
       ],
-      "modifiers": 2
+      "modifiers": 1
     },
     "ĕ": {
       "steps": [

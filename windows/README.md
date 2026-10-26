@@ -2,7 +2,7 @@
 
 [← Inicio](../README.md) · [Guía de teclas](../docs/TECLAS.md) · [¿Buscas Linux?](../docs/INSTALACION.md)
 
-**Windows también forma parte del proyecto.** El archivo [Occidentale.klc](Occidentale.klc) contiene la distribución del teclado para Microsoft Keyboard Layout Creator (MSKLC), con el reparto de acentos de la versión **6.1**.
+**Windows también forma parte del proyecto.** El archivo [Occidentale.klc](Occidentale.klc) contiene la distribución del teclado para Microsoft Keyboard Layout Creator (MSKLC), con el reparto de acentos de la versión **6.2**: **¿ / ¡ debajo de Escape** y **carón muerto ˇ en Mayús+punto**.
 
 ## ¿Puedo instalarlo ya?
 
@@ -31,7 +31,7 @@ Estos pasos son para preparar y comprobar la versión Windows. No se han ejecuta
 Si encuentras un problema, [comunícalo aquí](https://github.com/Emilianowv/Occidentale/issues), indicando tu versión de Windows, aplicación y combinación. No incluyas contraseñas ni datos personales.
 
 <details>
-<summary><strong>Estado técnico del archivo 6.1</strong></summary>
+<summary><strong>Estado técnico del archivo 6.2</strong></summary>
 
 El nombre interno es `WST` y la descripción, `Occidentale`. `scripts/check_windows_klc.py` comprueba estáticamente las 49 posiciones, las combinaciones principales y la ausencia de duplicados en las tablas de acentos muertos.
 

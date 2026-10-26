@@ -1,5 +1,14 @@
 # Changelog
 
+## 6.2.0 — 26 de octubre de 2026
+
+- La tecla debajo de Escape produce ¿ sin Mayús y ¡ con Mayús.
+- Mayús+punto pasa a carón muerto: č š ž ě ď ť ň ř ľ y sus mayúsculas.
+- Los dos puntos permanecen en Mayús+antigua tecla Ñ; · y ÷ permanecen en AltGr del punto.
+- Se conserva el acceso anterior al carón con Mayús+AltGr+agudo.
+- El grave y la tilde literales se escriben con sus acentos muertos seguidos de Espacio.
+- Se actualizan Linux, la fuente Windows, el mapa, las guías y el inventario reproducible.
+
 ## 6.1.0 — 26 de octubre de 2026
 
 - Grave muerto+n/N produce ñ/Ñ.
