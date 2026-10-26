@@ -1,0 +1,1394 @@
+{
+  "project": "Occidentale",
+  "based_on": "EMI V5",
+  "version": "6.0.0",
+  "os_support": {
+    "linux": "XKB e Compose: vedere VERIFICA.md per i test eseguiti",
+    "windows": "Sorgente MSKLC; compilazione e test Windows non eseguiti"
+  },
+  "keys": [
+    {
+      "xkb_key": "TLDE",
+      "scan_code": "29",
+      "virtual_key": "OEM_3",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "`",
+          "dead": false,
+          "xkb_keysym": "grave"
+        },
+        {
+          "character": "~",
+          "dead": false,
+          "xkb_keysym": "asciitilde"
+        },
+        {
+          "character": "\\",
+          "dead": false,
+          "xkb_keysym": "backslash"
+        },
+        {
+          "character": "\\",
+          "dead": false,
+          "xkb_keysym": "backslash"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE01",
+      "scan_code": "02",
+      "virtual_key": "1",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "1",
+          "dead": false,
+          "xkb_keysym": "1"
+        },
+        {
+          "character": "!",
+          "dead": false,
+          "xkb_keysym": "exclam"
+        },
+        {
+          "character": "|",
+          "dead": false,
+          "xkb_keysym": "bar"
+        },
+        {
+          "character": "¡",
+          "dead": false,
+          "xkb_keysym": "exclamdown"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE02",
+      "scan_code": "03",
+      "virtual_key": "2",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "2",
+          "dead": false,
+          "xkb_keysym": "2"
+        },
+        {
+          "character": "@",
+          "dead": false,
+          "xkb_keysym": "at"
+        },
+        {
+          "character": "@",
+          "dead": false,
+          "xkb_keysym": "at"
+        },
+        {
+          "character": "⅛",
+          "dead": false,
+          "xkb_keysym": "oneeighth"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE03",
+      "scan_code": "04",
+      "virtual_key": "3",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "3",
+          "dead": false,
+          "xkb_keysym": "3"
+        },
+        {
+          "character": "#",
+          "dead": false,
+          "xkb_keysym": "numbersign"
+        },
+        {
+          "character": "#",
+          "dead": false,
+          "xkb_keysym": "numbersign"
+        },
+        {
+          "character": "£",
+          "dead": false,
+          "xkb_keysym": "sterling"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE04",
+      "scan_code": "05",
+      "virtual_key": "4",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "4",
+          "dead": false,
+          "xkb_keysym": "4"
+        },
+        {
+          "character": "$",
+          "dead": false,
+          "xkb_keysym": "dollar"
+        },
+        {
+          "character": "~",
+          "dead": false,
+          "xkb_keysym": "asciitilde"
+        },
+        {
+          "character": "$",
+          "dead": false,
+          "xkb_keysym": "dollar"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE05",
+      "scan_code": "06",
+      "virtual_key": "5",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "5",
+          "dead": false,
+          "xkb_keysym": "5"
+        },
+        {
+          "character": "%",
+          "dead": false,
+          "xkb_keysym": "percent"
+        },
+        {
+          "character": "½",
+          "dead": false,
+          "xkb_keysym": "onehalf"
+        },
+        {
+          "character": "⅜",
+          "dead": false,
+          "xkb_keysym": "threeeighths"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE06",
+      "scan_code": "07",
+      "virtual_key": "6",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "6",
+          "dead": false,
+          "xkb_keysym": "6"
+        },
+        {
+          "character": "^",
+          "dead": false,
+          "xkb_keysym": "asciicircum"
+        },
+        {
+          "character": "¬",
+          "dead": false,
+          "xkb_keysym": "notsign"
+        },
+        {
+          "character": "⅝",
+          "dead": false,
+          "xkb_keysym": "fiveeighths"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE07",
+      "scan_code": "08",
+      "virtual_key": "7",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "7",
+          "dead": false,
+          "xkb_keysym": "7"
+        },
+        {
+          "character": "&",
+          "dead": false,
+          "xkb_keysym": "ampersand"
+        },
+        {
+          "character": "{",
+          "dead": false,
+          "xkb_keysym": "braceleft"
+        },
+        {
+          "character": "⅞",
+          "dead": false,
+          "xkb_keysym": "seveneighths"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE08",
+      "scan_code": "09",
+      "virtual_key": "8",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "8",
+          "dead": false,
+          "xkb_keysym": "8"
+        },
+        {
+          "character": "*",
+          "dead": false,
+          "xkb_keysym": "asterisk"
+        },
+        {
+          "character": "[",
+          "dead": false,
+          "xkb_keysym": "bracketleft"
+        },
+        {
+          "character": "™",
+          "dead": false,
+          "xkb_keysym": "trademark"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE09",
+      "scan_code": "0a",
+      "virtual_key": "9",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "9",
+          "dead": false,
+          "xkb_keysym": "9"
+        },
+        {
+          "character": "(",
+          "dead": false,
+          "xkb_keysym": "parenleft"
+        },
+        {
+          "character": "]",
+          "dead": false,
+          "xkb_keysym": "bracketright"
+        },
+        {
+          "character": "±",
+          "dead": false,
+          "xkb_keysym": "plusminus"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE10",
+      "scan_code": "0b",
+      "virtual_key": "0",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "0",
+          "dead": false,
+          "xkb_keysym": "0"
+        },
+        {
+          "character": ")",
+          "dead": false,
+          "xkb_keysym": "parenright"
+        },
+        {
+          "character": "}",
+          "dead": false,
+          "xkb_keysym": "braceright"
+        },
+        {
+          "character": "°",
+          "dead": false,
+          "xkb_keysym": "degree"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE11",
+      "scan_code": "0c",
+      "virtual_key": "OEM_MINUS",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "-",
+          "dead": false,
+          "xkb_keysym": "minus"
+        },
+        {
+          "character": "_",
+          "dead": false,
+          "xkb_keysym": "underscore"
+        },
+        {
+          "character": "\\",
+          "dead": false,
+          "xkb_keysym": "backslash"
+        },
+        {
+          "character": "¿",
+          "dead": false,
+          "xkb_keysym": "questiondown"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AE12",
+      "scan_code": "0d",
+      "virtual_key": "OEM_PLUS",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "=",
+          "dead": false,
+          "xkb_keysym": "equal"
+        },
+        {
+          "character": "+",
+          "dead": false,
+          "xkb_keysym": "plus"
+        },
+        {
+          "character": null,
+          "dead": true,
+          "xkb_keysym": "dead_cedilla"
+        },
+        {
+          "character": null,
+          "dead": true,
+          "xkb_keysym": "dead_ogonek"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD01",
+      "scan_code": "10",
+      "virtual_key": "Q",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "q",
+          "dead": false,
+          "xkb_keysym": "q"
+        },
+        {
+          "character": "Q",
+          "dead": false,
+          "xkb_keysym": "Q"
+        },
+        {
+          "character": "@",
+          "dead": false,
+          "xkb_keysym": "at"
+        },
+        {
+          "character": "Ω",
+          "dead": false,
+          "xkb_keysym": "Greek_OMEGA"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD02",
+      "scan_code": "11",
+      "virtual_key": "W",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "w",
+          "dead": false,
+          "xkb_keysym": "w"
+        },
+        {
+          "character": "W",
+          "dead": false,
+          "xkb_keysym": "W"
+        },
+        {
+          "character": "ſ",
+          "dead": false,
+          "xkb_keysym": "U017F"
+        },
+        {
+          "character": "§",
+          "dead": false,
+          "xkb_keysym": "section"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD03",
+      "scan_code": "12",
+      "virtual_key": "E",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "e",
+          "dead": false,
+          "xkb_keysym": "e"
+        },
+        {
+          "character": "E",
+          "dead": false,
+          "xkb_keysym": "E"
+        },
+        {
+          "character": "€",
+          "dead": false,
+          "xkb_keysym": "EuroSign"
+        },
+        {
+          "character": "¢",
+          "dead": false,
+          "xkb_keysym": "cent"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD04",
+      "scan_code": "13",
+      "virtual_key": "R",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "r",
+          "dead": false,
+          "xkb_keysym": "r"
+        },
+        {
+          "character": "R",
+          "dead": false,
+          "xkb_keysym": "R"
+        },
+        {
+          "character": "¶",
+          "dead": false,
+          "xkb_keysym": "paragraph"
+        },
+        {
+          "character": "®",
+          "dead": false,
+          "xkb_keysym": "registered"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD05",
+      "scan_code": "14",
+      "virtual_key": "T",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "t",
+          "dead": false,
+          "xkb_keysym": "t"
+        },
+        {
+          "character": "T",
+          "dead": false,
+          "xkb_keysym": "T"
+        },
+        {
+          "character": "ŧ",
+          "dead": false,
+          "xkb_keysym": "tslash"
+        },
+        {
+          "character": "Ŧ",
+          "dead": false,
+          "xkb_keysym": "Tslash"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD06",
+      "scan_code": "15",
+      "virtual_key": "Y",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "y",
+          "dead": false,
+          "xkb_keysym": "y"
+        },
+        {
+          "character": "Y",
+          "dead": false,
+          "xkb_keysym": "Y"
+        },
+        {
+          "character": "←",
+          "dead": false,
+          "xkb_keysym": "leftarrow"
+        },
+        {
+          "character": "¥",
+          "dead": false,
+          "xkb_keysym": "yen"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD07",
+      "scan_code": "16",
+      "virtual_key": "U",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "u",
+          "dead": false,
+          "xkb_keysym": "u"
+        },
+        {
+          "character": "U",
+          "dead": false,
+          "xkb_keysym": "U"
+        },
+        {
+          "character": "↓",
+          "dead": false,
+          "xkb_keysym": "downarrow"
+        },
+        {
+          "character": "↑",
+          "dead": false,
+          "xkb_keysym": "uparrow"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD08",
+      "scan_code": "17",
+      "virtual_key": "I",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "i",
+          "dead": false,
+          "xkb_keysym": "i"
+        },
+        {
+          "character": "I",
+          "dead": false,
+          "xkb_keysym": "I"
+        },
+        {
+          "character": "→",
+          "dead": false,
+          "xkb_keysym": "rightarrow"
+        },
+        {
+          "character": "ı",
+          "dead": false,
+          "xkb_keysym": "idotless"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD09",
+      "scan_code": "18",
+      "virtual_key": "O",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "o",
+          "dead": false,
+          "xkb_keysym": "o"
+        },
+        {
+          "character": "O",
+          "dead": false,
+          "xkb_keysym": "O"
+        },
+        {
+          "character": "œ",
+          "dead": false,
+          "xkb_keysym": "oe"
+        },
+        {
+          "character": "Œ",
+          "dead": false,
+          "xkb_keysym": "OE"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD10",
+      "scan_code": "19",
+      "virtual_key": "P",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "p",
+          "dead": false,
+          "xkb_keysym": "p"
+        },
+        {
+          "character": "P",
+          "dead": false,
+          "xkb_keysym": "P"
+        },
+        {
+          "character": "þ",
+          "dead": false,
+          "xkb_keysym": "thorn"
+        },
+        {
+          "character": "Þ",
+          "dead": false,
+          "xkb_keysym": "THORN"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD11",
+      "scan_code": "1a",
+      "virtual_key": "OEM_4",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "`",
+          "dead": true,
+          "xkb_keysym": "dead_grave"
+        },
+        {
+          "character": "^",
+          "dead": true,
+          "xkb_keysym": "dead_circumflex"
+        },
+        {
+          "character": "[",
+          "dead": false,
+          "xkb_keysym": "bracketleft"
+        },
+        {
+          "character": "{",
+          "dead": false,
+          "xkb_keysym": "braceleft"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AD12",
+      "scan_code": "1b",
+      "virtual_key": "OEM_6",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "+",
+          "dead": false,
+          "xkb_keysym": "plus"
+        },
+        {
+          "character": "*",
+          "dead": false,
+          "xkb_keysym": "asterisk"
+        },
+        {
+          "character": "]",
+          "dead": false,
+          "xkb_keysym": "bracketright"
+        },
+        {
+          "character": "}",
+          "dead": false,
+          "xkb_keysym": "braceright"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC01",
+      "scan_code": "1e",
+      "virtual_key": "A",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "a",
+          "dead": false,
+          "xkb_keysym": "a"
+        },
+        {
+          "character": "A",
+          "dead": false,
+          "xkb_keysym": "A"
+        },
+        {
+          "character": "æ",
+          "dead": false,
+          "xkb_keysym": "ae"
+        },
+        {
+          "character": "Æ",
+          "dead": false,
+          "xkb_keysym": "AE"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC02",
+      "scan_code": "1f",
+      "virtual_key": "S",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "s",
+          "dead": false,
+          "xkb_keysym": "s"
+        },
+        {
+          "character": "S",
+          "dead": false,
+          "xkb_keysym": "S"
+        },
+        {
+          "character": "ß",
+          "dead": false,
+          "xkb_keysym": "ssharp"
+        },
+        {
+          "character": "ẞ",
+          "dead": false,
+          "xkb_keysym": "U1E9E"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC03",
+      "scan_code": "20",
+      "virtual_key": "D",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "d",
+          "dead": false,
+          "xkb_keysym": "d"
+        },
+        {
+          "character": "D",
+          "dead": false,
+          "xkb_keysym": "D"
+        },
+        {
+          "character": "ð",
+          "dead": false,
+          "xkb_keysym": "eth"
+        },
+        {
+          "character": "Ð",
+          "dead": false,
+          "xkb_keysym": "ETH"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC04",
+      "scan_code": "21",
+      "virtual_key": "F",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "f",
+          "dead": false,
+          "xkb_keysym": "f"
+        },
+        {
+          "character": "F",
+          "dead": false,
+          "xkb_keysym": "F"
+        },
+        {
+          "character": "đ",
+          "dead": false,
+          "xkb_keysym": "dstroke"
+        },
+        {
+          "character": "ª",
+          "dead": false,
+          "xkb_keysym": "ordfeminine"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC05",
+      "scan_code": "22",
+      "virtual_key": "G",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "g",
+          "dead": false,
+          "xkb_keysym": "g"
+        },
+        {
+          "character": "G",
+          "dead": false,
+          "xkb_keysym": "G"
+        },
+        {
+          "character": "ŋ",
+          "dead": false,
+          "xkb_keysym": "eng"
+        },
+        {
+          "character": "Ŋ",
+          "dead": false,
+          "xkb_keysym": "ENG"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC06",
+      "scan_code": "23",
+      "virtual_key": "H",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "h",
+          "dead": false,
+          "xkb_keysym": "h"
+        },
+        {
+          "character": "H",
+          "dead": false,
+          "xkb_keysym": "H"
+        },
+        {
+          "character": "ħ",
+          "dead": false,
+          "xkb_keysym": "hstroke"
+        },
+        {
+          "character": "Ħ",
+          "dead": false,
+          "xkb_keysym": "Hstroke"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC07",
+      "scan_code": "24",
+      "virtual_key": "J",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "j",
+          "dead": false,
+          "xkb_keysym": "j"
+        },
+        {
+          "character": "J",
+          "dead": false,
+          "xkb_keysym": "J"
+        },
+        {
+          "character": "̉",
+          "dead": true,
+          "xkb_keysym": "dead_hook"
+        },
+        {
+          "character": "̛",
+          "dead": true,
+          "xkb_keysym": "dead_horn"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC08",
+      "scan_code": "25",
+      "virtual_key": "K",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "k",
+          "dead": false,
+          "xkb_keysym": "k"
+        },
+        {
+          "character": "K",
+          "dead": false,
+          "xkb_keysym": "K"
+        },
+        {
+          "character": "ĸ",
+          "dead": false,
+          "xkb_keysym": "kra"
+        },
+        {
+          "character": "&",
+          "dead": false,
+          "xkb_keysym": "ampersand"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC09",
+      "scan_code": "26",
+      "virtual_key": "L",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "l",
+          "dead": false,
+          "xkb_keysym": "l"
+        },
+        {
+          "character": "L",
+          "dead": false,
+          "xkb_keysym": "L"
+        },
+        {
+          "character": "ł",
+          "dead": false,
+          "xkb_keysym": "lstroke"
+        },
+        {
+          "character": "Ł",
+          "dead": false,
+          "xkb_keysym": "Lstroke"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC10",
+      "scan_code": "27",
+      "virtual_key": "OEM_1",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "ñ",
+          "dead": false,
+          "xkb_keysym": "ntilde"
+        },
+        {
+          "character": "Ñ",
+          "dead": false,
+          "xkb_keysym": "Ntilde"
+        },
+        {
+          "character": "~",
+          "dead": true,
+          "xkb_keysym": "dead_tilde"
+        },
+        {
+          "character": "˝",
+          "dead": true,
+          "xkb_keysym": "dead_doubleacute"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AC11",
+      "scan_code": "28",
+      "virtual_key": "OEM_7",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "´",
+          "dead": true,
+          "xkb_keysym": "dead_acute"
+        },
+        {
+          "character": "¨",
+          "dead": true,
+          "xkb_keysym": "dead_diaeresis"
+        },
+        {
+          "character": "{",
+          "dead": false,
+          "xkb_keysym": "braceleft"
+        },
+        {
+          "character": "ˇ",
+          "dead": true,
+          "xkb_keysym": "dead_caron"
+        }
+      ]
+    },
+    {
+      "xkb_key": "BKSL",
+      "scan_code": "2b",
+      "virtual_key": "OEM_5",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "\\",
+          "dead": false,
+          "xkb_keysym": "backslash"
+        },
+        {
+          "character": "|",
+          "dead": false,
+          "xkb_keysym": "bar"
+        },
+        {
+          "character": null,
+          "dead": false,
+          "xkb_keysym": "braceright"
+        },
+        {
+          "character": null,
+          "dead": true,
+          "xkb_keysym": "dead_breve"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB01",
+      "scan_code": "2c",
+      "virtual_key": "Z",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "z",
+          "dead": false,
+          "xkb_keysym": "z"
+        },
+        {
+          "character": "Z",
+          "dead": false,
+          "xkb_keysym": "Z"
+        },
+        {
+          "character": "«",
+          "dead": false,
+          "xkb_keysym": "guillemotleft"
+        },
+        {
+          "character": "<",
+          "dead": false,
+          "xkb_keysym": "less"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB02",
+      "scan_code": "2d",
+      "virtual_key": "X",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "x",
+          "dead": false,
+          "xkb_keysym": "x"
+        },
+        {
+          "character": "X",
+          "dead": false,
+          "xkb_keysym": "X"
+        },
+        {
+          "character": "»",
+          "dead": false,
+          "xkb_keysym": "guillemotright"
+        },
+        {
+          "character": ">",
+          "dead": false,
+          "xkb_keysym": "greater"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB03",
+      "scan_code": "2e",
+      "virtual_key": "C",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "c",
+          "dead": false,
+          "xkb_keysym": "c"
+        },
+        {
+          "character": "C",
+          "dead": false,
+          "xkb_keysym": "C"
+        },
+        {
+          "character": "¢",
+          "dead": false,
+          "xkb_keysym": "cent"
+        },
+        {
+          "character": "©",
+          "dead": false,
+          "xkb_keysym": "copyright"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB04",
+      "scan_code": "2f",
+      "virtual_key": "V",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "v",
+          "dead": false,
+          "xkb_keysym": "v"
+        },
+        {
+          "character": "V",
+          "dead": false,
+          "xkb_keysym": "V"
+        },
+        {
+          "character": "„",
+          "dead": false,
+          "xkb_keysym": "doublelowquotemark"
+        },
+        {
+          "character": "‚",
+          "dead": false,
+          "xkb_keysym": "singlelowquotemark"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB05",
+      "scan_code": "30",
+      "virtual_key": "B",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "b",
+          "dead": false,
+          "xkb_keysym": "b"
+        },
+        {
+          "character": "B",
+          "dead": false,
+          "xkb_keysym": "B"
+        },
+        {
+          "character": "“",
+          "dead": false,
+          "xkb_keysym": "leftdoublequotemark"
+        },
+        {
+          "character": "‘",
+          "dead": false,
+          "xkb_keysym": "leftsinglequotemark"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB06",
+      "scan_code": "31",
+      "virtual_key": "N",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "n",
+          "dead": false,
+          "xkb_keysym": "n"
+        },
+        {
+          "character": "N",
+          "dead": false,
+          "xkb_keysym": "N"
+        },
+        {
+          "character": "”",
+          "dead": false,
+          "xkb_keysym": "rightdoublequotemark"
+        },
+        {
+          "character": "’",
+          "dead": false,
+          "xkb_keysym": "rightsinglequotemark"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB07",
+      "scan_code": "32",
+      "virtual_key": "M",
+      "caps_sensitive": true,
+      "levels": [
+        {
+          "character": "m",
+          "dead": false,
+          "xkb_keysym": "m"
+        },
+        {
+          "character": "M",
+          "dead": false,
+          "xkb_keysym": "M"
+        },
+        {
+          "character": "µ",
+          "dead": false,
+          "xkb_keysym": "mu"
+        },
+        {
+          "character": "º",
+          "dead": false,
+          "xkb_keysym": "masculine"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB08",
+      "scan_code": "33",
+      "virtual_key": "OEM_COMMA",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": ",",
+          "dead": false,
+          "xkb_keysym": "comma"
+        },
+        {
+          "character": ";",
+          "dead": false,
+          "xkb_keysym": "semicolon"
+        },
+        {
+          "character": "•",
+          "dead": false,
+          "xkb_keysym": "U2022"
+        },
+        {
+          "character": "×",
+          "dead": false,
+          "xkb_keysym": "multiply"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB09",
+      "scan_code": "34",
+      "virtual_key": "OEM_PERIOD",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": ".",
+          "dead": false,
+          "xkb_keysym": "period"
+        },
+        {
+          "character": ":",
+          "dead": false,
+          "xkb_keysym": "colon"
+        },
+        {
+          "character": "·",
+          "dead": false,
+          "xkb_keysym": "periodcentered"
+        },
+        {
+          "character": "÷",
+          "dead": false,
+          "xkb_keysym": "division"
+        }
+      ]
+    },
+    {
+      "xkb_key": "AB10",
+      "scan_code": "35",
+      "virtual_key": "OEM_2",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "/",
+          "dead": false,
+          "xkb_keysym": "slash"
+        },
+        {
+          "character": "?",
+          "dead": false,
+          "xkb_keysym": "question"
+        },
+        {
+          "character": "̣",
+          "dead": true,
+          "xkb_keysym": "dead_belowdot"
+        },
+        {
+          "character": "˙",
+          "dead": true,
+          "xkb_keysym": "dead_abovedot"
+        }
+      ]
+    },
+    {
+      "xkb_key": "LSGT",
+      "scan_code": "56",
+      "virtual_key": "OEM_102",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": "<",
+          "dead": false,
+          "xkb_keysym": "less"
+        },
+        {
+          "character": ">",
+          "dead": false,
+          "xkb_keysym": "greater"
+        },
+        {
+          "character": "|",
+          "dead": false,
+          "xkb_keysym": "bar"
+        },
+        {
+          "character": "¦",
+          "dead": false,
+          "xkb_keysym": "brokenbar"
+        }
+      ]
+    },
+    {
+      "xkb_key": "SPCE",
+      "scan_code": "39",
+      "virtual_key": "SPACE",
+      "caps_sensitive": false,
+      "levels": [
+        {
+          "character": " ",
+          "dead": false,
+          "xkb_keysym": "space"
+        },
+        {
+          "character": " ",
+          "dead": false,
+          "xkb_keysym": "space"
+        },
+        {
+          "character": " ",
+          "dead": false,
+          "xkb_keysym": "space"
+        },
+        {
+          "character": " ",
+          "dead": false,
+          "xkb_keysym": "space"
+        }
+      ]
+    }
+  ],
+  "compose_overrides": {
+    "dead_grave+c": "ç",
+    "dead_grave+C": "Ç",
+    "dead_grave+s": "ß"
+  },
+  "notes": [
+    "Shift+grave can generate circumflex; Shift+acute generates dieresis (unchanged V5)",
+    "Avoid overwriting Linux Compose customization."
+  ],
+  "xkb_layout": "wst",
+  "manifest_note": "Verificato contro XKB compilato V5; corretti quattro livelli ereditati omessi dal manifest originario."
+}

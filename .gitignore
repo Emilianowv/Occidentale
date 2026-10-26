@@ -1,0 +1,7 @@
+dist/
+__pycache__/
+*.pyc
+*.xkm
+core
+*.zip
+.DS_Store

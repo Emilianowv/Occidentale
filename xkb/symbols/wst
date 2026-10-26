@@ -1,0 +1,37 @@
+// Occidentale (wst), derivato da EMI / Europeo V5.
+// Mappa V5 invariata; installazione nativa e registro KDE gestiti separatamente.
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "es(basic)"
+    name[Group1] = "Occidentale";
+
+    // Nivel 1: pulsación normal, Nivel 2: Mayús. Niveles 3/4: AltGr español.
+    key <TLDE> { [ grave, asciitilde, backslash, backslash ] };
+    key <AE01> { [ 1, exclam, bar, exclamdown ] };
+    key <AE02> { [ 2, at, at, oneeighth ] };
+    key <AE03> { [ 3, numbersign, numbersign, sterling ] };
+    key <AE04> { [ 4, dollar, asciitilde, dollar ] };
+    key <AE05> { [ 5, percent, onehalf, threeeighths ] };
+    key <AE06> { [ 6, asciicircum, notsign, fiveeighths ] };
+    key <AE07> { [ 7, ampersand, braceleft, seveneighths ] };
+    key <AE08> { [ 8, asterisk, bracketleft, trademark ] };
+    key <AE09> { [ 9, parenleft, bracketright, plusminus ] };
+    key <AE10> { [ 0, parenright, braceright, degree ] };
+    key <AE11> { [ minus, underscore, backslash, questiondown ] };
+    key <AE12> { [ equal, plus ] }; // Primi livelli US; livelli 3/4 ereditati.
+
+    // Tasti di punteggiatura: posizioni statunitensi, senza alterare gli accenti.
+    // Ç/ç si ottengono invece con accento grave + C/c via ~/.XCompose.
+    key <BKSL> { [ backslash, bar ] }; // US: tasto che prima dava ç
+    key <AB10> { [ slash, question, dead_belowdot, dead_abovedot ] };
+
+    // Legature: A aveva già ae/AE in es(basic), ora dichiarate esplicitamente.
+    // O: sostituisce oslash/Oslash di es(basic) con oe/OE.
+    key <AC01> { [ a, A, ae, AE ] };
+    key <AD09> { [ o, O, oe, OE ] };
+
+    // AltGr (Alt destro) + Shift: parentesi graffe sui tasti ` e +.
+    // Conservare dead_grave, dead_circumflex e i livelli AltGr senza Shift.
+    key <AD11> { [ dead_grave, dead_circumflex, bracketleft, braceleft ] };
+    key <AD12> { [ plus, asterisk, bracketright, braceright ] };
+};

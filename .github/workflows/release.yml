@@ -1,0 +1,23 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    container: debian:13
+    steps:
+      - run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git make python3 libxkbcommon-tools xkb-data x11-xkb-utils dpkg-dev
+      - uses: actions/checkout@v4
+      - name: Check tag matches VERSION
+        run: test "$GITHUB_REF_NAME" = "v$(cat VERSION)"
+      - run: make build
+      - run: python3 scripts/test_deb.py --live
+      - name: Create draft release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          files: dist/*
+          body_path: docs/RELEASE.md

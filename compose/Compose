@@ -1,0 +1,6 @@
+# BEGIN OCCIDENTALE WST
+<dead_grave> <c> : "ç" ccedilla
+<dead_grave> <C> : "Ç" Ccedilla
+<dead_grave> <s> : "ß" ssharp
+<dead_grave> <S> : "ẞ" U1E9E
+# END OCCIDENTALE WST

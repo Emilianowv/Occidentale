@@ -1,0 +1,21 @@
+name: Verify Debian 13
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  debian13:
+    runs-on: ubuntu-latest
+    container: debian:13
+    steps:
+      - name: Install test tools
+        run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git make python3 libxkbcommon-tools xkb-data x11-xkb-utils dpkg-dev
+      - uses: actions/checkout@v4
+      - run: make build
+      - name: Exercise real Debian package lifecycle
+        run: python3 scripts/test_deb.py --live
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Occidentale-packages
+          path: dist/

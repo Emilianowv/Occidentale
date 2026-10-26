@@ -1,0 +1,514 @@
+#!/usr/bin/env python3
+"""Occidentale: installazione nativa e configurazione KDE senza interfaccia grafica.
+
+Solo libreria standard Python. Ogni mutazione ha preflight, lock, snapshot,
+scrittura atomica e rollback in caso di eccezione.
+"""
+import argparse
+import base64
+import contextlib
+import datetime
+import fcntl
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import shutil
+import stat
+import subprocess
+import sys
+import tempfile
+import uuid
+import xml.etree.ElementTree as ET
+
+DATA = Path(__file__).resolve().parent
+BEGIN = '# BEGIN OCCIDENTALE WST'
+END = '# END OCCIDENTALE WST'
+XML_BEGIN = '<!-- BEGIN OCCIDENTALE WST -->'
+XML_END = '<!-- END OCCIDENTALE WST -->'
+
+
+class Error(Exception):
+    pass
+
+
+def safe_path(path):
+    """Refuse links in the path, including links to absent files."""
+    path = Path(path).absolute()
+    for item in (path, *path.parents):
+        if item.is_symlink():
+            raise Error(f'Link simbolico non supportato: {item}')
+    if path.exists() and not path.is_file():
+        raise Error(f'Non è un file regolare: {path}')
+    return path
+
+
+def snapshot(path):
+    path = safe_path(path)
+    if not path.exists():
+        return None
+    return {'data': base64.b64encode(path.read_bytes()).decode(),
+            'mode': stat.S_IMODE(path.stat().st_mode)}
+
+
+def content(snap):
+    return b'' if snap is None else base64.b64decode(snap['data'])
+
+
+def encoded(data, mode=0o644):
+    return {'data': base64.b64encode(data).decode(), 'mode': mode}
+
+
+def atomic(path, snap):
+    path = safe_path(path)
+    if snap is None:
+        path.unlink(missing_ok=True)
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, name = tempfile.mkstemp(prefix='.occidentale-', dir=path.parent)
+    try:
+        with os.fdopen(fd, 'wb') as f:
+            os.fchmod(f.fileno(), snap['mode'])
+            f.write(content(snap))
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(name, path)
+    finally:
+        Path(name).unlink(missing_ok=True)
+
+
+@contextlib.contextmanager
+def locked(state):
+    # Lock directory must itself not be a symlink.
+    safe_path(state / 'lock')
+    state.mkdir(parents=True, exist_ok=True, mode=0o700)
+    with (state / 'lock').open('a') as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        yield
+
+
+def load_state(state):
+    path = safe_path(state / 'state.json')
+    return json.loads(path.read_text()) if path.exists() else {'originals': {}, 'installed': {}}
+
+
+def change(state, label, plans, new_state):
+    plans = {str(safe_path(p)): s for p, s in plans.items()}
+    statefile = str(state / 'state.json')
+    plans[statefile] = encoded((json.dumps(new_state, indent=2) + '\n').encode(), 0o600)
+    before = {p: snapshot(p) for p in plans}
+    plans = {p: s for p, s in plans.items() if s != before[p]}
+    if not plans:
+        print('Già aggiornato; nessuna modifica.')
+        return
+    before = {p: before[p] for p in plans}
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    backup = state / 'backups' / (stamp + '-' + uuid.uuid4().hex[:8])
+    safe_path(backup / 'manifest.json')
+    backup.mkdir(parents=True, mode=0o700)
+    manifest = {'operation': label, 'before': before, 'after': plans, 'status': 'pending'}
+    atomic(backup / 'manifest.json', encoded(json.dumps(manifest, indent=2).encode(), 0o600))
+    try:
+        for p, s in plans.items():
+            atomic(p, s)
+    except BaseException:
+        for p, s in reversed(list(before.items())):
+            atomic(p, s)
+        manifest['status'] = 'rolled-back'
+        atomic(backup / 'manifest.json', encoded(json.dumps(manifest).encode(), 0o600))
+        raise
+    manifest['status'] = 'complete'
+    atomic(backup / 'manifest.json', encoded(json.dumps(manifest, indent=2).encode(), 0o600))
+    print(f'OK: {label}. Backup: {backup.name}')
+
+
+def remember(state, path, new, role):
+    key = str(path)
+    if key not in state['originals']:
+        state['originals'][key] = snapshot(path)
+    state['installed'][key] = new
+    state.setdefault('roles', {})[key] = role
+
+
+def replace_block(text, start, end, block):
+    if text.count(start) != text.count(end) or text.count(start) > 1:
+        raise Error(f'Blocco incompleto o duplicato: {start}')
+    if start in text:
+        first, last = text.index(start), text.index(end)
+        if last < first:
+            raise Error('Marcatori in ordine errato')
+        last += len(end)
+        if text[last:last+1] == '\n':
+            last += 1
+        return text[:first] + block + text[last:]
+    return text
+
+
+def registry_merge(old):
+    template = (DATA / 'xkb/rules/evdev.xml').read_text()
+    block = template[template.index(XML_BEGIN):template.index(XML_END)+len(XML_END)] + '\n'
+    if not old:
+        return template
+    root = ET.fromstring(old)
+    if root.tag != 'xkbConfigRegistry' or root.find('layoutList') is None:
+        raise Error('Catalogo XKB non supportato')
+    if XML_BEGIN in old:
+        result = replace_block(old, XML_BEGIN, XML_END, block)
+    else:
+        if any(x.text == 'wst' for x in root.findall('./layoutList/layout/configItem/name')):
+            raise Error('Il catalogo contiene già un wst non gestito da Occidentale')
+        if '</layoutList>' not in old:
+            raise Error('Catalogo XKB senza chiusura layoutList esplicita')
+        result = old.replace('</layoutList>', block + '</layoutList>', 1)
+    ET.fromstring(result)
+    return result
+
+
+def compile_map(layout='wst', variant='', options='', include=None, model='pc105'):
+    cmd = ['xkbcli', 'compile-keymap', '--include', str(include or DATA / 'xkb'),
+           '--include-defaults', '--rules', 'evdev', '--model', model,
+           '--layout', layout, '--variant', variant, '--options', options]
+    try:
+        p = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
+    except FileNotFoundError as exc:
+        raise Error('Installa libxkbcommon-tools: manca xkbcli') from exc
+    except subprocess.CalledProcessError as exc:
+        raise Error('Compilazione XKB fallita:\n' + exc.stderr.decode()) from exc
+    if not p.stdout:
+        raise Error('Compilatore XKB senza output')
+    return p.stdout
+
+
+def system_paths(args):
+    root = Path(args.root).absolute()
+    if root == Path('/') and os.geteuid() != 0 and args.command not in ('doctor', 'test'):
+        raise Error('Per il sistema usa sudo; per i comandi utente non usare sudo.')
+    return root, root / 'var/lib/occidentale', root / 'usr/share/X11/xkb/symbols/wst', root / 'etc/xkb/rules/evdev.xml'
+
+
+def system_install(args):
+    root, state_dir, symbols, registry = system_paths(args)
+    compile_map()
+    with locked(state_dir):
+        state = load_state(state_dir)
+        symbol_data = encoded((DATA / 'xkb/symbols/wst').read_bytes())
+        for path in (symbols, registry):
+            safe_path(path)
+        if symbols.exists() and str(symbols) not in state['installed'] and snapshot(symbols) != symbol_data:
+            raise Error('symbols/wst esiste già: conflitto, nessun file sovrascritto')
+        if str(symbols) in state['installed'] and snapshot(symbols) != state['installed'][str(symbols)]:
+            raise Error('symbols/wst modificato esternamente: salva o ripristina prima di aggiornare')
+        registry_data = encoded(registry_merge(content(snapshot(registry)).decode()).encode(),
+                                snapshot(registry)['mode'] if registry.exists() else 0o644)
+        remember(state, symbols, symbol_data, 'symbols')
+        remember(state, registry, registry_data, 'registry')
+        change(state_dir, 'system-install', {symbols: symbol_data, registry: registry_data}, state)
+    print('Layout nativo wst installato. Ogni utente esegue user-install e kde-select.')
+
+
+def system_remove(args):
+    _, state_dir, symbols, registry = system_paths(args)
+    with locked(state_dir):
+        state = load_state(state_dir)
+        plans = {}
+        for path in (symbols, registry):
+            key = str(path)
+            if key not in state['originals']:
+                continue
+            current = snapshot(path)
+            if current == state['installed'][key] or current is None:
+                plans[path] = state['originals'][key]
+            elif path == registry:
+                text = content(current).decode()
+                if XML_BEGIN not in text:
+                    raise Error('Catalogo modificato senza marcatori: intervento manuale necessario')
+                text = replace_block(text, XML_BEGIN, XML_END, '')
+                ET.fromstring(text)
+                plans[path] = encoded(text.encode(), current['mode'])
+            else:
+                raise Error(f'{path} modificato esternamente: rimozione annullata')
+        change(state_dir, 'system-remove', plans, {'originals': {}, 'installed': {}})
+    print('Rimozione sistema completata. I backup restano disponibili.')
+
+
+def user_paths(args):
+    if os.geteuid() == 0 and args.home is None:
+        raise Error('Esegui i comandi utente senza sudo (oppure specifica --home per test isolati).')
+    home = Path(args.home or Path.home()).absolute()
+    config = Path(args.config_home or (home / '.config' if args.home else os.environ.get('XDG_CONFIG_HOME', home / '.config'))).absolute()
+    state = (home / '.local/state' if args.home else Path(os.environ.get('XDG_STATE_HOME', home / '.local/state'))) / 'occidentale'
+    custom = os.environ.get('XCOMPOSEFILE')
+    compose = Path(custom).absolute() if custom and not args.home else home / '.XCompose'
+    return home, config, state, compose
+
+
+def user_install(args):
+    _, _, state_dir, compose = user_paths(args)
+    compile_map()
+    with locked(state_dir):
+        state = load_state(state_dir)
+        old = snapshot(compose)
+        text = content(old).decode()
+        block = (DATA / 'compose/Compose').read_text()
+        if BEGIN in text:
+            text = replace_block(text, BEGIN, END, block)
+        else:
+            if END in text:
+                raise Error('Blocco Compose incompleto')
+            # Do not enable %L in an existing custom file: preserve its semantics.
+            if old is None:
+                text = 'include "%L"\n'
+            if text and not text.endswith('\n'):
+                text += '\n'
+            text += block
+        # Compile exactly the resulting file before writing it.
+        verify_compose(text)
+        new = encoded(text.encode(), old['mode'] if old else 0o644)
+        remember(state, compose, new, 'compose')
+        change(state_dir, 'user-install', {compose: new}, state)
+    print('Compose pronto. Esci dalla sessione KDE e rientra per ricaricarlo in tutte le applicazioni.')
+
+
+def verify_compose(text):
+    import ctypes as C
+    lib = C.CDLL('libxkbcommon.so.0')
+    lib.xkb_context_new.argtypes = [C.c_int]
+    lib.xkb_context_new.restype = C.c_void_p
+    lib.xkb_context_unref.argtypes = [C.c_void_p]
+    lib.xkb_compose_table_new_from_buffer.argtypes = [C.c_void_p, C.c_char_p, C.c_size_t, C.c_char_p, C.c_int, C.c_int]
+    lib.xkb_compose_table_new_from_buffer.restype = C.c_void_p
+    lib.xkb_compose_table_unref.argtypes = [C.c_void_p]
+    ctx = lib.xkb_context_new(0)
+    data = text.encode()
+    table = lib.xkb_compose_table_new_from_buffer(ctx, data, len(data), b'en_US.UTF-8', 1, 0)
+    if table:
+        lib.xkb_compose_table_unref(table)
+    lib.xkb_context_unref(ctx)
+    if not table:
+        raise Error('Il file Compose risultante non compila')
+
+
+def section_values(text):
+    inside = False
+    result = {}
+    for line in text.splitlines():
+        if line.startswith('['):
+            if line.startswith('[Layout]') and '[$i]' in line:
+                raise Error('Sezione Layout KDE immutabile: modifica annullata')
+            inside = line.strip() == '[Layout]'
+        elif inside and '=' in line and not line.lstrip().startswith(('#', ';')):
+            key, value = line.split('=', 1)
+            if '[$i]' in key:
+                raise Error('Configurazione KDE immutabile: modifica annullata')
+            if '[$' in key and key.split('[', 1)[0].strip() in ('LayoutList', 'VariantList', 'DisplayNames', 'Use', 'Model', 'Options'):
+                raise Error('Chiave KDE con espansione speciale: modifica manuale necessaria')
+            result[key.strip()] = value.strip()
+    return result
+
+
+def edit_section(text, updates):
+    lines = text.splitlines(keepends=True)
+    headers = [i for i, line in enumerate(lines) if line.strip() == '[Layout]']
+    if len(headers) > 1:
+        raise Error('Più sezioni Layout: configurazione ambigua')
+    if not headers:
+        if text and not text.endswith('\n'):
+            text += '\n'
+        return text + '[Layout]\n' + ''.join(f'{k}={v}\n' for k, v in updates.items())
+    first = headers[0]
+    last = next((i for i in range(first+1, len(lines)) if lines[i].startswith('[')), len(lines))
+    output = []
+    remaining = dict(updates)
+    for line in lines[first+1:last]:
+        key = line.split('=', 1)[0].strip() if '=' in line and not line.lstrip().startswith(('#', ';')) else None
+        if key in updates:
+            if key in remaining:
+                output.append(f'{key}={remaining.pop(key)}\n')
+        else:
+            output.append(line)
+    if output and not output[-1].endswith('\n'):
+        output[-1] += '\n'
+    output.extend(f'{k}={v}\n' for k, v in remaining.items())
+    return ''.join(lines[:first+1] + output + lines[last:])
+
+
+def layout_rows(values):
+    layouts = values.get('LayoutList', '').split(',')
+    variants = values.get('VariantList', '').split(',')
+    names = values.get('DisplayNames', '').split(',')
+    return [(x, variants[i] if i < len(variants) else '', names[i] if i < len(names) else '')
+            for i, x in enumerate(layouts) if x]
+
+
+def kde_select(args):
+    _, config, state_dir, _ = user_paths(args)
+    _, _, symbols, _ = system_paths_for_read(args)
+    if not symbols.is_file():
+        raise Error('Installa prima il layout nativo con system-install')
+    with locked(state_dir):
+        state = load_state(state_dir)
+        path = config / 'kxkbrc'
+        old = snapshot(path)
+        text = content(old).decode()
+        values = section_values(text)
+        rows = [r for r in layout_rows(values) if r[0] != 'wst' and r[0] not in args.replace]
+        # Keep the original layouts as fallbacks; never silently truncate them.
+        rows.insert(0, ('wst', '', 'wst'))
+        if len(rows) > 4:
+            raise Error('Limite X11 di 4 layout: rimuovi un layout o usa --replace ID')
+        layouts, variants, names = (','.join(r[i] for r in rows) for i in range(3))
+        model = values.get('Model', 'pc105')
+        options = values.get('Options', '')
+        # Use the actual native symbols, including other user layouts/fallbacks.
+        compile_map(layouts, variants, options, include=symbols.parent.parent, model=model)
+        # User overrides could shadow the installed native layout.
+        shadow = config / 'xkb/symbols/wst'
+        if shadow.exists() and shadow.read_bytes() != symbols.read_bytes():
+            raise Error('Un wst utente nasconde quello nativo: salva e rimuovi il file prima di selezionare')
+        for base in (config / 'xkb', Path(args.home or Path.home()) / '.xkb'):
+            custom = base / 'symbols/wst'
+            if custom.exists() and custom.read_bytes() != symbols.read_bytes():
+                raise Error(f'Override wst incompatibile: {custom}')
+            if (base / 'rules/evdev').exists():
+                compile_map(layouts, variants, options, include=base, model=model)
+        new = encoded(edit_section(text, {'LayoutList': layouts, 'VariantList': variants,
+                      'DisplayNames': names, 'Use': 'true'}).encode(), old['mode'] if old else 0o600)
+        remember(state, path, new, 'kde')
+        change(state_dir, 'kde-select', {path: new}, state)
+    print('KDE: Occidentale (wst) configurato come primo layout. Esci dalla sessione e rientra.')
+
+
+def system_paths_for_read(args):
+    root = Path(args.root).absolute()
+    return root, root / 'var/lib/occidentale', root / 'usr/share/X11/xkb/symbols/wst', root / 'etc/xkb/rules/evdev.xml'
+
+
+def user_remove(args):
+    _, config, state_dir, compose = user_paths(args)
+    with locked(state_dir):
+        state = load_state(state_dir)
+        plans = {}
+        # Include previously managed XCOMPOSEFILE, even if the environment changed.
+        for key, original in state['originals'].items():
+            path = Path(key)
+            current = snapshot(path)
+            if current == state['installed'][key] or current is None:
+                plans[path] = original
+            elif state.get('roles', {}).get(key) == 'kde' or path == config / 'kxkbrc':
+                text = content(current).decode()
+                values = section_values(text)
+                rows = [r for r in layout_rows(values) if r[0] != 'wst']
+                if not rows:
+                    # Valid fallback when the user had no prior KDE configuration.
+                    rows = [('us', '', '')]
+                updates = {name: ','.join(r[i] for r in rows) for i, name in enumerate(('LayoutList', 'VariantList', 'DisplayNames'))}
+                plans[path] = encoded(edit_section(text, updates).encode(), current['mode'])
+            else:
+                text = content(current).decode()
+                plans[path] = encoded(replace_block(text, BEGIN, END, '').encode(), current['mode'])
+        change(state_dir, 'user-remove', plans, {'originals': {}, 'installed': {}})
+    print('Configurazione utente rimossa. Esci dalla sessione e rientra prima di rimuovere il pacchetto.')
+
+
+def restore(args):
+    if args.scope == 'system':
+        _, state_dir, _, _ = system_paths(args)
+    else:
+        _, _, state_dir, _ = user_paths(args)
+    with locked(state_dir):
+        backups = state_dir / 'backups'
+        if args.backup:
+            if not re.fullmatch(r'[0-9]{8}T[0-9]{12}Z-[0-9a-f]{8}', args.backup):
+                raise Error('Identificatore backup non valido')
+            candidates = [backups / args.backup / 'manifest.json']
+        else:
+            candidates = sorted(backups.glob('*/manifest.json'), reverse=True)
+        target = None
+        for item in candidates:
+            m = json.loads(safe_path(item).read_text())
+            if m['status'] == 'complete' and not m['operation'].startswith('restore:'):
+                target = (item, m)
+                break
+        if target is None:
+            raise Error('Nessun backup ripristinabile')
+        item, m = target
+        for p, expected in m['after'].items():
+            if snapshot(p) != expected:
+                raise Error(f'Modifiche successive in {p}: ripristino annullato senza sovrascrivere')
+        plans = dict(m['before'])
+        statefile = str(state_dir / 'state.json')
+        state = json.loads(content(plans.pop(statefile)).decode()) if plans.get(statefile) else {'originals': {}, 'installed': {}}
+        change(state_dir, 'restore:' + item.parent.name, plans, state)
+        m['status'] = 'restored'
+        atomic(item, encoded(json.dumps(m, indent=2).encode(), 0o600))
+    print('Ripristino completato; esci dalla sessione e rientra se hai cambiato KDE/Compose.')
+
+
+def doctor(args):
+    _, _, symbols, registry = system_paths_for_read(args)
+    _, config, state_dir, compose = user_paths(args)
+    checks = {'native_symbols': symbols.is_file(), 'registry': registry.is_file(),
+              'compose': BEGIN in content(snapshot(compose)).decode(),
+              'kde_selected': 'wst' in section_values(content(snapshot(config / 'kxkbrc')).decode()).get('LayoutList', '').split(',')}
+    if checks['native_symbols']:
+        compile_map(include=symbols.parent.parent)
+        checks['native_compile'] = True
+    if checks['registry']:
+        result = subprocess.run(['xkbcli', 'list', '--skip-default-paths', '/usr/share/X11/xkb',
+                                 str(registry.parent.parent)], capture_output=True, text=True, check=True)
+        checks['registry_discovery'] = bool(re.search(r"^\s*- layout: ['\"]?wst['\"]?\s*$", result.stdout, re.M))
+    if checks['compose']:
+        verify_compose(compose.read_text())
+    for p in (config / 'xkb/rules/evdev', config / 'xkb/rules/evdev.xml', config / 'xkb/symbols/wst'):
+        if p.exists():
+            print(f'Override da controllare: {p}')
+    print(json.dumps({'session': os.environ.get('XDG_SESSION_TYPE', 'unknown'),
+                      'checks': checks, 'backups': str(state_dir / 'backups')}, indent=2))
+    return 0 if all(checks.values()) else 1
+
+
+def backups(args):
+    if args.scope == 'system':
+        _, state_dir, _, _ = system_paths(args)
+    else:
+        _, _, state_dir, _ = user_paths(args)
+    for item in sorted((state_dir / 'backups').glob('*/manifest.json')):
+        m = json.loads(safe_path(item).read_text())
+        print(f"{item.parent.name}  {m['status']}  {m['operation']}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--root', default='/', help='radice sistema alternativa per staging/test')
+    parser.add_argument('--home', help='home alternativa per test isolati')
+    parser.add_argument('--config-home', help='directory configurazione utente alternativa')
+    sub = parser.add_subparsers(dest='command', required=True)
+    for name in ('test', 'system-install', 'system-remove', 'user-install', 'user-remove', 'doctor'):
+        sub.add_parser(name)
+    select = sub.add_parser('kde-select')
+    select.add_argument('--replace', action='append', default=[], metavar='ID', help='sostituisce esplicitamente un vecchio layout (es. emius)')
+    rollback = sub.add_parser('restore')
+    rollback.add_argument('--scope', choices=('user', 'system'), default='user')
+    rollback.add_argument('--backup', help='ID snapshot; predefinito: ultimo non ripristinato')
+    listing = sub.add_parser('backups')
+    listing.add_argument('--scope', choices=('user', 'system'), default='user')
+    args = parser.parse_args()
+    try:
+        if args.command == 'test':
+            compile_map()
+            compile_map('es,wst,us', ',,')
+            verify_compose('include "%L"\n' + (DATA / 'compose/Compose').read_text())
+            print('OK: compilazione wst, es+wst+us e Compose (nessuna attivazione).')
+            return 0
+        funcs = {'system-install': system_install, 'system-remove': system_remove,
+                 'user-install': user_install, 'user-remove': user_remove,
+                 'kde-select': kde_select, 'restore': restore, 'doctor': doctor, 'backups': backups}
+        return funcs[args.command](args) or 0
+    except (Error, OSError, ValueError, ET.ParseError) as exc:
+        print(f'ERRORE: {exc}', file=sys.stderr)
+        return 1
+
+
+if __name__ == '__main__':
+    sys.exit(main())

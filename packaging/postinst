@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+case "$1" in
+    configure) python3 "${DPKG_ROOT:-}/usr/share/occidentale/occidentale" --root "${DPKG_ROOT:-/}" system-install ;;
+esac
