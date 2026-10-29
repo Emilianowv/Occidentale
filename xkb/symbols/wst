@@ -1,9 +1,9 @@
-// Occidentale (wst), derivato da EMI / Europeo V5.
-// Base V5; dalla 6.1 la posizione di Ñ diventa ;/: (ñ via grave morto+n).
+// RomanceScript (wst). Procedencia y derechos en COPYRIGHT.
+// Restablecer ñ/Ñ y la puntuación de Mayús+coma y Mayús+punto.
 default partial alphanumeric_keys
 xkb_symbols "basic" {
     include "es(basic)"
-    name[Group1] = "Occidentale";
+    name[Group1] = "RomanceScript";
 
     // Nivel 1: pulsación normal, Nivel 2: Mayús. Niveles 3/4: AltGr español.
     // Signos de apertura accesibles debajo de Escape.
@@ -25,20 +25,20 @@ xkb_symbols "basic" {
     // Ç/ç si ottengono invece con accento grave + C/c via ~/.XCompose.
     key <BKSL> { [ backslash, bar ] }; // US: tasto che prima dava ç
     key <AB10> { [ slash, question, dead_belowdot, dead_abovedot ] };
-    // Prefisso distinto dall'agudo per conservare ś/Ś dopo Shift+virgola.
-    key <AB08> { [ comma, dead_abovecomma, U2022, multiply ] };
-    // Carón con Mayús+punto; los dos puntos siguen en Mayús+AC10.
-    key <AB09> { [ period, dead_caron, periodcentered, division ] };
+    // Coma y punto y coma en su posición original.
+    key <AB08> { [ comma, semicolon, U2022, multiply ] };
+    // Punto y dos puntos en su posición original.
+    key <AB09> { [ period, colon, periodcentered, division ] };
 
     // Legature: A aveva già ae/AE in es(basic), ora dichiarate esplicitamente.
     // O: sostituisce oslash/Oslash di es(basic) con oe/OE.
     key <AC01> { [ a, A, ae, AE ] };
     key <AD09> { [ o, O, oe, OE ] };
-    // Punteggiatura sulla fila centrale; conservare tilde e doppio acuto morti.
-    key <AC10> { [ semicolon, colon, dead_tilde, dead_doubleacute ] };
+    // Eñe directa; conservar los niveles AltGr anteriores.
+    key <AC10> { [ ntilde, Ntilde, dead_tilde, dead_doubleacute ] };
 
     // AltGr (Alt destro) + Shift: parentesi graffe sui tasti ` e +.
     // Grave e tilde morti; il circonflesso morto è ora su Shift+6.
     key <AD11> { [ dead_grave, dead_tilde, bracketleft, braceleft ] };
-    key <AD12> { [ dead_abovering, dead_macron, bracketright, braceright ] };
+    key <AD12> { [ dead_breve, dead_belowcomma, bracketright, braceright ] };
 };

@@ -1,33 +1,21 @@
-# Verifiche del 26 ottobre 2026
+# Pruebas de RomanceScript 7.0
 
-Ambiente reale: Debian GNU/Linux 13, Plasma/KWin 6.3.6, libxkbcommon 1.7.0, xkb-data 2.42, x11-xkb-utils 7.7.
+Las comprobaciones usan el motor real libxkbcommon y las tablas Compose de Linux. El entorno de referencia es Debian 13 con KDE Plasma 6. Las pruebas no instalan el teclado en el escritorio abierto.
 
-| Controllo | Esito |
-|---|---|
-| Confronto V5 originale → wst **6.0**, 49 tasti × 4 stati | 196 risultati identici; verifica storica |
-| Test automatici di layout e gestore 6.2 | 29 test locali superati; workflow remoto consultabile nelle Actions del repository |
-| Accenti gravi, acuti, circonflessi e dieresi | 40 combinazioni maiuscole/minuscole verificate tramite libxkbcommon Compose |
-| Grave+c/C, grave+s/S e grave+n/N | ç/Ç, ß/ẞ e ñ/Ñ verificati da sequenze di tasti fisici |
-| Legature, ñ, ASCII, livelli AltGr | Inclusi nei 196 controlli del manifesto |
-| Caps Lock, Control e accenti seguiti da spazio | Superati |
-| Compilazione X11 con xkbcomp | File XKM generato e riletto |
-| Scoperta KDE tramite libxkbregistry | Occidentale/wst presente nell'elenco xkbcli usando il registro aggiuntivo |
-| KWin 6 isolato su Wayland | Avviato; letta tramite wl_keyboard la mappa inviata dal compositore; 196 stati corretti |
-| Server X11 temporaneo | Xwayland indipendente con -nokeymap; mappa caricata con xkbcomp e riletta dal server; 196 stati corretti |
-| Backup, reinstallazione, aggiornamento, restore, rimozione | Verificati in directory temporanee, con confronto dei byte |
-| Modifiche successive personali | Compose, opzioni KDE e altre voci del registro conservate |
-| Conflitti, link simbolici e blocchi incompleti | Rifiutati senza sovrascrivere i dati |
-| Errore di scrittura simulato | Rollback dei file già modificati verificato |
-| Pacchetto Debian con dpkg reale e fakeroot | Installazione, reinstallazione, rimozione, purge e compilazione del payload installato superati in radice temporanea |
-| Archivi ZIP/TAR e pacchetto .deb | Build deterministico e checksum verificati |
-| Sorgente Windows | 49 posizioni e combinazioni essenziali controllate staticamente |
-| Shift+punto, carón 6.2 | č š ž ě ď ť ň ř ľ e maiuscole verificati; anche sul keymap esportato da KWin e riletto da X11 |
-| Sotto Escape 6.2 | ¿/¡ senza/con Shift; livelli AltGr invariati |
-| Confronto 6.1 → 6.2 | Cambiano solo TLDE livelli 1/2 e AB09 livello 2; tutti i 571 risultati accessibili precedenti restano disponibili |
+## Qué se comprueba
 
-La sessione KWin dei test usa home, configurazione, runtime e bus D-Bus temporanei; non è stata modificata la disposizione del desktop aperto. Il test Wayland verifica il caricamento di `kxkbrc` nel compositore e il contenuto esportato al client. Compose viene poi verificato con la tabella dell'utente di prova; non è una simulazione di digitazione in ogni applicazione grafica.
+- Las 49 posiciones en cuatro niveles: 196 estados contra el manifiesto.
+- ñ/Ñ, ;/:, ¿/¡ y los niveles AltGr conservados.
+- Los acentos de vocales, las ligaduras œ/Œ y æ/Æ, ç/Ç y ß/ẞ.
+- Breve+a/A → ă/Ă y Mayús+esa tecla seguido de s/S o t/T → ș/Ș y ț/Ț.
+- Bloq Mayús, Control y los símbolos literales mediante acento seguido de Espacio.
+- Las letras principales de español, portugués, francés, italiano, rumano y catalán, incluidas las mayúsculas. La puntuación y los caracteres auxiliares se muestran aparte.
+- Instalación, repetición, actualización del bloque anterior, respaldo, recuperación, conflictos y retirada en directorios temporales.
+- Compilación X11 y comparación del mapa exportado por un KWin Wayland aislado y de un mapa cargado y releído en un servidor Xwayland independiente.
+- Instalación, reinstalación y retirada del paquete con dpkg en una raíz temporal. El workflow Debian añade un ciclo en un contenedor desechable.
+- Las posiciones y tablas principales del archivo Windows, mediante controles estáticos.
 
-## Riprodurre i test
+## Reproducir las pruebas
 
 ```bash
 sudo apt install make python3 libxkbcommon-tools xkb-data x11-xkb-utils dpkg-dev fakeroot
@@ -36,49 +24,30 @@ make build
 python3 scripts/test_deb.py
 ```
 
-Il test dpkg opera in una radice temporanea con gli script di manutenzione reali, eseguiti in modalità chrootless e con le librerie dell'host; la dipendenza dal database di pacchetti vuoto viene esclusa soltanto per quel test. Il workflow Debian esegue inoltre `scripts/test_deb.py --live` in un container usa e getta, senza queste esclusioni.
+El test dpkg temporal utiliza fakeroot y las herramientas del sistema anfitrión. El modo `--live` está reservado a contenedores desechables: no debe ejecutarse en el sistema del usuario.
 
-Per KWin e X11 isolati servono anche:
+Para KWin y X11 aislados:
 
 ```bash
 sudo apt install kwin-wayland xwayland dbus gcc pkg-config libwayland-dev fuse3
 python3 scripts/test_kwin.py
 ```
 
-I test KWin e fakeroot richiedono risorse IPC vietate da alcuni sandbox. In quel caso vanno eseguiti nel normale terminale; non servono privilegi root. I file temporanei e i processi vengono rimossi al termine.
+Estos tests necesitan sockets e IPC que algunos entornos aislados bloquean. Los procesos y los archivos temporales se retiran al terminar.
 
-## Limiti del collaudo
+## Límites
 
-- Non è stata aperta una sessione completa Plasma **Xorg**: il protocollo X11 è stato provato con un server Xwayland indipendente e il formato XKB con xkbcomp.
-- La ricerca nel catalogo è stata verificata attraverso la stessa libreria usata da KDE; non è stata completata una selezione manuale nella finestra del KCM.
-- Firefox, Chromium, LibreOffice, applicazioni Qt/GTK con IBus/Fcitx, login SDDM e console Linux non sono dichiarati collaudati con digitazione reale. Il progetto non cambia SDDM né console.
-- Il sorgente Windows non è compilato o installato e mantiene le differenze descritte nella sua guida.
-- I workflow GitHub preparati non si considerano eseguiti finché non compare un risultato remoto effettivo.
+No se ha abierto una sesión completa Plasma Xorg para estas pruebas: X11 se comprueba mediante un servidor Xwayland independiente. El catálogo se comprueba con libxkbregistry; esto no equivale a completar una selección manual en cada interfaz de escritorio.
 
-Per il collaudo finale nelle applicazioni, dopo il nuovo accesso scrivere:
+La compilación y el mapa correcto no garantizan la escritura en todas las aplicaciones, especialmente si utilizan su propio método de entrada. Tras instalar, cerrar sesión y volver a entrar, conviene escribir en las aplicaciones habituales:
 
 ```text
-à è ì ò ù À È Ì Ò Ù
-á é í ó ú Á É Í Ó Ú
-ä ë ï ö ü Ä Ë Ï Ö Ü
-â ê î ô û Â Ê Î Ô Û
-ç Ç ß ẞ œ Œ æ Æ ñ Ñ
-¿ ¡ č š ž ě ď ť ň ř ľ Č Š Ž Ě Ď Ť Ň Ř Ľ
-[] {} / ? \ | @ # €
+ñ Ñ ç Ç ß ẞ œ Œ æ Æ
+á é í ó ú À È Ì Ò Ù
+ã õ â ê î ô û ä ë ï ö ü ÿ
+ă Ă ș Ș ț Ț l·l ¿ ¡ ; :
 ```
 
-Controllare inoltre copia/incolla/annulla, Alt+Tab, Caps Lock, cambio tra layout alternativi e recupero della configurazione precedente.
+El archivo Windows no está compilado, instalado ni probado escribiendo en Windows. Sus controles estáticos no sustituyen ese trabajo.
 
-## Cambio 6.1
-
-La posizione AC10 ora produce punto e virgola e due punti senza/con Shift. I livelli AltGr conservano tilde morta e doppio acuto. Shift+virgola è il prefisso per ś/Ś; Shift+punto resta invariato. Il test dei 196 stati usa il manifesto aggiornato; non viene più dichiarata identità completa con V5. L’inventario CLDR è riproducibile con `python3 scripts/language_audit.py --write`.
-
-Shift+grave è ora tilde morta; Shift+6 è circonflesso morto. Verificate ã/õ/ñ e maiuscole, tutte le vocali con circonflesso e i simboli letterali tramite spazio. Agudo+s/t produce ș/ț, mentre Shift+virgola+s/S conserva ś/Ś; verificati entrambi i casi, đ/Đ, anello a/o/u e vocali con macrón.
-
-Il rapporto CLDR aggiornato confronta 57 repertori principali: 55 completi nelle rotte provate; restano il carattere ʼ del bretone e Ʒ/ʒ/Ǥ/ǥ/Ǯ/ǯ del sami skolt. Scots e casubio sono segnalati come non verificati, non conteggiati come coperti.
-
-## Cambio 6.2
-
-Il tasto sotto Escape ora produce ¿/¡; Shift+punto è carón morto. I due punti restano su Shift+AC10. I simboli letterali grave e tilde sono verificati tramite i tasti morti a destra di P seguiti da Spazio. La copertura delle lingue non diminuisce e tutte le rotte di caratteri precedentemente accessibili hanno ancora un risultato raggiungibile.
-
-Rieseguiti localmente i 29 test, il controllo statico Windows, il test con KWin Wayland isolato e Xwayland indipendente e il ciclo reale dpkg in una radice temporanea. Non è stata cambiata la disposizione del desktop dell'utente.
+Los resultados remotos se consultan en [GitHub Actions](https://github.com/Emilianowv/RomanceScript/actions). El [informe de idiomas](LENGUAS.md) se regenera sin red mediante `python3 scripts/language_audit.py --write`.

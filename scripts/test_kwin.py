@@ -32,17 +32,11 @@ def verify_states(keymap, compose):
         assert kb.sequence([('AD11',), ('AB06',)]) == 'ñ'
         assert kb.sequence([('AD11',), ('AB06', True)]) == 'Ñ'
         for first, second, expected in [
-            (('AC11',),('AC02',),'ș'), (('AC11',),('AD05',True),'Ț'),
-            (('AB08',True),('AC02',True),'Ś'), (('AD11',),('AC03',True),'Đ'),
-            (('AD12',),('AC01',),'å'), (('AD12',),('AD09',True),'Ø'),
-            (('AD12',),('AD07',),'ů'), (('AD12',True),('AD07',True),'Ū')]:
+            (('AD12',True),('AC02',),'ș'), (('AD12',True),('AC02',True),'Ș'),
+            (('AD12',True),('AD05',),'ț'), (('AD12',True),('AD05',True),'Ț'),
+            (('AD12',),('AC01',),'ă'), (('AD12',),('AC01',True),'Ă')]:
             assert kb.sequence([first,second]) == expected, expected
-        for key, lower, upper in [('AB03','č','Č'),('AC02','š','Š'),('AB01','ž','Ž'),
-                                  ('AD03','ě','Ě'),('AC03','ď','Ď'),('AD05','ť','Ť'),
-                                  ('AB06','ň','Ň'),('AD04','ř','Ř'),('AC09','ľ','Ľ')]:
-            for shift, expected in [(False,lower),(True,upper)]:
-                assert kb.sequence([('AB09',True),(key,shift)]) == expected, expected
-        for first, expected in [(('AD11',),'`'),(('AD11',True),'~'),(('AB09',True),'ˇ')]:
+        for first, expected in [(('AD11',),'`'),(('AD11',True),'~')]:
             assert kb.sequence([first,('SPCE',)]) == expected, expected
     finally:
         kb.close()

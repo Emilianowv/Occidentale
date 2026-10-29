@@ -24,7 +24,7 @@ def main():
     out = ROOT/'dist'
     out.mkdir(exist_ok=True)
     files = list(source_files())
-    prefix = f'Occidentale-{version}'
+    prefix = f'RomanceScript-{version}'
     with zipfile.ZipFile(out/f'{prefix}.zip', 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         for p in files:
             item = zipfile.ZipInfo(f'{prefix}/{p.relative_to(ROOT).as_posix()}', (1980, 1, 1, 0, 0, 0))
@@ -48,10 +48,11 @@ def main():
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(p, target)
             target.chmod(0o755 if p.stat().st_mode & 0o111 else 0o644)
-        binpath = stage/'usr/bin/occidentale'
-        binpath.parent.mkdir(parents=True)
-        binpath.write_text('#!/bin/sh\nexec python3 /usr/share/occidentale/occidentale "$@"\n')
-        binpath.chmod(0o755)
+        for command in ('romancescript', 'occidentale'):
+            binpath = stage/'usr/bin'/command
+            binpath.parent.mkdir(parents=True, exist_ok=True)
+            binpath.write_text('#!/bin/sh\nexec python3 /usr/share/occidentale/occidentale "$@"\n')
+            binpath.chmod(0o755)
         meta = stage/'DEBIAN'
         meta.mkdir()
         size = sum(p.stat().st_size for p in stage.rglob('*') if p.is_file())//1024+1
@@ -63,11 +64,11 @@ Architecture: all
 Maintainer: Emilianowv <309815527+Emilianowv@users.noreply.github.com>
 Depends: python3 (>= 3.11), xkb-data, libxkbcommon0, libxkbcommon-tools
 Recommends: x11-xkb-utils
-Homepage: https://github.com/Emilianowv/Occidentale
+Homepage: https://github.com/Emilianowv/RomanceScript
 Installed-Size: {size}
-Description: Occidentale multilingual XKB keyboard layout (wst)
- Native XKB layout for X11 and Wayland, with KDE Plasma 6 registration,
- per-user Compose, backups and rollback. Derived from EMI / Europeo V5.
+Description: RomanceScript keyboard layout for Romance languages (wst)
+ XKB layout for Spanish, Portuguese, French, Italian, Romanian and Catalan.
+ Includes Compose rules, KDE configuration, backups and removal tools.
 ''')
         for name in ('postinst', 'prerm'):
             dest = meta/name

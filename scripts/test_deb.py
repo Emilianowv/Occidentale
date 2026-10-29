@@ -29,11 +29,17 @@ def test(root, live):
         subprocess.run([*command, '-i', str(deb)], check=True, capture_output=True)
         assert symbol.read_bytes() == (ROOT/'xkb/symbols/wst').read_bytes()
         assert '<name>wst</name>' in registry.read_text()
+        assert '<description>RomanceScript</description>' in registry.read_text()
+        for name in ('romancescript', 'occidentale'):
+            wrapper = root/'usr/bin'/name
+            assert wrapper.is_file() and wrapper.stat().st_mode & 0o111, name
         # In a disposable root, compile using installed native symbols + host base data.
         subprocess.run(['xkbcli', 'compile-keymap', '--include', str(symbol.parent.parent),
                         '--include-defaults', '--layout', 'wst'], check=True, capture_output=True)
     subprocess.run([*command, '-r', 'occidentale'], check=True, capture_output=True)
     assert not symbol.exists() and not registry.exists(), 'Native files must be removed by prerm'
+    assert not (root/'usr/bin/romancescript').exists()
+    assert not (root/'usr/bin/occidentale').exists()
     subprocess.run([*command, '-P', 'occidentale'], check=True, capture_output=True)
     assert list((root/'var/lib/occidentale/backups').glob('*/manifest.json')), 'Recovery snapshots must survive purge'
     print('OK: dpkg installazione, reinstallazione, rimozione, purge e compilazione del payload installato.')

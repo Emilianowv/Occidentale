@@ -1,4 +1,13 @@
-# Changelog
+# Cambios
+
+## 7.0.0 — 29 de octubre de 2026
+
+- Nombre del proyecto y del teclado: RomanceScript.
+- Alcance: español, portugués, francés, italiano, rumano y catalán, con ß/ẞ adicional.
+- ñ/Ñ en su posición española; Mayús+coma → ; y Mayús+punto → :.
+- Breve y coma inferior en la antigua tecla de anillo/macrón: ă/Ă y ș/Ș, ț/Ț.
+- Se conservan el identificador wst, el paquete occidentale y sus respaldos; se añade el comando romancescript.
+- README y guías reescritos con el estado real de Linux y Windows.
 
 ## 6.2.0 — 26 de octubre de 2026
 

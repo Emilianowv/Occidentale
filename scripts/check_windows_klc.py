@@ -5,7 +5,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 man = json.loads((root / 'docs/layout-manifest.json').read_text(encoding='utf-8'))
-klc = (root / 'windows/Occidentale.klc').read_text(encoding='utf-16')
+klc = (root / 'windows/RomanceScript.klc').read_text(encoding='utf-16')
 lines = klc.splitlines()
 assert lines[0].startswith('KBD WST ')
 assert 'SHIFTSTATE' in lines and 'LAYOUT ;' in klc and 'ENDKBD' in lines
@@ -20,14 +20,14 @@ def check(xkb, normal, shift, altgr, altgr_shift):
     tokens=line.split('//')[0].split()
     assert tokens[3] == normal and tokens[4] == shift and tokens[6] == altgr and tokens[7] == altgr_shift, (xkb,tokens)
 check('TLDE', '00bf','00a1','005c','005c')
-check('AB09', '002e','02c7@','00b7','00f7')
+check('AB09', '002e','003a','00b7','00f7')
 check('AE06', '0036','005e@','00ac','215d')
 check('AD11', '0060@','007e@','005b','007b')
-check('AD12', '00b0@','00af@','005d','007d')
-check('AB08', '002c','02bc@','2022','00d7')
+check('AD12', '02d8@','0326@','005d','007d')
+check('AB08', '002c','003b','2022','00d7')
 check('AD09', '006f','004f','0153','0152')
 check('AC01', '0061','0041','00e6','00c6')
-check('AC10', '003b','003a','007e@','02dd@')
+check('AC10', '00f1','00d1','007e@','02dd@')
 assert '006e 00f1' in klc and '004e 00d1' in klc
 assert '0063 00e7' in klc and '0043 00c7' in klc and '0073 00df' in klc
 print(f'OK: {len(layout_rows)} posizioni Windows, legature e composizioni principali (controllo statico).')
@@ -49,16 +49,11 @@ for line in lines:
             assert base not in tables[current], (current, base)
             tables[current][base] = result
 for prefix, base, result in [
-    ('02c7','0063','010d'),('02c7','0043','010c'),('02c7','0073','0161'),('02c7','0053','0160'),
-    ('02c7','007a','017e'),('02c7','005a','017d'),('02c7','0065','011b'),('02c7','0045','011a'),
-    ('02c7','0064','010f'),('02c7','0044','010e'),('02c7','0074','0165'),('02c7','0054','0164'),
-    ('02c7','006e','0148'),('02c7','004e','0147'),('02c7','0072','0159'),('02c7','0052','0158'),
-    ('02c7','006c','013e'),('02c7','004c','013d'),('02c7','0020','02c7'),
-    ('0060','0020','0060'),('007e','0020','007e'),
-    ('0060','006e','00f1'),('0060','004e','00d1'),('0060','0064','0111'),('0060','0044','0110'),
-    ('00b4','0073','0219'),('00b4','0053','0218'),('00b4','0074','021b'),('00b4','0054','021a'),
-    ('02bc','0073','015b'),('02bc','0053','015a'),
-    ('00b0','0061','00e5'),('00b0','0041','00c5'),('00b0','006f','00f8'),('00b0','004f','00d8'),
-    ('00b0','0075','016f'),('00b0','0055','016e'),('00af','0075','016b'),('00af','0055','016a')]:
+    ('0060','0063','00e7'),('0060','0043','00c7'),
+    ('0060','0073','00df'),('0060','0053','1e9e'),
+    ('0326','0073','0219'),('0326','0053','0218'),
+    ('0326','0074','021b'),('0326','0054','021a'),
+    ('02d8','0061','0103'),('02d8','0041','0102'),
+    ('00b4','0061','00e1'),('00b4','0041','00c1')]:
     assert tables[prefix][base] == result, (prefix, base)
 print('OK: tablas muertas Windows sin duplicados y nuevas combinaciones coherentes (solo prueba estática).')

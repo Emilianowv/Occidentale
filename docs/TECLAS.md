@@ -1,78 +1,47 @@
-# Tu guía de teclas
+# Teclas de RomanceScript
 
-[← Inicio](../README.md) · [Instalar en Linux](INSTALACION.md) · [Windows](../windows/README.md)
+[Inicio](../README.md) · [Instalación Linux](INSTALACION.md)
 
-**Dos pulsaciones, una letra:** pulsa el acento, suéltalo y después pulsa la letra. Usa Mayús con la letra para obtener la mayúscula.
+Las posiciones corresponden a RomanceScript; las etiquetas impresas en el teclado pueden ser distintas.
 
-Las combinaciones siguientes están verificadas en Linux. El archivo Windows recoge el mismo reparto previsto, pendiente de pruebas en ese sistema.
-
-## Encuentra las teclas
-
-Las posiciones se refieren a la distribución Occidentale; las etiquetas impresas en tu teclado pueden ser distintas.
-
-| Posición física | Sin Mayús | Con Mayús |
+| Posición | Sin Mayús | Con Mayús |
 |---|---|---|
-| Debajo de **Escape**, esquina superior izquierda | **¿** | **¡** |
-| Justo a la derecha de **P** | Acento grave **&#96;** | Tilde **~** |
-| La tecla siguiente, antigua **+ / \*** | Anillo **˚** | Macrón **¯** |
-| Antigua posición de **Ñ**, a la derecha de **L** | **;** | **:** |
-| Siguiente tecla a la derecha de esa posición | Acento agudo **´** | Diéresis **¨** |
-| Tecla **6** de la fila numérica | **6** | Circunflejo **^** |
-| Tecla de la coma **,** | **,** | Prefijo para **ś / Ś** |
-| Tecla del punto **.** | **.** | Carón **ˇ** |
+| Debajo de Escape | ¿ | ¡ |
+| A la derecha de L | ñ | Ñ |
+| Coma | , | ; |
+| Punto | . | : |
+| A la derecha de P | Grave muerto &#96; | Tilde muerta ~ |
+| A la derecha de Ñ | Agudo muerto ´ | Diéresis muerta ¨ |
+| Fila numérica, tecla 6 | 6 | Circunflejo muerto ^ |
+| Junto a la barra inversa/barra vertical, antigua tecla +/* | Breve muerto ˘ | Coma inferior muerta |
 
-El grave que forma letras está **a la derecha de P**. La tecla de la esquina superior izquierda ahora escribe **¿ / ¡**. Para escribir el grave literal, pulsa grave y después Espacio; para la tilde literal, pulsa Mayús+grave y después Espacio.
+Pulsa el acento, suelta y pulsa la letra. Mantén Mayús al pulsar la letra para obtener la mayúscula.
 
-## Acentos cotidianos
-
-| Pulsa y suelta… | Después una vocal | También en mayúsculas |
-|---|---|---|
-| Agudo **´** | á é í ó ú | Á É Í Ó Ú |
-| Grave **&#96;** | à è ì ò ù | À È Ì Ò Ù |
-| Mayús + agudo: **¨** | ä ë ï ö ü | Ä Ë Ï Ö Ü |
-| Mayús + **6**: **^** | â ê î ô û | Â Ê Î Ô Û |
-| Mayús + grave: **~** | ã õ; también ñ | Ã Õ; también Ñ |
-| Mayús + anillo: **¯** | ā ē ī ō ū | Ā Ē Ī Ō Ū |
-
-**Para las lenguas eslavas:** pulsa **Mayús+punto**, suelta ambas teclas y pulsa **c, s, z, e, d, t, n, r o l**. Obtienes **č š ž ě ď ť ň ř ľ**; con Mayús en la letra, **Č Š Ž Ě Ď Ť Ň Ř Ľ**. El acceso anterior mediante Mayús+AltGr+agudo sigue disponible.
-
-Para escribir el acento por sí solo, pulsa su tecla y después **Espacio**. Por ejemplo, Mayús+6 y Espacio escribe **^**.
-
-## Letras especiales
-
-| Pulsa y suelta… | Después… | Resultado |
-|---|---|---|
-| Grave **&#96;** | n / N | ñ / Ñ |
-| Grave **&#96;** | c / C | ç / Ç |
-| Grave **&#96;** | s / S | ß / ẞ |
-| Grave **&#96;** | d / D | đ / Đ |
-| Agudo **´** | s / S | ș / Ș |
-| Agudo **´** | t / T | ț / Ț |
-| Mayús + coma | s / S | ś / Ś |
-| Anillo **˚** | a / A | å / Å |
-| Anillo **˚** | o / O | ø / Ø |
-| Anillo **˚** | u / U | ů / Ů |
-
-Para los siguientes caracteres, mantén **AltGr** (Alt derecho) mientras pulsas la letra:
-
-| Combinación | Resultado | Añadiendo Mayús |
-|---|---|---|
-| AltGr + **A** | æ | Æ |
-| AltGr + **O** | œ | Œ |
-| AltGr + **E** | € | — |
-
-## Símbolos útiles
-
-| Símbolo | Combinación |
+| Secuencia | Resultado |
 |---|---|
-| ¿ / ¡ | Tecla debajo de Escape, sin/con Mayús |
-| ; / : | Antigua tecla Ñ, sin/con Mayús |
-| + | Mayús + **=** de la fila numérica |
-| * | Mayús + **8** |
-| [ / { | AltGr / AltGr+Mayús + tecla del grave a la derecha de P |
-| ] / } | AltGr / AltGr+Mayús + tecla del anillo |
-| &#96; literal | Grave a la derecha de P, después Espacio |
-| ~ literal | Mayús + grave a la derecha de P, después Espacio |
-| ˇ literal | Mayús + punto, después Espacio |
+| Agudo + vocal | á é í ó ú / Á É Í Ó Ú |
+| Grave + vocal | à è ì ò ù / À È Ì Ò Ù |
+| Diéresis + vocal o y | ä ë ï ö ü ÿ / Ä Ë Ï Ö Ü Ÿ |
+| Circunflejo + vocal | â ê î ô û / Â Ê Î Ô Û |
+| Tilde + a/o | ã õ / Ã Õ |
+| Breve + a/A | ă / Ă |
+| Mayús+tecla del breve, después s/S | ș / Ș |
+| Mayús+tecla del breve, después t/T | ț / Ț |
+| Grave + c/C | ç / Ç |
+| Grave + s/S | ß / ẞ |
 
-Los **:** siguen en Mayús+antigua tecla Ñ. Los niveles AltGr del punto conservan **·** y **÷**. Para los demás niveles y caracteres, consulta el [mapa completo](layout-manifest.json) y el [inventario de idiomas](LENGUAS.md).
+El acento agudo ya no activa ș/ț. La coma inferior de estas letras se distingue del punto inferior y de la cedilla.
+
+| Combinación simultánea | Resultado |
+|---|---|
+| AltGr+O, sin/con Mayús | œ / Œ |
+| AltGr+A, sin/con Mayús | æ / Æ |
+| AltGr+S, sin/con Mayús | ß / ẞ |
+| AltGr+E | € |
+| AltGr+punto | ·, para l·l |
+| Mayús+8 | * |
+| Mayús+= | + |
+
+Para escribir el grave o la tilde literales, pulsa su acento muerto y después Espacio. Los corchetes y las llaves siguen en AltGr y Mayús+AltGr de las dos teclas a la derecha de P.
+
+El [mapa completo](layout-manifest.json) contiene los cuatro niveles. El [informe de idiomas](LENGUAS.md) separa letras principales, caracteres auxiliares y puntuación.

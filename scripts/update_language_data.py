@@ -22,21 +22,7 @@ TAG = 'release-49'
 BASE = f'https://raw.githubusercontent.com/unicode-org/cldr/{TAG}'
 PARENTS = {}
 CACHE = Path(tempfile.gettempdir()) / ('occidentale-cldr-'+TAG)
-GROUPS = {
-    'Romances': {'es':'Español', 'fr':'Francés', 'it':'Italiano', 'pt':'Portugués', 'ca':'Catalán',
-                 'gl':'Gallego', 'oc':'Occitano', 'ast':'Asturiano', 'an':'Aragonés', 'co':'Corso',
-                 'sc':'Sardo', 'fur':'Friulano', 'rm':'Romanche', 'wa':'Valón', 'vec':'Véneto', 'lij':'Ligur', 'ro':'Rumano'},
-    'Germánicas': {'en':'Inglés', 'de':'Alemán', 'nl':'Neerlandés', 'fy':'Frisón occidental',
-                   'lb':'Luxemburgués', 'da':'Danés', 'nb':'Noruego bokmål', 'nn':'Noruego nynorsk',
-                   'sv':'Sueco', 'is':'Islandés', 'fo':'Feroés', 'sco':'Escocés (scots)'},
-    'Célticas': {'ga':'Irlandés', 'gd':'Gaélico escocés', 'cy':'Galés', 'br':'Bretón', 'kw':'Córnico', 'gv':'Manés'},
-    'Otras lenguas europeas de alfabeto latino': {
-        'pl':'Polaco', 'cs':'Checo', 'sk':'Eslovaco', 'sl':'Esloveno', 'hr':'Croata', 'bs':'Bosnio',
-        'sr_Latn':'Serbio latino', 'eu':'Euskera', 'hu':'Húngaro', 'sq':'Albanés', 'tr':'Turco',
-        'mt':'Maltés', 'fi':'Finés', 'et':'Estonio', 'lv':'Letón', 'lt':'Lituano',
-        'se':'Sami septentrional', 'sma':'Sami meridional', 'smj':'Sami de Lule',
-        'smn':'Sami de Inari', 'sms':'Sami skolt', 'hsb':'Alto sorabo', 'dsb':'Bajo sorabo', 'csb':'Casubio'}
-}
+GROUPS = {'Romances': {'es':'Español', 'pt':'Portugués', 'fr':'Francés', 'it':'Italiano', 'ro':'Rumano', 'ca':'Catalán'}}
 
 
 class UnicodeSet:
@@ -154,7 +140,7 @@ def main():
     data = {'source':'Unicode CLDR', 'tag':TAG, 'license':'Unicode-3.0',
             'parent_locales_source':{'url':f'{BASE}/common/supplemental/supplementalData.xml',
                                      'sha256':hashlib.sha256(supplemental).hexdigest()},
-            'note':'Selección de lenguas, no catálogo exhaustivo. Main y auxiliary separados; no promete compatibilidad de aplicaciones.',
+            'note':'Seis lenguas prioritarias de RomanceScript. Repertorios principales, auxiliares y puntuación separados.',
             'languages':rows, 'unavailable_languages':unavailable}
     path = ROOT/'docs/language-repertoires.json'
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n')

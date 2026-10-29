@@ -31,7 +31,7 @@ class InstallerTests(unittest.TestCase):
     def run_cli(self, *args, success=True, cli=None):
         env = dict(os.environ)
         env.pop('XCOMPOSEFILE', None)
-        proc = subprocess.run([str(cli or ROOT/'occidentale'), '--root', str(self.root), '--home', str(self.home), *args],
+        proc = subprocess.run([str(cli or ROOT/'romancescript'), '--root', str(self.root), '--home', str(self.home), *args],
                               env=env, text=True, capture_output=True)
         if success:
             self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
@@ -65,16 +65,15 @@ class InstallerTests(unittest.TestCase):
             self.assertEqual(kb.sequence([('AD11',), ('AC02',)]), 'ß')
             self.assertEqual(kb.sequence([('AD11',), ('AB03',)]), 'ç')
             for first, second, expected in [
-                (('AC11',),('AC02',),'ș'), (('AC11',),('AD05',True),'Ț'),
-                (('AB08',True),('AC02',),'ś'), (('AD11',),('AC03',True),'Đ'),
-                (('AD12',),('AD09',True),'Ø'), (('AD12',True),('AD07',),'ū')]:
+                (('AD12',True),('AC02',),'ș'), (('AD12',True),('AD05',True),'Ț'),
+                (('AD12',),('AC01',),'ă'), (('AD12',),('AC01',True),'Ă')]:
                 self.assertEqual(kb.sequence([first,second]),expected)
         finally:
             kb.close()
         registry = subprocess.run(['xkbcli', 'list', '--skip-default-paths', '/usr/share/X11/xkb', str(self.root/'etc/xkb')],
                                   check=True, capture_output=True, text=True).stdout
         self.assertIn("layout: 'wst'", registry)
-        self.assertIn('description: Occidentale', registry)
+        self.assertIn('description: RomanceScript', registry)
         self.run_cli('doctor')
         self.run_cli('user-remove')
         self.assertEqual(self.kde.read_bytes(), kde_before)
@@ -108,15 +107,15 @@ class InstallerTests(unittest.TestCase):
         self.assertNotIn('OCCIDENTALE', self.compose.read_text())
 
     def test_upgrade_replaces_previous_compose_block(self):
-        original = 'include "%L"\n# BEGIN OCCIDENTALE WST\n<dead_grave> <c> : "ç" ccedilla\n# END OCCIDENTALE WST\n# personal rule below\n'
+        original = 'include "%L"\n# BEGIN OCCIDENTALE WST\n<dead_grave> <c> : "ç" ccedilla\n<dead_acute> <s> : "ș" U0219\n<dead_acute> <t> : "ț" U021B\n# END OCCIDENTALE WST\n# personal rule below\n'
         self.compose.write_text(original)
         self.run_cli('user-install')
         self.assertEqual(self.compose.read_text().count('# BEGIN OCCIDENTALE WST'),1)
         self.assertIn('# personal rule below',self.compose.read_text())
         kb=Keyboard(compose=self.compose.read_text())
         try:
-            self.assertEqual(kb.sequence([('AC11',),('AC02',)]),'ș')
-            self.assertEqual(kb.sequence([('AB08',True),('AC02',)]),'ś')
+            self.assertEqual(kb.sequence([('AD12',True),('AC02',)]),'ș')
+            self.assertEqual(kb.sequence([('AC11',),('AC02',)]),'ś')
         finally:
             kb.close()
         self.run_cli('user-remove')
@@ -215,9 +214,9 @@ class InstallerTests(unittest.TestCase):
         payload = self.base/'updated'
         shutil.copytree(ROOT, payload, ignore=shutil.ignore_patterns('.git', '__pycache__', 'dist'))
         source = payload/'xkb/symbols/wst'
-        source.write_text(source.read_text().replace('name[Group1] = "Occidentale"', 'name[Group1] = "Occidentale Update"'))
+        source.write_text(source.read_text().replace('name[Group1] = "RomanceScript"', 'name[Group1] = "RomanceScript Update"'))
         self.run_cli('system-install', cli=payload/'occidentale')
-        self.assertIn('Occidentale Update', self.symbol.read_text())
+        self.assertIn('RomanceScript Update', self.symbol.read_text())
         self.run_cli('restore', '--scope', 'system')
         self.assertEqual(self.symbol.read_bytes(), original)
         self.run_cli('system-remove')

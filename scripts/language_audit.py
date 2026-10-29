@@ -28,7 +28,7 @@ DEAD_NAMES = {'dead_grave':'grave muerto', 'dead_acute':'agudo muerto',
 
 def key_label(item, level):
     name = item['xkb_key']
-    fixed = {'AD11':'tecla de grave', 'AC11':'tecla de agudo', 'SPCE':'Espacio', 'LSGT':'tecla ISO <'}
+    fixed = {'AD11':'tecla de grave', 'AC11':'tecla de agudo', 'AD12':'tecla de breve', 'SPCE':'Espacio', 'LSGT':'tecla ISO <'}
     base = fixed.get(name) or item['levels'][0]['character'] or name
     if len(base) == 1 and base.isalpha():
         base = base.upper()
@@ -107,9 +107,9 @@ def report(kb, data, manifest):
 
 
 def markdown(result):
-    lines=['# Cobertura de lenguas europeas con alfabeto latino', '',
-           f"Occidentale {result['layout_version']} · datos Unicode CLDR {result['source']} · Compose en_US.UTF-8.", '',
-           'Es una selección de lenguas modernas y regionales, no un inventario exhaustivo. Las categorías organizan el trabajo; no establecen límites políticos o geográficos.', '',
+    lines=['# Cobertura de RomanceScript', '',
+           f"RomanceScript {result['layout_version']} · datos Unicode CLDR {result['source']} · Compose en_US.UTF-8.", '',
+           'El alcance prioritario es español, portugués, francés, italiano, rumano y catalán. Se conserva ß/ẞ como compatibilidad adicional.', '',
            'Se han probado teclas directas, Shift/AltGr y un acento muerto seguido de una tecla imprimible. Las mayúsculas también se comprueban. Los dígrafos se evalúan como cadenas. “Falta” significa que no apareció en esas rutas; puede existir otra vía con varios acentos, entrada Unicode o una tecla Compose configurada aparte.', '',
            'Los repertorios principales, auxiliares y de puntuación se mantienen separados. Un repertorio principal cubierto no equivale a soporte ortográfico completo ni a pruebas de aplicaciones. CLDR no es una medida de frecuencia de uso.', '']
     groups = list(dict.fromkeys(row['group'] for row in result['languages']))
@@ -120,7 +120,7 @@ def markdown(result):
                 lines.append(f"| {row['name']} | {' '.join(row['special']) or 'Ninguno fuera de ASCII'} | {' '.join(row['missing']) or '—'} |")
         lines.append('')
     lines += ['## Rutas actuales de interés', '', '| Carácter | Cómo se obtiene |', '|---|---|']
-    for char in 'ñÑçÇßẞđĐșȘțȚśŚåÅøØůŮāĀēĒīĪōŌūŪœŒæÆãõäöüčšžąęłðþħİıőű':
+    for char in 'ñÑçÇßẞăĂșȘțȚœŒæÆãÃõÕàèìòùáéíóúâêîôûäëïöüÿŸ·¿¡':
         recipe=result['recipes'].get(char)
         lines.append(f"| {char} | {' → '.join(recipe['steps']) if recipe else 'No encontrado'} |")
     lines += ['', '## Auxiliares y puntuación', '',

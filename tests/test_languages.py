@@ -22,11 +22,13 @@ class LanguageCoverageTests(unittest.TestCase):
         rows={row['locale']:row for row in actual['languages']}
         self.assertEqual(rows['ro']['group'],'Romances')
         self.assertEqual(rows['es']['missing'],[])
-        for locale in ('es','fr','it','pt','ro','de','nl','sv','nb','nn','da','fo','is','pl','cs','hr','bs','sr_Latn','lv','lt'):
+        for locale in ('es','fr','it','pt','ro','ca'):
             with self.subTest(locale=locale):
                 self.assertEqual(rows[locale]['missing'],[])
         self.assertIsNotNone(segment('l·l',actual['recipes']))
-        self.assertEqual(actual['recipes']['ñ']['steps'],['tecla de grave','N'])
+        self.assertEqual(set(rows), {'es','pt','fr','it','ro','ca'})
+        self.assertEqual(actual['recipes']['ñ']['steps'],['Ñ'])
+        self.assertIsNotNone(segment('ßẞ',actual['recipes']))
 
 
 if __name__=='__main__':

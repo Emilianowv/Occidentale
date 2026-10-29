@@ -1,24 +1,13 @@
-# Provenienza e fedeltà V5
+# Procedencia
 
-La base è l'archivio fornito dall'utente `Europeo-Keyboard-repository(1).zip`.
+RomanceScript continúa el proyecto llamado Occidentale. La base recibida fue `Europeo-Keyboard-repository(1).zip`, con SHA256 `b7df76e307ce35307f2781cfe5dc975e2aa65b1b40b00909a02cd67025a1960c`.
 
-SHA256: `b7df76e307ce35307f2781cfe5dc975e2aa65b1b40b00909a02cd67025a1960c`.
+Occidentale 6.0 conservó las 49 posiciones y sus cuatro niveles de la base, verificados mediante 196 comparaciones. Las versiones 6.1 y 6.2 cambiaron varias posiciones; no se declara identidad con la distribución original para esas versiones ni para RomanceScript.
 
-Il file `linux/symbols/emius` è stato rinominato `xkb/symbols/wst`. Sono cambiati i commenti descrittivi e il nome del gruppo, ora `Occidentale`. Nella 6.0 le definizioni dei tasti sono rimaste invariate. La 6.1 modifica AC10, AE06, AD11, AD12 e AB08 secondo il reparto documentato in DISENO-6.1.md; le composizioni personalizzate sono state ampliate. Il confronto di 196 risultati qui sotto documenta la versione 6.0.
+RomanceScript 7.0 limita el alcance a seis lenguas y adopta el reparto documentado en [Diseño](DISENO.md). Conserva los identificadores internos de instalación para poder actualizar desde Occidentale. Las versiones anteriores se consultan en la historia Git y en [Cambios](CHANGELOG.md).
 
-Il 26 ottobre 2026, con xkb-data 2.42 e libxkbcommon 1.7 su Debian 13, sono state compilate la mappa V5 originale e quella rinominata. Il confronto tramite libxkbcommon ha confermato la coincidenza di tutti i 49 tasti alfanumerici nei quattro stati normale, Shift, AltGr e AltGr+Shift: **196 risultati uguali**.
+La inclusión `es(basic)` utiliza los archivos de xkeyboard-config ya instalados en Linux. Algunos niveles AltGr se heredan de esa base; el [manifiesto](layout-manifest.json) registra el resultado compilado, no solo los símbolos declarados explícitamente.
 
-Il manifesto originale ometteva quattro simboli effettivamente ereditati da `es(basic)`, anche se i commenti li descrivevano come assenti:
+El archivo Windows se llama `RomanceScript.klc` y conserva el identificador interno WST. Su validación es estática. No se presenta como una versión Windows compilada o probada.
 
-| Tasto | Livello 3 | Livello 4 |
-|---|---|---|
-| AE12, `=` | dead_cedilla | dead_ogonek |
-| BKSL, `\` | braceright | dead_breve |
-
-Il nuovo manifesto rappresenta i risultati reali. Le tabelle di tastiera non sono state modificate per adeguarle ai vecchi commenti. Gli accenti dipendono anche dalla base spagnola del pacchetto xkb-data: i test completi del manifesto rendono visibili eventuali cambiamenti futuri a monte.
-
-L'installer precedente riusava lo stato EMI V4 e configurava soltanto la cediglia. Il nuovo gestore usa un ambito `occidentale` separato e definisce esplicitamente anche ß/ẞ. I backup e i file di tastiera delle versioni precedenti non vengono cancellati.
-
-La 6.2 modifica soltanto altri tre livelli: TLDE normale/Shift (¿/¡) e AB09 Shift (carón morto). Il [reparto 6.2](DISENO-6.2.md) documenta i simboli conservati e le loro nuove posizioni.
-
-Il sorgente MSKLC è stato rinominato in `windows/Occidentale.klc`, con nome interno `WST` e versione attuale 6.2. La sua validazione rimane statica; non è un port Windows collaudato e mantiene i limiti della trasposizione preliminare originale.
+El archivo original no incluía una licencia de código abierto. Los derechos se mantienen en [COPYRIGHT](../COPYRIGHT). Los datos de Unicode CLDR conservan su licencia Unicode-3.0, incluida en [UNICODE-LICENSE.txt](UNICODE-LICENSE.txt).

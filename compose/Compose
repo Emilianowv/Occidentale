@@ -5,15 +5,8 @@
 <dead_grave> <S> : "ẞ" U1E9E
 <dead_grave> <n> : "ñ" ntilde
 <dead_grave> <N> : "Ñ" Ntilde
-<dead_grave> <d> : "đ" dstroke
-<dead_grave> <D> : "Đ" Dstroke
-<dead_acute> <s> : "ș" U0219
-<dead_acute> <S> : "Ș" U0218
-<dead_acute> <t> : "ț" U021B
-<dead_acute> <T> : "Ț" U021A
-<dead_abovecomma> <s> : "ś" U015B
-<dead_abovecomma> <S> : "Ś" U015A
-<dead_abovecomma> <space> : "´" acute
-<dead_abovering> <o> : "ø" oslash
-<dead_abovering> <O> : "Ø" Oslash
+<dead_belowcomma> <s> : "ș" U0219
+<dead_belowcomma> <S> : "Ș" U0218
+<dead_belowcomma> <t> : "ț" U021B
+<dead_belowcomma> <T> : "Ț" U021A
 # END OCCIDENTALE WST

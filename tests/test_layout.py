@@ -29,19 +29,20 @@ class LayoutTests(unittest.TestCase):
                     self.assertEqual(actual, expected)
 
     def test_required_compose_characters(self):
-        for key, lower, upper in [('AB03', 'ç', 'Ç'), ('AC02', 'ß', 'ẞ'), ('AB06', 'ñ', 'Ñ'), ('AC03', 'đ', 'Đ')]:
+        for key, lower, upper in [('AB03', 'ç', 'Ç'), ('AC02', 'ß', 'ẞ'), ('AB06', 'ñ', 'Ñ')]:
             for shift, expected in [(False, lower), (True, upper)]:
                 with self.subTest(expected=expected):
                     self.assertEqual(self.kb.sequence([('AD11',), (key, shift)]), expected)
 
     def test_semicolon_colon_and_retained_dead_keys(self):
-        self.assertEqual(self.kb.name('AC10'), 'semicolon')
-        self.assertEqual(self.kb.name('AC10', shift=True), 'colon')
+        self.assertEqual(self.kb.name('AC10'), 'ntilde')
+        self.assertEqual(self.kb.name('AC10', shift=True), 'Ntilde')
         self.assertEqual(self.kb.name('AC10', altgr=True), 'dead_tilde')
         self.assertEqual(self.kb.name('AC10', shift=True, altgr=True), 'dead_doubleacute')
         self.assertEqual(self.kb.sequence([('AC10', False, True), ('AC01',)]), 'ã')
         self.assertEqual(self.kb.sequence([('AC10', True, True), ('AD09',)]), 'ő')
-        self.assertEqual(self.kb.name('AB08', shift=True), 'dead_abovecomma')
+        self.assertEqual(self.kb.name('AB08', shift=True), 'semicolon')
+        self.assertEqual(self.kb.name('AB09', shift=True), 'colon')
 
     def test_opening_punctuation_below_escape(self):
         self.assertEqual(self.kb.name('TLDE'), 'questiondown')
@@ -54,45 +55,34 @@ class LayoutTests(unittest.TestCase):
         self.assertEqual(self.kb.name('AE01', shift=True, altgr=True), 'exclamdown')
         self.assertEqual(self.kb.name('AE11', shift=True, altgr=True), 'questiondown')
 
-    def test_caron_on_shift_period_both_cases(self):
+    def test_punctuation_and_braces_keep_altgr_levels(self):
         self.assertEqual(self.kb.name('AB09'), 'period')
-        self.assertEqual(self.kb.name('AB09', shift=True), 'dead_caron')
+        self.assertEqual(self.kb.name('AB09', shift=True), 'colon')
         self.assertEqual(self.kb.name('AB09', altgr=True), 'periodcentered')
         self.assertEqual(self.kb.name('AB09', shift=True, altgr=True), 'division')
-        self.assertEqual(self.kb.name('AC11', shift=True, altgr=True), 'dead_caron')
-        for key, lower, upper in [('AB03','č','Č'),('AC02','š','Š'),('AB01','ž','Ž'),
-                                  ('AD03','ě','Ě'),('AC03','ď','Ď'),('AD05','ť','Ť'),
-                                  ('AB06','ň','Ň'),('AD04','ř','Ř'),('AC09','ľ','Ľ')]:
-            for shift, expected in [(False,lower),(True,upper)]:
-                with self.subTest(expected=expected):
-                    self.assertEqual(self.kb.sequence([('AB09',True),(key,shift)]),expected)
-                    self.assertEqual(self.kb.sequence([('AC11',True,True),(key,shift)]),expected)
-        self.assertEqual(self.kb.sequence([('AB09',True),('SPCE',)]),'ˇ')
+        self.assertEqual(self.kb.name('AD12', altgr=True), 'bracketright')
+        self.assertEqual(self.kb.name('AD12', shift=True, altgr=True), 'braceright')
+        self.assertEqual(self.kb.name('AE12', shift=True), 'plus')
+        self.assertEqual(self.kb.name('AE08', shift=True), 'asterisk')
 
-    def test_romanian_and_polish_have_distinct_prefixes(self):
-        for key, lower, upper in [('AC02','ș','Ș'),('AD05','ț','Ț')]:
-            for shift, expected in [(False,lower),(True,upper)]:
-                with self.subTest(expected=expected):
-                    self.assertEqual(self.kb.sequence([('AC11',),(key,shift)]),expected)
-        for shift, expected in [(False,'ś'),(True,'Ś')]:
-            self.assertEqual(self.kb.sequence([('AB08',True),('AC02',shift)]),expected)
-        self.assertEqual(self.kb.sequence([('AC11',),('AB03',)]),'ć')
-        self.assertEqual(self.kb.sequence([('AC11',),('AB06',)]),'ń')
-        self.assertEqual(self.kb.sequence([('AC11',),('AB01',)]),'ź')
-
-    def test_ring_and_macron_both_cases(self):
-        for key, lower, upper in [('AC01','å','Å'),('AD09','ø','Ø'),('AD07','ů','Ů')]:
-            for shift, expected in [(False,lower),(True,upper)]:
-                with self.subTest(expected=expected):
-                    self.assertEqual(self.kb.sequence([('AD12',),(key,shift)]),expected)
-        for key, lower, upper in [('AC01','ā','Ā'),('AD03','ē','Ē'),('AD08','ī','Ī'),('AD09','ō','Ō'),('AD07','ū','Ū')]:
-            for shift, expected in [(False,lower),(True,upper)]:
+    def test_romanian_breve_and_comma_below_both_cases(self):
+        self.assertEqual(self.kb.name('AD12'), 'dead_breve')
+        self.assertEqual(self.kb.name('AD12', shift=True), 'dead_belowcomma')
+        for key, lower, upper in [('AC02','ș','Ș'), ('AD05','ț','Ț')]:
+            for shift, expected in [(False,lower), (True,upper)]:
                 with self.subTest(expected=expected):
                     self.assertEqual(self.kb.sequence([('AD12',True),(key,shift)]),expected)
-        self.assertEqual(self.kb.name('AD12',altgr=True),'bracketright')
-        self.assertEqual(self.kb.name('AD12',shift=True,altgr=True),'braceright')
-        self.assertEqual(self.kb.name('AE12',shift=True),'plus')
-        self.assertEqual(self.kb.name('AE08',shift=True),'asterisk')
+        for shift, expected in [(False,'ă'), (True,'Ă')]:
+            self.assertEqual(self.kb.sequence([('AD12',),( 'AC01',shift)]),expected)
+        # The acute prefix no longer selects the Romanian comma-below letters.
+        self.assertEqual(self.kb.sequence([('AC11',),('AC02',)]),'ś')
+
+    def test_french_ligatures_diaeresis_and_german_extra(self):
+        for key, lower, upper in [('AC01','ae','AE'), ('AD09','oe','OE'), ('AC02','ssharp','U1E9E')]:
+            self.assertEqual(self.kb.name(key,altgr=True),lower)
+            self.assertEqual(self.kb.name(key,shift=True,altgr=True),upper)
+        for shift, expected in [(False,'ÿ'),(True,'Ÿ')]:
+            self.assertEqual(self.kb.sequence([('AC11',True),('AD06',shift)]),expected)
 
     def test_accents_both_cases_from_physical_keys(self):
         for dead, shift_dead, combining in [('AD11', False, '\u0300'), ('AE06', True, '\u0302'),
@@ -105,7 +95,7 @@ class LayoutTests(unittest.TestCase):
 
     def test_dead_keys_then_space(self):
         for key, shift, expected in [('AD11', False, '`'), ('AD11', True, '~'), ('AE06', True, '^'),
-                                     ('AC11', False, "'"), ('AC11', True, '"'), ('AB09', True, 'ˇ')]:
+                                     ('AC11', False, "'"), ('AC11', True, '"'), ('AD12', False, '˘')]:
             with self.subTest(key=key, shift=shift):
                 self.assertEqual(self.kb.sequence([(key, shift), ('SPCE',)]), expected)
 
@@ -123,12 +113,12 @@ class LayoutTests(unittest.TestCase):
         try:
             self.assertEqual(self.kb.name('AC01'), 'A')
             self.assertEqual(self.kb.name('AD09', altgr=True), 'OE')
-            self.assertEqual(self.kb.name('AC10'), 'semicolon')
-            self.assertEqual(self.kb.name('AC10', shift=True), 'colon')
+            self.assertEqual(self.kb.name('AC10'), 'Ntilde')
+            self.assertEqual(self.kb.name('AC10', shift=True), 'ntilde')
             self.assertEqual(self.kb.sequence([('AD11',), ('AB06',)]), 'Ñ')
             self.assertEqual(self.kb.name('TLDE'), 'questiondown')
             self.assertEqual(self.kb.name('TLDE', shift=True), 'exclamdown')
-            self.assertEqual(self.kb.sequence([('AB09',True), ('AB03',)]), 'Č')
+            self.assertEqual(self.kb.sequence([('AD12',True), ('AC02',)]), 'Ș')
         finally:
             update(self.kb.state, self.kb.code('CAPS'), 1)
             update(self.kb.state, self.kb.code('CAPS'), 0)
@@ -148,7 +138,7 @@ class LayoutTests(unittest.TestCase):
             subprocess.run(['xkbcomp', '-w', '0', str(source), str(binary)], check=True, capture_output=True)
             self.assertGreater(binary.stat().st_size, 1000)
             dumped = subprocess.run(['xkbcomp', '-w', '0', '-xkb', str(binary), '-'], check=True, capture_output=True).stdout
-            self.assertIn(b'Occidentale', dumped)
+            self.assertIn(b'RomanceScript', dumped)
 
 
 if __name__ == '__main__':

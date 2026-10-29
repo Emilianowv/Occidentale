@@ -1,10 +1,10 @@
 {
-  "project": "Occidentale",
+  "project": "RomanceScript",
   "based_on": "EMI V5",
-  "version": "6.2.0",
+  "version": "7.0.0",
   "os_support": {
-    "linux": "XKB e Compose: vedere VERIFICA.md per i test eseguiti",
-    "windows": "Sorgente MSKLC; compilazione e test Windows non eseguiti"
+    "linux": "XKB y Compose; pruebas y límites en VERIFICA.md",
+    "windows": "Fuente MSKLC con validación estática; no compilada ni instalada en Windows"
   },
   "keys": [
     {
@@ -686,14 +686,14 @@
       "caps_sensitive": false,
       "levels": [
         {
-          "character": "˚",
+          "character": "˘",
           "dead": true,
-          "xkb_keysym": "dead_abovering"
+          "xkb_keysym": "dead_breve"
         },
         {
-          "character": "¯",
+          "character": ",",
           "dead": true,
-          "xkb_keysym": "dead_macron"
+          "xkb_keysym": "dead_belowcomma"
         },
         {
           "character": "]",
@@ -966,14 +966,14 @@
       "caps_sensitive": false,
       "levels": [
         {
-          "character": ";",
+          "character": "ñ",
           "dead": false,
-          "xkb_keysym": "semicolon"
+          "xkb_keysym": "ntilde"
         },
         {
-          "character": ":",
+          "character": "Ñ",
           "dead": false,
-          "xkb_keysym": "colon"
+          "xkb_keysym": "Ntilde"
         },
         {
           "character": "~",
@@ -1251,9 +1251,9 @@
           "xkb_keysym": "comma"
         },
         {
-          "character": "´",
-          "dead": true,
-          "xkb_keysym": "dead_abovecomma"
+          "character": ";",
+          "dead": false,
+          "xkb_keysym": "semicolon"
         },
         {
           "character": "•",
@@ -1279,9 +1279,9 @@
           "xkb_keysym": "period"
         },
         {
-          "character": "ˇ",
-          "dead": true,
-          "xkb_keysym": "dead_caron"
+          "character": ":",
+          "dead": false,
+          "xkb_keysym": "colon"
         },
         {
           "character": "·",

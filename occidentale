@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Occidentale: installazione nativa e configurazione KDE senza interfaccia grafica.
+"""RomanceScript: installazione nativa e configurazione KDE senza interfaccia grafica.
 
 Solo libreria standard Python. Ogni mutazione ha preflight, lock, snapshot,
 scrittura atomica e rollback in caso di eccezione.
@@ -157,7 +157,7 @@ def registry_merge(old):
         result = replace_block(old, XML_BEGIN, XML_END, block)
     else:
         if any(x.text == 'wst' for x in root.findall('./layoutList/layout/configItem/name')):
-            raise Error('Il catalogo contiene già un wst non gestito da Occidentale')
+            raise Error('Il catalogo contiene già un wst non gestito da RomanceScript')
         if '</layoutList>' not in old:
             raise Error('Catalogo XKB senza chiusura layoutList esplicita')
         result = old.replace('</layoutList>', block + '</layoutList>', 1)
@@ -376,7 +376,7 @@ def kde_select(args):
                       'DisplayNames': names, 'Use': 'true'}).encode(), old['mode'] if old else 0o600)
         remember(state, path, new, 'kde')
         change(state_dir, 'kde-select', {path: new}, state)
-    print('KDE: Occidentale (wst) configurato come primo layout. Esci dalla sessione e rientra.')
+    print('KDE: RomanceScript (wst) configurato come primo layout. Esci dalla sessione e rientra.')
 
 
 def system_paths_for_read(args):
@@ -479,7 +479,7 @@ def backups(args):
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(prog="romancescript", description=__doc__)
     parser.add_argument('--root', default='/', help='radice sistema alternativa per staging/test')
     parser.add_argument('--home', help='home alternativa per test isolati')
     parser.add_argument('--config-home', help='directory configurazione utente alternativa')
