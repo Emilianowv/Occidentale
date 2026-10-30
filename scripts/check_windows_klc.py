@@ -7,7 +7,8 @@ root = Path(__file__).resolve().parents[1]
 man = json.loads((root / 'docs/layout-manifest.json').read_text(encoding='utf-8'))
 klc = (root / 'windows/RomanceScript.klc').read_text(encoding='utf-16')
 lines = klc.splitlines()
-assert lines[0].startswith('KBD WST ')
+assert lines[0].startswith('KBD ROM ')
+assert 'VERSION '+'.'.join((root/'VERSION').read_text().strip().split('.')[:2]) in lines
 assert 'SHIFTSTATE' in lines and 'LAYOUT ;' in klc and 'ENDKBD' in lines
 layout_rows = [line for line in lines if line.rstrip().endswith('>') and '// <' in line]
 assert len(layout_rows) == len(man['keys']) == 49

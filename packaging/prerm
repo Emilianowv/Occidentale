@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu
 case "$1" in
-    remove|deconfigure) python3 "${DPKG_ROOT:-}/usr/share/occidentale/occidentale" --root "${DPKG_ROOT:-/}" system-remove ;;
+    remove|deconfigure) python3 "${DPKG_ROOT:-}/usr/share/romancescript/romancescript" --root "${DPKG_ROOT:-/}" system-remove ;;
 esac

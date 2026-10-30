@@ -1,5 +1,13 @@
 # Cambios
 
+## 8.0.0 — 29 de octubre de 2026
+
+- El identificador XKB pasa de `wst` a `rom` y el paquete Debian pasa de `occidentale` a `romancescript`.
+- Se elimina el alias de comando `occidentale`; el comando único es `romancescript`.
+- Rutas de estado y marcadores de bloques actualizados a `romancescript` / `ROMANCESCRIPT ROM`.
+- Instalación en Linux con un comando (`install.sh`) o descargando el `.deb`.
+- Windows añade un asistente `install.ps1` junto al `.klc`; ambos con validación estática.
+
 ## 7.0.0 — 29 de octubre de 2026
 
 - Nombre del proyecto y del teclado: RomanceScript.

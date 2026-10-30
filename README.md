@@ -2,6 +2,14 @@
 
 Distribución de teclado QWERTY para escribir en **español, portugués, francés, italiano, rumano y catalán**. Conserva **ß/ẞ** como compatibilidad adicional con el alemán.
 
+## Descargas
+
+- **[Linux Debian/Ubuntu: paquete .deb](https://github.com/Emilianowv/RomanceScript/releases/latest/download/romancescript_8.0.0_all.deb)**
+- **[Windows: ZIP con el archivo de diseño KLC](https://github.com/Emilianowv/RomanceScript/releases/latest/download/RomanceScript-8.0.0-Windows.zip)**. No contiene un instalador compilado.
+- [Código fuente ZIP](https://github.com/Emilianowv/RomanceScript/releases/latest/download/RomanceScript-8.0.0.zip), [TAR.GZ](https://github.com/Emilianowv/RomanceScript/releases/latest/download/RomanceScript-8.0.0.tar.gz) y [SHA256SUMS](https://github.com/Emilianowv/RomanceScript/releases/latest/download/SHA256SUMS).
+
+La abreviatura y el identificador XKB son **rom**. Al actualizar desde wst, instala el paquete y ejecuta `romancescript user-install` y `romancescript kde-select` desde cada cuenta KDE. Después cierra sesión y vuelve a entrar.
+
 ## Distribución
 
 La **ñ/Ñ** está en su posición española. **Mayús+coma** escribe **;** y **Mayús+punto** escribe **:**.
@@ -23,9 +31,9 @@ El agudo y la diéresis se conservan a la derecha de Ñ. Para formar una letra a
 ## Sistemas
 
 - **Linux:** instalación XKB, reglas Compose para los acentos y selección desde KDE. Se prueba en Debian 13 con KDE Plasma 6, KWin Wayland y un servidor X11 independiente. Incluye copias de seguridad, actualización y desinstalación.
-- **Windows:** se incluye [RomanceScript.klc](windows/RomanceScript.klc), un archivo para Microsoft Keyboard Layout Creator. Tiene controles estáticos; **no se ha compilado ni probado en Windows y no hay un instalador Windows disponible**.
+- **Windows:** se incluye [RomanceScript.klc](windows/RomanceScript.klc) y un asistente [install.ps1](windows/install.ps1) para descargarlo y abrirlo en Microsoft Keyboard Layout Creator. Tienen controles estáticos; **no se han compilado ni probado en Windows y no hay un instalador Windows compilado**.
 
-[Descargar el código en ZIP](https://github.com/Emilianowv/RomanceScript/archive/refs/heads/main.zip) · [Instalar en Linux](docs/INSTALACION.md) · [Archivo Windows](windows/README.md)
+[Descargar el código en ZIP](https://github.com/Emilianowv/RomanceScript/archive/refs/heads/main.zip) · [Instalar en Linux con un comando](docs/INSTALACION.md) · [Archivo Windows](windows/README.md)
 
 ## Alcance y comprobaciones
 

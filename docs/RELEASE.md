@@ -1,15 +1,12 @@
-# RomanceScript 7.0.0
+# RomanceScript 8.0.0
 
-El proyecto pasa de Occidentale a RomanceScript. Su alcance prioritario queda limitado a español, portugués, francés, italiano, rumano y catalán, con ß/ẞ como compatibilidad adicional.
+El proyecto adopta el nombre RomanceScript y el identificador XKB `rom`. El paquete Debian pasa a llamarse `romancescript` y el comando es `romancescript`.
 
-- ñ/Ñ vuelve a su posición española.
-- Mayús+coma y Mayús+punto vuelven a producir ; y :.
-- La antigua tecla de anillo/macrón pasa a breve y coma inferior: ă/Ă, ș/Ș y ț/Ț.
-- Se conservan ¿/¡ bajo Escape, los acentos de las vocales, ç, œ/Œ y æ/Æ.
-- La documentación describe el alcance y los límites sin presentar compatibilidad no probada.
+- La nueva versión utiliza `rom` y el paquete `romancescript`; la selección KDE sustituye wst. El paquete anterior puede conservarse durante la transición de las otras cuentas.
+- El teclado se instala en `/usr/share/X11/xkb/symbols/rom`; el estado y los respaldos usan `romancescript`.
+- Instalación en Linux con un comando: `curl -fsSL https://raw.githubusercontent.com/Emilianowv/RomanceScript/main/install.sh | sh`, o descargando el `.deb`.
+- Windows incluye `RomanceScript.klc` y un asistente `install.ps1`, ambos con validación estática; no hay un instalador compilado.
 
-El identificador XKB `wst` y el nombre del paquete Debian `occidentale` se conservan para actualizar las instalaciones anteriores. El comando principal pasa a `romancescript`; el comando anterior sigue funcionando.
+La distribución de teclas no cambia respecto a 7.0: ñ/Ñ en su posición española, Mayús+coma → ;, Mayús+punto → :, ¿/¡ bajo Escape, breve y coma inferior en la antigua tecla +/*, ç/ß con grave, œ/æ con AltGr y los acentos muertos a la derecha de P y de Ñ.
 
-Para actualizar desde el paquete Debian, instala `occidentale_7.0.0_all.deb`, ejecuta `romancescript user-install` desde cada usuario y cierra sesión y vuelve a entrar. La selección de teclado existente se conserva.
-
-Windows incluye solo el archivo KLC revisado estáticamente. No hay un instalador compilado ni pruebas de escritura en Windows.
+Descargas: paquete Linux `.deb`, código fuente ZIP/TAR.GZ, ZIP Windows con KLC y asistente de descarga, archivos KLC/PowerShell individuales e instalador Linux `install.sh`. Todas las descargas tienen su SHA256 en SHA256SUMS.

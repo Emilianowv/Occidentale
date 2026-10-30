@@ -6,7 +6,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_EMAIL = '309815527+Emilianowv@users.noreply.github.com'
-TOP = ('romancescript', 'occidentale', 'VERSION', 'README.md', 'COPYRIGHT', 'Makefile', '.gitignore', '.gitattributes',
+TOP = ('romancescript', 'install.sh', 'VERSION', 'README.md', 'COPYRIGHT', 'Makefile', '.gitignore', '.gitattributes',
        'xkb', 'compose', 'docs', 'scripts', 'tests', 'packaging', 'windows', '.github')
 
 

@@ -12,18 +12,20 @@ python3 scripts/test_deb.py
 
 El build genera en `dist/`:
 
-- `RomanceScript-7.0.0.zip`
-- `RomanceScript-7.0.0.tar.gz`
-- `occidentale_7.0.0_all.deb`
+- `RomanceScript-8.0.0.zip`
+- `RomanceScript-8.0.0.tar.gz`
+- `romancescript_8.0.0_all.deb`
+- `RomanceScript-8.0.0-Windows.zip`
+- `RomanceScript.klc`, `install.ps1` e `install.sh`
 - `SHA256SUMS`
 
-El paquete conserva su nombre interno por compatibilidad con instalaciones anteriores. Instala los comandos `romancescript` y `occidentale`.
+El paquete se llama `romancescript` e instala el comando `romancescript`. La versión publicada adjunta también los archivos KLC y PowerShell individuales para su descarga directa; ambos tienen solo validación estática.
 
-El workflow de verificación construye y prueba el paquete en un contenedor Debian 13. El workflow de etiquetas crea una **versión en borrador** después de comprobar que la etiqueta coincide con VERSION:
+El workflow de verificación construye y prueba el paquete en un contenedor Debian 13. El workflow de etiquetas crea una **versión pública** después de comprobar que la etiqueta coincide con VERSION:
 
 ```bash
-git tag v7.0.0
-git push origin v7.0.0
+git tag v8.0.0
+git push origin v8.0.0
 ```
 
-Revisa los resultados, los archivos y las sumas antes de publicar una versión. Un resultado local no implica que el workflow remoto haya pasado. No se distribuye un instalador Windows sin compilarlo y probarlo en ese sistema.
+Revisa los resultados, los archivos y las sumas antes de publicar una versión. Un resultado local no implica que el workflow remoto haya pasado. No se distribuye un instalador Windows compilado; el `.klc` y el script PowerShell no se han compilado ni probado en ese sistema.

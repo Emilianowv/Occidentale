@@ -1,6 +1,6 @@
 # Cobertura de RomanceScript
 
-RomanceScript 7.0.0 · datos Unicode CLDR release-49 · Compose en_US.UTF-8.
+RomanceScript 8.0.0 · datos Unicode CLDR release-49 · Compose en_US.UTF-8.
 
 El alcance prioritario es español, portugués, francés, italiano, rumano y catalán. Se conserva ß/ẞ como compatibilidad adicional.
 

@@ -1,4 +1,4 @@
-# Diseño de RomanceScript 7.0
+# Diseño de RomanceScript 8.0
 
 El alcance prioritario es español, portugués, francés, italiano, rumano y catalán. Se conserva ß/ẞ como compatibilidad adicional con el alemán. Otros caracteres heredados pueden seguir disponibles, pero no se declara cobertura de sus lenguas.
 
@@ -13,6 +13,6 @@ Respecto a Occidentale 6.2:
 
 La [guía de teclas](TECLAS.md) muestra las secuencias. El manifiesto contiene 49 posiciones por cuatro niveles: 196 estados comprobados.
 
-El nombre visible pasa a RomanceScript. El identificador XKB `wst`, el nombre del paquete Debian `occidentale`, las rutas de estado y los marcadores de bloques se conservan para actualizar las instalaciones anteriores sin perder sus respaldos. El comando principal es `romancescript`; `occidentale` sigue disponible como alias de compatibilidad.
+El identificador XKB pasa a `rom` y el paquete Debian se llama `romancescript`. El comando es `romancescript`. Las rutas de estado (`/var/lib/romancescript` y `~/.local/state/romancescript`) y los marcadores de bloques (`ROMANCESCRIPT ROM`) usan el nuevo nombre.
 
 La cobertura de letras principales se mide con los datos guardados de Unicode CLDR y el motor real XKB/Compose. Los caracteres auxiliares y la puntuación se muestran aparte. La fuente Windows recibe el mismo reparto previsto, con los límites de su validación estática.

@@ -15,9 +15,10 @@ jobs:
         run: test "$GITHUB_REF_NAME" = "v$(cat VERSION)"
       - run: make build
       - run: python3 scripts/test_deb.py --live
-      - name: Create draft release
+      - name: Publish release with Linux and Windows files
         uses: softprops/action-gh-release@v2
         with:
-          draft: true
+          draft: false
+          fail_on_unmatched_files: true
           files: dist/*
           body_path: docs/RELEASE.md

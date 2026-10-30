@@ -14,16 +14,16 @@ from xkb_api import Keyboard, ROOT
 
 class InstallerTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix='occidentale test à ')
+        self.temp = tempfile.TemporaryDirectory(prefix='romancescript test à ')
         self.base = Path(self.temp.name)
         self.root, self.home = self.base/'root', self.base/'home'
         self.home.mkdir()
         self.config = self.home/'.config'
         self.kde = self.config/'kxkbrc'
         self.compose = self.home/'.XCompose'
-        self.symbol = self.root/'usr/share/X11/xkb/symbols/wst'
+        self.symbol = self.root/'usr/share/X11/xkb/symbols/rom'
         self.registry = self.root/'etc/xkb/rules/evdev.xml'
-        self.state = self.home/'.local/state/occidentale'
+        self.state = self.home/'.local/state/romancescript'
 
     def tearDown(self):
         self.temp.cleanup()
@@ -56,7 +56,7 @@ class InstallerTests(unittest.TestCase):
             self.run_cli(cmd)
         self.assertEqual(before, [p.read_bytes() for p in (self.symbol, self.registry, self.compose, self.kde)])
         self.assertEqual(count, len(list(self.state.glob('backups/*'))))
-        self.assertIn('LayoutList=wst,es,us', self.kde.read_text())
+        self.assertIn('LayoutList=rom,es,us', self.kde.read_text())
         self.assertIn('Options=grp:alt_shift_toggle', self.kde.read_text())
         self.assertIn('# personal comment', self.kde.read_text())
         self.assertIn('[Other]\nKeep=untouched', self.kde.read_text())
@@ -72,7 +72,7 @@ class InstallerTests(unittest.TestCase):
             kb.close()
         registry = subprocess.run(['xkbcli', 'list', '--skip-default-paths', '/usr/share/X11/xkb', str(self.root/'etc/xkb')],
                                   check=True, capture_output=True, text=True).stdout
-        self.assertIn("layout: 'wst'", registry)
+        self.assertIn("layout: 'rom'", registry)
         self.assertIn('description: RomanceScript', registry)
         self.run_cli('doctor')
         self.run_cli('user-remove')
@@ -94,7 +94,7 @@ class InstallerTests(unittest.TestCase):
         self.assertIn('<!-- keep -->', self.registry.read_text())
         self.assertIn('<!-- later change -->', self.registry.read_text())
         self.assertIn('<name>other</name>', self.registry.read_text())
-        self.assertNotIn('<name>wst</name>', self.registry.read_text())
+        self.assertNotIn('<name>rom</name>', self.registry.read_text())
 
     def test_compose_preserves_later_additions(self):
         self.seed()
@@ -104,13 +104,13 @@ class InstallerTests(unittest.TestCase):
         self.run_cli('user-remove')
         self.assertIn('custom', self.compose.read_text())
         self.assertIn('later', self.compose.read_text())
-        self.assertNotIn('OCCIDENTALE', self.compose.read_text())
+        self.assertNotIn('ROMANCESCRIPT', self.compose.read_text())
 
     def test_upgrade_replaces_previous_compose_block(self):
-        original = 'include "%L"\n# BEGIN OCCIDENTALE WST\n<dead_grave> <c> : "ç" ccedilla\n<dead_acute> <s> : "ș" U0219\n<dead_acute> <t> : "ț" U021B\n# END OCCIDENTALE WST\n# personal rule below\n'
+        original = 'include "%L"\n# BEGIN ROMANCESCRIPT ROM\n<dead_grave> <c> : "ç" ccedilla\n<dead_acute> <s> : "ș" U0219\n<dead_acute> <t> : "ț" U021B\n# END ROMANCESCRIPT ROM\n# personal rule below\n'
         self.compose.write_text(original)
         self.run_cli('user-install')
-        self.assertEqual(self.compose.read_text().count('# BEGIN OCCIDENTALE WST'),1)
+        self.assertEqual(self.compose.read_text().count('# BEGIN ROMANCESCRIPT ROM'),1)
         self.assertIn('# personal rule below',self.compose.read_text())
         kb=Keyboard(compose=self.compose.read_text())
         try:
@@ -129,6 +129,32 @@ class InstallerTests(unittest.TestCase):
         self.assertFalse(self.compose.exists())
         self.assertFalse(self.kde.exists())
 
+    def test_legacy_wst_migration_preserves_personal_rules_and_rollback(self):
+        self.seed('wst,es,us,fr', ',,,')
+        original = ('include "%L"\n# personal before\n'
+                    '# BEGIN OCCIDENTALE WST\n<dead_grave> <c> : "ç" ccedilla\n'
+                    '# END OCCIDENTALE WST\n# personal after\n')
+        self.compose.write_text(original)
+        kde_before = self.kde.read_bytes()
+        self.run_cli('system-install')
+        self.run_cli('user-install')
+        self.run_cli('kde-select')
+        self.assertNotIn('OCCIDENTALE WST', self.compose.read_text())
+        self.assertIn('# personal before', self.compose.read_text())
+        self.assertIn('# personal after', self.compose.read_text())
+        self.assertIn('LayoutList=rom,es,us,fr', self.kde.read_text())
+        self.assertEqual(self.compose.read_text().count('# BEGIN ROMANCESCRIPT ROM'), 1)
+        self.run_cli('doctor')
+        self.run_cli('user-remove')
+        self.assertEqual(self.compose.read_text(), original)
+        self.assertEqual(self.kde.read_bytes(), kde_before)
+
+    def test_incomplete_legacy_compose_block_is_not_overwritten(self):
+        original = 'include "%L"\n# BEGIN OCCIDENTALE WST\n'
+        self.compose.write_text(original)
+        self.run_cli('user-install', success=False)
+        self.assertEqual(self.compose.read_text(), original)
+
     def test_restore_last_user_transaction(self):
         self.seed()
         kde_before = self.kde.read_bytes()
@@ -137,9 +163,9 @@ class InstallerTests(unittest.TestCase):
         self.run_cli('kde-select')
         self.run_cli('restore')
         self.assertEqual(self.kde.read_bytes(), kde_before)
-        self.assertIn('OCCIDENTALE', self.compose.read_text())
+        self.assertIn('ROMANCESCRIPT', self.compose.read_text())
         self.run_cli('restore')
-        self.assertNotIn('OCCIDENTALE', self.compose.read_text())
+        self.assertNotIn('ROMANCESCRIPT', self.compose.read_text())
 
     def test_restore_conflict_leaves_all_files_unchanged(self):
         self.run_cli('user-install')
@@ -162,7 +188,7 @@ class InstallerTests(unittest.TestCase):
         self.assertEqual(self.registry.read_bytes(), before)
 
     def test_incomplete_compose_and_symlinks_are_not_overwritten(self):
-        self.compose.write_text('# BEGIN OCCIDENTALE WST\n')
+        self.compose.write_text('# BEGIN ROMANCESCRIPT ROM\n')
         before = self.compose.read_bytes()
         self.run_cli('user-install', success=False)
         self.assertEqual(self.compose.read_bytes(), before)
@@ -180,20 +206,20 @@ class InstallerTests(unittest.TestCase):
         self.run_cli('kde-select', success=False)
         self.assertEqual(self.kde.read_bytes(), before)
         self.run_cli('kde-select', '--replace', 'de')
-        self.assertIn('LayoutList=wst,es,us,fr', self.kde.read_text())
+        self.assertIn('LayoutList=rom,es,us,fr', self.kde.read_text())
 
     def test_external_kde_changes_keep_new_layouts_and_options(self):
         self.seed()
         self.run_cli('system-install')
         self.run_cli('kde-select')
-        self.kde.write_text(self.kde.read_text().replace('LayoutList=wst,es,us', 'LayoutList=wst,es,fr').replace('grp:alt_shift_toggle', 'grp:win_space_toggle'))
+        self.kde.write_text(self.kde.read_text().replace('LayoutList=rom,es,us', 'LayoutList=rom,es,fr').replace('grp:alt_shift_toggle', 'grp:win_space_toggle'))
         self.run_cli('user-remove')
         self.assertIn('LayoutList=es,fr', self.kde.read_text())
         self.assertIn('Options=grp:win_space_toggle', self.kde.read_text())
 
     def test_user_shadow_blocks_selection(self):
         self.run_cli('system-install')
-        shadow = self.config/'xkb/symbols/wst'
+        shadow = self.config/'xkb/symbols/rom'
         shadow.parent.mkdir(parents=True)
         shadow.write_text('foreign')
         self.run_cli('kde-select', success=False)
@@ -213,9 +239,9 @@ class InstallerTests(unittest.TestCase):
         original = self.symbol.read_bytes()
         payload = self.base/'updated'
         shutil.copytree(ROOT, payload, ignore=shutil.ignore_patterns('.git', '__pycache__', 'dist'))
-        source = payload/'xkb/symbols/wst'
+        source = payload/'xkb/symbols/rom'
         source.write_text(source.read_text().replace('name[Group1] = "RomanceScript"', 'name[Group1] = "RomanceScript Update"'))
-        self.run_cli('system-install', cli=payload/'occidentale')
+        self.run_cli('system-install', cli=payload/'romancescript')
         self.assertIn('RomanceScript Update', self.symbol.read_text())
         self.run_cli('restore', '--scope', 'system')
         self.assertEqual(self.symbol.read_bytes(), original)
@@ -232,7 +258,7 @@ class InstallerTests(unittest.TestCase):
                 self.assertEqual(self.kde.read_text(), text)
 
     def test_transaction_rolls_back_on_write_failure(self):
-        loader = importlib.machinery.SourceFileLoader('occidentale_test', str(ROOT/'occidentale'))
+        loader = importlib.machinery.SourceFileLoader('romancescript_test', str(ROOT/'romancescript'))
         spec = importlib.util.spec_from_loader(loader.name, loader)
         module = importlib.util.module_from_spec(spec)
         loader.exec_module(module)

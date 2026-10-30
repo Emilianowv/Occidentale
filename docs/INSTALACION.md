@@ -4,6 +4,18 @@
 
 La instalación está verificada en **Debian 13 con KDE Plasma 6**. Incluye el teclado, las combinaciones de acentos y una copia de tu configuración anterior.
 
+## Instalación rápida (un comando)
+
+En Debian 13 con KDE Plasma 6, abre una terminal y ejecuta:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Emilianowv/RomanceScript/main/install.sh | sh
+```
+
+El script descarga el paquete de la versión 8.0.0, comprueba su SHA256, lo instala con sus dependencias y configura tus acentos y la selección KDE. El comando queda instalado en el sistema. Después guarda tu trabajo, cierra sesión y vuelve a entrar. Si prefieres revisarlo antes, descarga [`install.sh`](../install.sh), ábrelo y ejecútalo como `./install.sh`.
+
+También puedes [descargar el paquete `.deb`](#si-tienes-un-paquete-debian-deb) e instalarlo con un solo archivo.
+
 ## 1. Descarga y abre la carpeta
 
 [Descarga el ZIP del proyecto](https://github.com/Emilianowv/RomanceScript/archive/refs/heads/main.zip), extráelo y abre una terminal dentro de la carpeta **RomanceScript-main**. En muchos gestores de archivos puedes hacerlo con clic derecho → «Abrir terminal aquí».
@@ -58,20 +70,20 @@ El teclado usa el formato nativo de Linux y los pasos de instalación desde el Z
 `kde-select` configura solamente KDE. Otros escritorios pueden no mostrar RomanceScript en su selector aunque el archivo esté instalado. En una sesión **X11**, puedes probarlo temporalmente con:
 
 ```bash
-setxkbmap wst
+setxkbmap rom
 ```
 
 Antes de probar, anota el identificador de tu distribución habitual para poder volver a ella. Este comando no configura la selección persistente del escritorio ni funciona como selector de Wayland. En **Wayland** la selección depende del escritorio: estas instrucciones automatizan KDE. No se modifican la consola de texto ni la pantalla de inicio de sesión.
 
 ## Si tienes un paquete Debian `.deb`
 
-El paquete conserva el nombre interno `occidentale` para actualizar las instalaciones anteriores. El teclado visible y el comando principal se llaman RomanceScript.
+El paquete se llama `romancescript`. Instala el teclado y el comando `romancescript` en el sistema.
 
-Cuando una [versión publicada](https://github.com/Emilianowv/RomanceScript/releases) incluya `occidentale_7.0.0_all.deb`, descarga también su `SHA256SUMS`. Desde la carpeta de descarga, verifica el archivo antes de instalar:
+Descarga [romancescript_8.0.0_all.deb](https://github.com/Emilianowv/RomanceScript/releases/latest/download/romancescript_8.0.0_all.deb) y su [SHA256SUMS](https://github.com/Emilianowv/RomanceScript/releases/latest/download/SHA256SUMS). Desde la carpeta de descarga, verifica el archivo antes de instalar:
 
 ```bash
-grep '  occidentale_7.0.0_all.deb$' SHA256SUMS | sha256sum -c -
-sudo apt install ./occidentale_7.0.0_all.deb
+grep '  romancescript_8.0.0_all.deb$' SHA256SUMS | sha256sum -c -
+sudo apt install ./romancescript_8.0.0_all.deb
 romancescript user-install
 romancescript kde-select
 romancescript doctor
@@ -79,13 +91,17 @@ romancescript doctor
 
 Continúa solo si la comprobación muestra **OK** para el paquete. Este método instala el comando `romancescript` en el sistema: ya no necesita el prefijo `./` ni conservar la carpeta del proyecto. Después, cierra sesión y vuelve a entrar.
 
-Si no aparecen archivos descargables en Releases, utiliza el ZIP y los pasos anteriores.
+La página de Releases contiene también los archivos del código fuente y el ZIP de Windows.
 
 ## Actualizar
 
 Con el ZIP: descarga la nueva versión, extráela en una carpeta aparte y repite `system-install` con sudo y `user-install` sin sudo desde esa carpeta. Conserva la nueva carpeta para gestionar esa instalación.
 
-Con el `.deb`: instala el nuevo paquete y ejecuta `romancescript user-install` desde cada usuario.
+Con el `.deb`: instala el nuevo paquete y ejecuta `romancescript user-install` y `romancescript kde-select` desde cada usuario.
+
+La versión 8 utiliza `rom`. La selección KDE sustituye automáticamente el antiguo `wst` y conserva los otros teclados. Las reglas Compose anteriores se sustituyen sin borrar las reglas personales. Cada operación guarda una copia para volver atrás.
+
+El paquete antiguo `occidentale`, si está instalado, puede permanecer durante la transición para que las otras cuentas sigan utilizando wst hasta que se actualicen. La versión nueva solo instala el comando `romancescript`; el paquete anterior y sus respaldos no se eliminan automáticamente.
 
 Después cierra sesión y vuelve a entrar. Repetir estos pasos no duplica las entradas y las modificaciones efectivas generan copias de seguridad.
 
@@ -123,7 +139,7 @@ Selecciona un teclado alternativo, cierra sesión y vuelve a entrar. Después el
 sudo ./romancescript system-remove
 ```
 
-Con el paquete `.deb`, usa `romancescript user-remove`, cambia de teclado y vuelve a entrar; después ejecuta `sudo apt remove occidentale`.
+Con el paquete `.deb`, usa `romancescript user-remove`, cambia de teclado y vuelve a entrar; después ejecuta `sudo apt remove romancescript`.
 
 Las copias de seguridad se conservan. Los cambios ajenos a RomanceScript se respetan; si hay un conflicto, el programa lo indica antes de sobrescribirlos.
 

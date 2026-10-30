@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TAG = 'release-49'
 BASE = f'https://raw.githubusercontent.com/unicode-org/cldr/{TAG}'
 PARENTS = {}
-CACHE = Path(tempfile.gettempdir()) / ('occidentale-cldr-'+TAG)
+CACHE = Path(tempfile.gettempdir()) / ('romancescript-cldr-'+TAG)
 GROUPS = {'Romances': {'es':'Español', 'pt':'Portugués', 'fr':'Francés', 'it':'Italiano', 'ro':'Rumano', 'ca':'Catalán'}}
 
 

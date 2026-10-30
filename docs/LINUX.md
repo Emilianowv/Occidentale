@@ -8,16 +8,16 @@ RomanceScript utiliza XKB y Compose. `system-install` compila la distribución a
 
 | Ruta | Contenido |
 |---|---|
-| `/usr/share/X11/xkb/symbols/wst` | Distribución nativa para X11 y libxkbcommon |
+| `/usr/share/X11/xkb/symbols/rom` | Distribución nativa para X11 y libxkbcommon |
 | `/etc/xkb/rules/evdev.xml` | Entrada de catálogo para KDE Plasma 6 |
-| `/var/lib/occidentale/` | Estado y respaldos del sistema |
+| `/var/lib/romancescript/` | Estado y respaldos del sistema |
 | `~/.XCompose` | Reglas personales de composición, salvo que se use XCOMPOSEFILE |
 | `~/.config/kxkbrc` | Selección de teclado en KDE |
-| `~/.local/state/occidentale/` | Estado y respaldos del usuario, salvo XDG_STATE_HOME |
+| `~/.local/state/romancescript/` | Estado y respaldos del usuario, salvo XDG_STATE_HOME |
 
-Se mantienen el identificador `wst`, el paquete Debian `occidentale` y las rutas y marcadores anteriores para actualizar desde Occidentale sin cambiar las referencias ni perder las copias. El nombre visible es RomanceScript. `romancescript` es el comando principal; `occidentale` funciona como alias.
+El identificador XKB es `rom`, el paquete Debian se llama `romancescript` y el comando es `romancescript`. Las rutas y los marcadores de bloques usan el nombre `romancescript`.
 
-El paquete instala ambos comandos y sus datos en `/usr/share/occidentale`. Sus scripts de instalación y retirada gestionan los archivos XKB mediante el mismo mecanismo de respaldo. No se modifican los catálogos de `/usr/share/X11/xkb/rules`.
+El paquete instala el comando `romancescript` y sus datos en `/usr/share/romancescript`. Sus scripts de instalación y retirada gestionan los archivos XKB mediante el mismo mecanismo de respaldo. No se modifican los catálogos de `/usr/share/X11/xkb/rules`.
 
 ## Acentos
 
@@ -31,7 +31,7 @@ Se respeta `XCOMPOSEFILE`. Algunos métodos de entrada o aplicaciones pueden uti
 
 `kde-select` conserva variantes, opciones, modelo, comentarios y otras secciones del archivo. Valida la combinación completa y rechaza más de cuatro distribuciones. `--replace ID` permite retirar explícitamente una distribución anterior.
 
-Los archivos personales `symbols/wst` o `rules/evdev` pueden ocultar la versión del sistema. Los conflictos se señalan antes de sobrescribir configuraciones. Los enlaces simbólicos y las claves KDE inmutables también se rechazan.
+Los archivos personales `symbols/rom` o `rules/evdev` pueden ocultar la versión del sistema. Los conflictos se señalan antes de sobrescribir configuraciones. Los enlaces simbólicos y las claves KDE inmutables también se rechazan.
 
 Hace falta cerrar sesión y volver a entrar para cargar los cambios en el escritorio y las aplicaciones. `setxkbmap` permite una prueba temporal en X11; no configura KWin Wayland. Otros escritorios pueden no mostrar la entrada del catálogo. No se cambia SDDM, la consola de texto ni initramfs.
 

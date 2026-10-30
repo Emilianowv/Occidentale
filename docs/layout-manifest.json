@@ -1,7 +1,7 @@
 {
   "project": "RomanceScript",
   "based_on": "EMI V5",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "os_support": {
     "linux": "XKB y Compose; pruebas y límites en VERIFICA.md",
     "windows": "Fuente MSKLC con validación estática; no compilada ni instalada en Windows"
@@ -1389,6 +1389,6 @@
     "Shift+grave can generate circumflex; Shift+acute generates dieresis (unchanged V5)",
     "Avoid overwriting Linux Compose customization."
   ],
-  "xkb_layout": "wst",
+  "xkb_layout": "rom",
   "manifest_note": "6.1: ;/: en AC10; ñ/đ por grave; tilde en Shift+grave; circunflejo en Shift+6; anillo/macrón en AD12; ș/ț por agudo y ś/Ś por Shift+coma."
 }

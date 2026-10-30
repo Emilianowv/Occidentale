@@ -77,12 +77,12 @@ def verify_x11(base, env, keymap, compose):
 
 
 def main():
-    with tempfile.TemporaryDirectory(prefix='occidentale-kwin-') as t:
+    with tempfile.TemporaryDirectory(prefix='romancescript-kwin-') as t:
         base = Path(t)
         runtime, home, native = base/'runtime', base/'home', base/'system'
         runtime.mkdir(mode=0o700)
         home.mkdir()
-        cli = [str(ROOT/'occidentale'), '--root', str(native), '--home', str(home)]
+        cli = [str(ROOT/'romancescript'), '--root', str(native), '--home', str(home)]
         for command in ('system-install', 'user-install', 'kde-select'):
             subprocess.run([*cli, command], check=True, capture_output=True)
         binary = base/'read-keymap'
@@ -91,18 +91,18 @@ def main():
         env = dict(os.environ, XDG_RUNTIME_DIR=str(runtime), XDG_CONFIG_HOME=str(home/'.config'),
                    HOME=str(home), XKB_CONFIG_EXTRA_PATH=str(native/'usr/share/X11/xkb'),
                    QT_QPA_PLATFORM='offscreen', KWIN_COMPOSE='Q', LIBGL_ALWAYS_SOFTWARE='true',
-                   WAYLAND_DISPLAY='occidentale-test')
+                   WAYLAND_DISPLAY='romancescript-test')
         for key in ('DISPLAY', 'DBUS_SESSION_BUS_ADDRESS', 'XKB_DEFAULT_LAYOUT', 'XKB_DEFAULT_VARIANT', 'XCOMPOSEFILE'):
             env.pop(key, None)
         log = base/'kwin.log'
         with log.open('w') as f:
             process = subprocess.Popen(['dbus-run-session', '--', 'kwin_wayland', '--virtual',
                                         '--no-lockscreen', '--no-global-shortcuts', '--no-kactivities',
-                                        '--socket', 'occidentale-test'], env=env, stdout=f, stderr=f,
+                                        '--socket', 'romancescript-test'], env=env, stdout=f, stderr=f,
                                        start_new_session=True)
         try:
             for _ in range(100):
-                if (runtime/'occidentale-test').exists() or process.poll() is not None:
+                if (runtime/'romancescript-test').exists() or process.poll() is not None:
                     break
                 time.sleep(0.05)
             if process.poll() is not None:

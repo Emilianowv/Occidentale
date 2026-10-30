@@ -1,4 +1,4 @@
-// RomanceScript (wst). Procedencia y derechos en COPYRIGHT.
+// RomanceScript (rom). Procedencia y derechos en COPYRIGHT.
 // Restablecer ñ/Ñ y la puntuación de Mayús+coma y Mayús+punto.
 default partial alphanumeric_keys
 xkb_symbols "basic" {

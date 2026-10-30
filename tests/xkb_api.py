@@ -37,7 +37,7 @@ compose_utf8 = bind('xkb_compose_state_get_utf8', C.c_int, ptr, C.c_char_p, C.c_
 
 
 class Keyboard:
-    def __init__(self, include=None, layout='wst', compose=None, keymap_bytes=None):
+    def __init__(self, include=None, layout='rom', compose=None, keymap_bytes=None):
         self.ctx = context_new(0)
         data = keymap_bytes or subprocess.run(['xkbcli', 'compile-keymap', '--include', str(include or ROOT/'xkb'),
                                '--include-defaults', '--layout', layout, '--options', ''],

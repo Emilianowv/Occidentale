@@ -133,7 +133,7 @@ class LayoutTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as t:
             source, binary = Path(t)/'map.xkb', Path(t)/'map.xkm'
             result = subprocess.run(['xkbcli', 'compile-keymap', '--include', str(ROOT/'xkb'),
-                                     '--include-defaults', '--layout', 'wst'], check=True, capture_output=True)
+                                     '--include-defaults', '--layout', 'rom'], check=True, capture_output=True)
             source.write_bytes(result.stdout)
             subprocess.run(['xkbcomp', '-w', '0', str(source), str(binary)], check=True, capture_output=True)
             self.assertGreater(binary.stat().st_size, 1000)

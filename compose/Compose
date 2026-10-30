@@ -1,4 +1,4 @@
-# BEGIN OCCIDENTALE WST
+# BEGIN ROMANCESCRIPT ROM
 <dead_grave> <c> : "ç" ccedilla
 <dead_grave> <C> : "Ç" Ccedilla
 <dead_grave> <s> : "ß" ssharp
@@ -9,4 +9,4 @@
 <dead_belowcomma> <S> : "Ș" U0218
 <dead_belowcomma> <t> : "ț" U021B
 <dead_belowcomma> <T> : "Ț" U021A
-# END OCCIDENTALE WST
+# END ROMANCESCRIPT ROM
